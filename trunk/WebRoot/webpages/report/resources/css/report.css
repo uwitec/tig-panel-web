@@ -1,0 +1,12 @@
+
+.datalist{ 
+	border:1px solid #000000; /* 表格边框 */ 
+	font-family:Arial; 
+	border-collapse:collapse; /* 边框重叠 */ 
+	background:#E2ECEC;     /* 表格背景色 */ 
+	} 
+.datalist td{ 
+	border:1px solid #000000; /* 单元格边框 */ 
+	padding-top:4px; padding-bottom:4px; 
+	padding-left:10px; padding-right:10px; 
+}

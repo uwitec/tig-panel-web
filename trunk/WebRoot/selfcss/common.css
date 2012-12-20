@@ -1,0 +1,716 @@
+@CHARSET "UTF-8";
+
+.x-image-none{
+	display:none !important;
+}
+
+.x-image-nodeback {
+	background-image: url(../images/bg.png) !important;
+	background-repeat : repeat-x !important;
+	height : 20 !important;
+}
+
+.x-image-nodestyle {
+	height : 20 !important;
+}
+
+.x-image-11{
+	background-image: url(../images/11.png) !important;
+}
+
+.x-image-12{
+	background-image: url(../images/12.png) !important;
+}
+
+.x-image-37{
+	background-image: url(../images/37.png) !important;
+}
+
+.x-image-49{
+	background-image: url(../images/49.png) !important;
+}
+
+.x-image-55{
+	background-image: url(../images/55.png) !important;
+}
+
+.x-image-67{
+	background-image: url(../images/67.png) !important;
+}
+
+.x-image-69{
+	background-image: url(../images/69.png) !important;
+}
+
+.x-image-71{
+	background-image: url(../images/71.png) !important;
+}
+
+.x-image-78{
+	background-image: url(../images/78.png) !important;
+}
+
+.x-image-add{
+	background-image: url(../images/add.png) !important;
+}
+
+.x-image-application_form_add{
+	background-image: url(../images/application_form_add.png) !important;
+}
+
+.x-image-application_form_delete{
+	background-image: url(../images/application_form_delete.png) !important;
+}
+
+.x-image-application_form_edit{
+	background-image: url(../images/application_form_edit.png) !important;
+}
+
+.x-image-application_form_magnify{
+	background-image: url(../images/application_form_magnify.png) !important;
+}
+
+.x-image-arrow{
+	background-image: url(../images/arrow.png) !important;
+}
+
+.x-image-arrow_right{
+	background-image: url(../images/arrow_right.png) !important;
+}
+
+.x-image-blank{
+	background-image: url(../images/blank.png) !important;
+}
+
+.x-image-bullet_black{
+	background-image: url(../images/bullet_black.png) !important;
+}
+
+.x-image-bullet_error{
+	background-image: url(../images/bullet_error.png) !important;
+}
+
+.x-image-bullet_green{
+	background-image: url(../images/bullet_green.png) !important;
+}
+
+.x-image-bullet_red{
+	background-image: url(../images/bullet_red.png) !important;
+}
+
+.x-image-chart_organisation{
+	background-image: url(../images/chart_organisation.png) !important;
+}
+
+.x-image-Cluster{
+	background-image: url(../images/Cluster.png) !important;
+}
+
+.x-image-Cluster_1{
+	background-image: url(../images/Cluster_1.png) !important;
+}
+
+.x-image-Cluster_10{
+	background-image: url(../images/Cluster_10.png) !important;
+}
+
+.x-image-Cluster_2{
+	background-image: url(../images/Cluster_2.png) !important;
+}
+
+.x-image-Cluster_3{
+	background-image: url(../images/Cluster_3.png) !important;
+}
+
+.x-image-Cluster_4{
+	background-image: url(../images/Cluster_4.png) !important;
+}
+
+.x-image-Cluster_5{
+	background-image: url(../images/Cluster_5.png) !important;
+}
+
+.x-image-cluster_add{
+	background-image: url(../images/cluster_add.png) !important;
+}
+
+.x-image-cluster_remove{
+	background-image: url(../images/cluster_remove.png) !important;
+}
+
+.x-image-cluster_tiny{
+	background-image: url(../images/cluster_tiny.png) !important;
+}
+
+.x-image-cluster_tiny_1{
+	background-image: url(../images/cluster_tiny_1.png) !important;
+}
+
+.x-image-cluster_tiny_10{
+	background-image: url(../images/cluster_tiny_10.png) !important;
+}
+
+.x-image-cluster_tiny_2{
+	background-image: url(../images/cluster_tiny_2.png) !important;
+}
+
+.x-image-cluster_tiny_3{
+	background-image: url(../images/cluster_tiny_3.png) !important;
+}
+
+.x-image-cluster_tiny_4{
+	background-image: url(../images/cluster_tiny_4.png) !important;
+}
+
+.x-image-cluster_tiny_5{
+	background-image: url(../images/cluster_tiny_5.png) !important;
+}
+
+.x-image-cmp-bg.gif{
+	background-image: url(../images/cmp-bg.gif) !important;
+}
+
+.x-image-cog{
+	background-image: url(../images/cog.png) !important;
+}
+
+.x-image-color_swatch{
+	background-image: url(../images/color_swatch.png) !important;
+}
+
+.x-image-color_wheel{
+	background-image: url(../images/color_wheel.png) !important;
+}
+
+.x-image-computer{
+	background-image: url(../images/computer.png) !important;
+}
+
+.x-image-computer_add{
+	background-image: url(../images/computer_add.png) !important;
+}
+
+.x-image-computer_delete{
+	background-image: url(../images/computer_delete.png) !important;
+}
+
+.x-image-computer_edit{
+	background-image: url(../images/computer_edit.png) !important;
+}
+
+.x-image-computer_error{
+	background-image: url(../images/computer_error.png) !important;
+}
+
+.x-image-computer_go{
+	background-image: url(../images/computer_go.png) !important;
+}
+
+.x-image-computer_key{
+	background-image: url(../images/computer_key.png) !important;
+}
+
+.x-image-computer_link{
+	background-image: url(../images/computer_link.png) !important;
+}
+
+.x-image-control_play{
+	background-image: url(../images/control_play.png) !important;
+}
+
+.x-image-control_play_blue{
+	background-image: url(../images/control_play_blue.png) !important;
+}
+
+.x-image-control_repeat{
+	background-image: url(../images/control_repeat.png) !important;
+}
+
+.x-image-control_repeat_blue{
+	background-image: url(../images/control_repeat_blue.png) !important;
+}
+
+.x-image-control_stop{
+	background-image: url(../images/control_stop.png) !important;
+}
+
+.x-image-control_stop_blue{
+	background-image: url(../images/control_stop_blue.png) !important;
+}
+
+.x-image-cross{
+	background-image: url(../images/cross.png) !important;
+}
+
+.x-image-database{
+	background-image: url(../images/database.png) !important;
+}
+
+.x-image-database_add{
+	background-image: url(../images/database_add.png) !important;
+}
+
+.x-image-database_connect{
+	background-image: url(../images/database_connect.png) !important;
+}
+
+.x-image-database_delete{
+	background-image: url(../images/database_delete.png) !important;
+}
+
+.x-image-database_edit{
+	background-image: url(../images/database_edit.png) !important;
+}
+
+.x-image-database_error{
+	background-image: url(../images/database_error.png) !important;
+}
+
+.x-image-database_gear{
+	background-image: url(../images/database_gear.png) !important;
+}
+
+.x-image-database_go{
+	background-image: url(../images/database_go.png) !important;
+}
+
+.x-image-database_key{
+	background-image: url(../images/database_key.png) !important;
+}
+
+.x-image-database_lightning{
+	background-image: url(../images/database_lightning.png) !important;
+}
+
+.x-image-database_link{
+	background-image: url(../images/database_link.png) !important;
+}
+
+.x-image-database_refresh{
+	background-image: url(../images/database_refresh.png) !important;
+}
+
+.x-image-database_save{
+	background-image: url(../images/database_save.png) !important;
+}
+
+.x-image-event_level_mask{
+	background-image: url(../images/event_level_mask.png) !important;
+}
+
+.x-image-event_level_mask_msg{
+	background-image: url(../images/event_level_mask_msg.png) !important;
+}
+
+.x-image-event_level_mask_tiny{
+	background-image: url(../images/event_level_mask_tiny.png) !important;
+}
+
+.x-image-folder.gif{
+	background-image: url(../images/folder.gif) !important;
+}
+
+.x-image-grid_10{
+	background-image: url(../images/grid_10.png) !important;
+}
+
+.x-image-group{
+	background-image: url(../images/group.png) !important;
+}
+
+.x-image-hd-bg.gif{
+	background-image: url(../images/hd-bg.gif) !important;
+}
+
+.x-image-house{
+	background-image: url(../images/house.png) !important;
+}
+
+.x-image-itms.css{
+	background-image: url(../images/itms.css) !important;
+}
+
+.x-image-itms_logo{
+	background-image: url(../images/itms_logo.png) !important;
+}
+
+.x-image-itms_logo_black{
+	background-image: url(../images/itms_logo_black.png) !important;
+}
+
+.x-image-key{
+	background-image: url(../images/key.png) !important;
+}
+
+.x-image-key_add{
+	background-image: url(../images/key_add.png) !important;
+}
+
+.x-image-layout_content{
+	background-image: url(../images/layout_content.png) !important;
+}
+
+.x-image-layout_edit{
+	background-image: url(../images/layout_edit.png) !important;
+}
+
+.x-image-loading-module.gif{
+	background-image: url(../images/loading-module.gif) !important;
+}
+
+.x-image-loading.gif{
+	background-image: url(../images/loading.gif) !important;
+}
+
+.x-image-lock{
+	background-image: url(../images/lock.png) !important;
+}
+
+.x-image-lock_edit{
+	background-image: url(../images/lock_edit.png) !important;
+}
+
+.x-image-login_pic.gif{
+	background-image: url(../images/login_pic.gif) !important;
+}
+
+.x-image-magnifier{
+	background-image: url(../images/magnifier.png) !important;
+}
+
+.x-image-monitor_offline{
+	background-image: url(../images/monitor_offline.png) !important;
+}
+
+.x-image-monitor_online{
+	background-image: url(../images/monitor_online.png) !important;
+}
+
+.x-image-Node{
+	background-image: url(../images/Node.png) !important;
+}
+
+.x-image-Node_1{
+	background-image: url(../images/Node_1.png) !important;
+}
+
+.x-image-Node_10{
+	background-image: url(../images/Node_10.png) !important;
+}
+
+.x-image-Node_2{
+	background-image: url(../images/Node_2.png) !important;
+}
+
+.x-image-Node_3{
+	background-image: url(../images/Node_3.png) !important;
+}
+
+.x-image-Node_4{
+	background-image: url(../images/Node_4.png) !important;
+}
+
+.x-image-Node_5{
+	background-image: url(../images/Node_5.png) !important;
+}
+
+.x-image-node_add{
+	background-image: url(../images/node_add.png) !important;
+}
+
+.x-image-node_remove{
+	background-image: url(../images/node_remove.png) !important;
+}
+
+.x-image-node_tiny{
+	background-image: url(../images/node_tiny.png) !important;
+}
+
+.x-image-node_tiny_1{
+	background-image: url(../images/node_tiny_1.png) !important;
+}
+
+.x-image-node_tiny_10{
+	background-image: url(../images/node_tiny_10.png) !important;
+}
+
+.x-image-node_tiny_2{
+	background-image: url(../images/node_tiny_2.png) !important;
+}
+
+.x-image-node_tiny_3{
+	background-image: url(../images/node_tiny_3.png) !important;
+}
+
+.x-image-node_tiny_4{
+	background-image: url(../images/node_tiny_4.png) !important;
+}
+
+.x-image-node_tiny_5{
+	background-image: url(../images/node_tiny_5.png) !important;
+}
+
+.x-image-node_tiny_ip{
+	background-image: url(../images/node_tiny_ip.png) !important;
+}
+
+.x-image-note{
+	background-image: url(../images/note.png) !important;
+}
+
+.x-image-note_add{
+	background-image: url(../images/note_add.png) !important;
+}
+
+.x-image-note_delete{
+	background-image: url(../images/note_delete.png) !important;
+}
+
+.x-image-note_edit{
+	background-image: url(../images/note_edit.png) !important;
+}
+
+.x-image-note_error{
+	background-image: url(../images/note_error.png) !important;
+}
+
+.x-image-note_go{
+	background-image: url(../images/note_go.png) !important;
+}
+
+.x-image-os_1{
+	background-image: url(../images/os_1.png) !important;
+}
+
+.x-image-os_2{
+	background-image: url(../images/os_2.png) !important;
+}
+
+.x-image-os_3{
+	background-image: url(../images/os_3.png) !important;
+}
+
+.x-image-os_4{
+	background-image: url(../images/os_4.png) !important;
+}
+
+.x-image-os_5{
+	background-image: url(../images/os_5.png) !important;
+}
+
+.x-image-package{
+	background-image: url(../images/package.png) !important;
+}
+
+.x-image-package_1{
+	background-image: url(../images/package_1.png) !important;
+}
+
+.x-image-package_2{
+	background-image: url(../images/package_2.png) !important;
+}
+
+.x-image-package_3{
+	background-image: url(../images/package_3.png) !important;
+}
+
+.x-image-package_4{
+	background-image: url(../images/package_4.png) !important;
+}
+
+.x-image-package_tiny{
+	background-image: url(../images/package_tiny.png) !important;
+}
+
+.x-image-package_tiny_1{
+	background-image: url(../images/package_tiny_1.png) !important;
+}
+
+.x-image-package_tiny_2{
+	background-image: url(../images/package_tiny_2.png) !important;
+}
+
+.x-image-package_tiny_3{
+	background-image: url(../images/package_tiny_3.png) !important;
+}
+
+.x-image-package_tiny_4{
+	background-image: url(../images/package_tiny_4.png) !important;
+}
+
+.x-image-page{
+	background-image: url(../images/page.png) !important;
+}
+
+.x-image-page_add{
+	background-image: url(../images/page_add.png) !important;
+}
+
+.x-image-page_delete{
+	background-image: url(../images/page_delete.png) !important;
+}
+
+.x-image-page_edit{
+	background-image: url(../images/page_edit.png) !important;
+}
+
+.x-image-page_go{
+	background-image: url(../images/page_go.png) !important;
+}
+
+.x-image-plugin{
+	background-image: url(../images/plugin.png) !important;
+}
+
+.x-image-server_go{
+	background-image: url(../images/server_go.png) !important;
+}
+
+.x-image-status{
+	background-image: url(../images/status.png) !important;
+}
+
+.x-image-status_1{
+	background-image: url(../images/status_1.png) !important;
+}
+
+.x-image-status_10{
+	background-image: url(../images/status_10.png) !important;
+}
+
+.x-image-status_2{
+	background-image: url(../images/status_2.png) !important;
+}
+
+.x-image-status_3{
+	background-image: url(../images/status_3.png) !important;
+}
+
+.x-image-status_4{
+	background-image: url(../images/status_4.png) !important;
+}
+
+.x-image-status_5{
+	background-image: url(../images/status_5.png) !important;
+}
+
+.x-image-System{
+	background-image: url(../images/System.png) !important;
+}
+
+.x-image-System_1{
+	background-image: url(../images/System_1.png) !important;
+}
+
+.x-image-System_10{
+	background-image: url(../images/System_10.png) !important;
+}
+
+.x-image-System_2{
+	background-image: url(../images/System_2.png) !important;
+}
+
+.x-image-System_3{
+	background-image: url(../images/System_3.png) !important;
+}
+
+.x-image-System_4{
+	background-image: url(../images/System_4.png) !important;
+}
+
+.x-image-System_5{
+	background-image: url(../images/System_5.png) !important;
+}
+
+.x-image-system_add{
+	background-image: url(../images/system_add.png) !important;
+}
+
+.x-image-system_remove{
+	background-image: url(../images/system_remove.png) !important;
+}
+
+.x-image-system_tiny{
+	background-image: url(../images/system_tiny.png) !important;
+}
+
+.x-image-system_tiny_1{
+	background-image: url(../images/system_tiny_1.png) !important;
+}
+
+.x-image-system_tiny_10{
+	background-image: url(../images/system_tiny_10.png) !important;
+}
+
+.x-image-system_tiny_2{
+	background-image: url(../images/system_tiny_2.png) !important;
+}
+
+.x-image-system_tiny_3{
+	background-image: url(../images/system_tiny_3.png) !important;
+}
+
+.x-image-system_tiny_4{
+	background-image: url(../images/system_tiny_4.png) !important;
+}
+
+.x-image-system_tiny_5{
+	background-image: url(../images/system_tiny_5.png) !important;
+}
+
+.x-image-table{
+	background-image: url(../images/table.png) !important;
+}
+
+.x-image-tick{
+	background-image: url(../images/tick.png) !important;
+}
+
+.x-image-user{
+	background-image: url(../images/user.png) !important;
+}
+
+.x-image-wrench{
+	background-image: url(../images/wrench.png) !important;
+}
+
+.tablemng{
+	background-color:"#93B3CA";
+	width:100%;
+	font-family: "Arial";
+	font-size: 9pt;
+	color: #000000;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.tablemng tr{ background-color:"#FFDEAD";}
+
+.workingpanel_fieldlabel{
+	color: #FF0000;
+	font-size: 20px;
+	
+}
+
+.workingpanel_fieldtext{
+	font-size: 16px;
+	font-weight: bold;
+	text-align:left;
+}
+
+.workingpanel_fieldcombo{
+	font-size: 16px;
+	font-weight: bold;
+	text-align:left;
+}
+
+.tablemng td{ 
+	background-color:"#FFFFFF";
+	padding:1px;	
+}
+
+#row-win{
+	height:350;
+	overflow:auto;	
+}

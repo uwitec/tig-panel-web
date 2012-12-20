@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+     PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+     "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="SystemUnit">
+	<select id="selectAllUnits" parameterClass="java.lang.Integer" resultClass="com.web.form.administration.Unit">
+		<!-- SELECT u.NODEID, u.NODENAME, u.NODELEVEL, u.PARENTNODEID FROM MNGNODEINFOTB u
+		START WITH u.NODEID = #value#
+		CONNECT BY u.PARENTNODEID = PRIOR u.NODEID -->
+		select * from MNGNODEINFOTB
+		where FIND_IN_SET(nodeid, getNodeChildLst(0));
+	</select>
+
+	<resultMap class="com.web.form.administration.Unit" id="ibatorgenerated_BaseResultMap">
+		<result column="NODEID" jdbcType="VARCHAR" property="nodeid" />
+		<result column="NODENAME" jdbcType="VARCHAR" property="nodename" />
+		<result column="NODELEVEL" jdbcType="DECIMAL" property="nodelevel" />
+		<result column="PARENTNODEID" jdbcType="VARCHAR" property="parentnodeid" />
+	</resultMap>
+	
+	<select id="selectUnitCount" parameterClass="com.web.form.administration.Unit" resultClass="java.lang.Integer">
+		<![CDATA[
+			SELECT COUNT(*) FROM MNGNODEINFOTB
+		]]>
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="nodelevel">
+				NODELEVEL = #nodelevel#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="nodename">
+				NODENAME LIKE '%'||#nodename#||'%'
+			</isNotEmpty>
+		</dynamic>
+		<isNotEmpty prepend="order by" property="sortString">
+			$sortString$
+		</isNotEmpty>
+	</select>
+	
+	<select id="selectUnitLv1" parameterClass="com.web.form.administration.Unit" resultMap="ibatorgenerated_BaseResultMap">
+		SELECT NODEID, NODENAME, PARENTNODEID, NODELEVEL FROM MNGNODEINFOTB
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="nodelevel">
+				NODELEVEL = #nodelevel#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="nodename">
+				NODENAME LIKE '%'||#nodename#||'%'
+			</isNotEmpty>
+		</dynamic>
+		<isNotEmpty prepend="order by" property="sortString">
+			$sortString$
+		</isNotEmpty>
+	</select>
+	
+	<select id="selectUnitLv2" parameterClass="com.web.form.administration.Unit" resultMap="ibatorgenerated_BaseResultMap">
+		SELECT NODEID, NODENAME, PARENTNODEID, NODELEVEL FROM MNGNODEINFOTB
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="nodelevel">
+				NODELEVEL = #nodelevel#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="nodename">
+				NODENAME LIKE '%'||#nodename#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="parentnodeid">
+				PARENTNODEID = #parentnodeid#
+			</isNotEmpty>
+		</dynamic>
+		<isNotEmpty prepend="order by" property="sortString">
+			$sortString$
+		</isNotEmpty>
+	</select>
+	
+	<delete id="deleteSystemUnit" parameterClass="com.web.form.administration.Unit">
+		delete from MNGNODEINFOTB u
+		WHERE u.NODEID IN
+			(SELECT t.NODEID FROM MNGNODEINFOTB t START WITH t.NODEID = #nodeid:DECIMAL# 
+				CONNECT BY PRIOR t.NODEID = t.PARENTNODEID)
+	</delete>
+	
+	<delete id="deleteSystemUnitLv" parameterClass="com.web.form.administration.Unit">
+		DELETE FROM MNGNODEINFOTB u 
+		WHERE u.NODEID IN
+			(SELECT t.NODEID FROM MNGNODEINFOTB t START WITH t.NODEID = #nodeid:DECIMAL# 
+				CONNECT BY PRIOR t.NODEID = t.PARENTNODEID)
+	</delete>
+	
+	<insert id="insertSystemUnit" parameterClass="com.web.form.administration.Unit">
+		insert into MNGNODEINFOTB
+		<dynamic prepend="(">
+		  <isNotNull prepend="," property="nodeid">
+		    NODEID
+		  </isNotNull>
+		  <isNotNull prepend="," property="nodename">
+		    NODENAME
+		  </isNotNull>
+		  <isNotNull prepend="," property="nodelevel">
+		    NODELEVEL
+		  </isNotNull>
+		  <isNotNull prepend="," property="parentnodeid">
+		    PARENTNODEID
+		  </isNotNull>
+		  )
+		</dynamic>
+		values
+		<dynamic prepend="(">
+		  <isNotNull prepend="," property="nodeid">
+		    #nodeid:DECIMAL#
+		  </isNotNull>
+		  <isNotNull prepend="," property="nodename">
+		    #nodename:VARCHAR#
+		  </isNotNull>
+		  <isNotNull prepend="," property="nodelevel">
+		    #nodelevel:DECIMAL#
+		  </isNotNull>
+		  <isNotNull prepend="," property="parentnodeid">
+		    #parentnodeid:DECIMAL#
+		  </isNotNull>
+		  )
+		</dynamic>
+	</insert>
+  
+	<update id="updateSystemUnit" parameterClass="com.web.form.administration.Unit">
+		update MNGNODEINFOTB
+		<dynamic prepend="set">
+		  <isNotNull prepend="," property="nodename">
+		    NODENAME = #nodename:VARCHAR#
+		  </isNotNull>
+		  <isNotNull prepend="," property="nodelevel">
+		    NODELEVEL = #nodelevel:DECIMAL#
+		  </isNotNull>
+		  <isNotNull prepend="," property="parentnodeid">
+		    PARENTNODEID = #parentnodeid:DECIMAL#
+		  </isNotNull>
+		</dynamic>
+		where NODEID = #nodeid:DECIMAL#
+	</update>
+</sqlMap>

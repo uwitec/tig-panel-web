@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT root-privilege-config (privilege+)>
+
+<!ELEMENT privilege (#PCDATA)>
+<!ATTLIST privilege name          CDATA         #REQUIRED>
+<!ATTLIST privilege logging       (true|false)  #REQUIRED>

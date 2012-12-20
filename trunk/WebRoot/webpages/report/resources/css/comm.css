@@ -1,0 +1,8 @@
+#load-ing-common{
+	position:absolute;right:5px;top:25px;
+	background:#FFFFE1 url(../image/loading.gif) no-repeat 4px 2px ;
+	z-index: 1;
+    height:20px;line-height:20px;width:150px;font-size:12px;padding-left:30px;
+    color:#090A00; 
+    border:1px #9EB1C2 solid;
+}

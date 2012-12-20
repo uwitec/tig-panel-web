@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.ui.theme" value="simple"/>
+	<constant name="struts.custom.i18n.resources" 
+		value="com/application/messages/messages-common,
+				com/application/messages/messages-welcome,
+				com/application/messages/messages-exception,
+				com/application/messages/messages-admin,
+				com/application/messages/messages-dictionary,
+				com/application/messages/messages-clearing"/>
+
+	<package name="BasePackage" extends="json-default">
+		<interceptors>
+			<interceptor name="AppExceptionHandler" class="com.application.struts2.interceptors.ExceptionHandlerInterceptor"></interceptor>
+			<interceptor name="ActionLogger" class="com.application.struts2.interceptors.ActionLoggingInterceptor"></interceptor>
+			<interceptor name="PrivilegeJudger" class="com.application.struts2.interceptors.PrivilegeJudgeInterceptor"></interceptor>
+			<interceptor-stack name="SystemConsoleInterceptorStack">
+				<interceptor-ref name="ActionLogger"></interceptor-ref>
+				<interceptor-ref name="AppExceptionHandler"></interceptor-ref>
+
+				<interceptor-ref name="PrivilegeJudger"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<global-results>
+		    <result name="RETURNLOGON">/webpages/welcome/welcome.jsp</result>
+			<result name="APPEXCEPTION">/webpages/exception/exception.jsp</result>
+			<result name="AJAX_SUCCESS" type="json">
+				<param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">actionresult</param>
+			</result> 
+		</global-results>
+		
+		<action name="common_*" class="com.web.action.base.CommonAction" method="{1}">
+			<interceptor-ref name="SystemConsoleInterceptorStack"></interceptor-ref>
+		</action>
+		
+		<!-- 资源权限的Action -->
+		<action name="privilegequery_*" class="PrivilegeQueryActionBean" method="{1}">
+			<interceptor-ref name="SystemConsoleInterceptorStack"></interceptor-ref>
+		</action>
+	</package>
+
+
+	<include file="com/application/configuration/struts2/struts-welcome.xml"></include>
+	<include file="com/application/configuration/struts2/struts-administration.xml"></include>
+	<include file="com/application/configuration/struts2/struts-report.xml"></include>
+	<!-- <include file="com/application/configuration/struts2/struts-cchs.xml"></include>
+	<include file="com/application/configuration/struts2/struts-bus.xml"></include> -->
+	<include file="com/application/configuration/struts2/struts-common.xml"></include>	
+	
+	
+</struts>

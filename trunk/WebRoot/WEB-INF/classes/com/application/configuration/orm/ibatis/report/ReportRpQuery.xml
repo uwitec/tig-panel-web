@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ReportRpQuery">
+
+	<typeAlias alias="ReportRpQuery" type="com.web.action.report.htreport.domain.ReportRpQuery"/>
+	
+    <resultMap id="reportRpQueryModel" class="ReportRpQuery">
+    	<result property="queryId"        column="query_id"    /> 
+    	<result property="reportId"        column="report_id"    /> 
+    	<result property="fChn"        column="f_chn"    /> 
+    	<result property="fEng"        column="f_eng"    /> 
+    	<result property="inputType"        column="input_type"    /> 
+    	<result property="isNeed"        column="is_need"    /> 
+    	<result property="priority"        column="priority"    /> 
+    	<result property="queryDomains"        column="query_domains"    /> 
+    	<result property="spData"        column="sp_data"    /> 
+    	<result property="outKey"        column="out_key_name"    /> 
+	</resultMap>
+	
+
+    <select id="findById" resultMap="reportRpQueryModel" parameterClass="string"  resultSetType="SCROLL_INSENSITIVE" >
+       	   select *  from t_report_rp_query where query_Id = #value#
+    </select>
+    
+    
+    <select id="findByCondition" resultMap="reportRpQueryModel" parameterClass="java.util.Map"  resultSetType="SCROLL_INSENSITIVE" >
+        select *  from t_report_rp_query  
+        <dynamic prepend="where">
+        	<isNotEmpty prepend="and" property="reportId">
+        		report_id=#reportId#
+        	</isNotEmpty>
+        </dynamic>
+    </select>
+    
+    <select id="findByReportId" resultMap="reportRpQueryModel" parameterClass="string"  resultSetType="SCROLL_INSENSITIVE" >
+        select *  from t_report_rp_query  where report_id=#value# order by priority desc
+    </select>
+    
+    <select id="findPagingByCondition" resultMap="reportRpQueryModel" parameterClass="java.util.Map" resultSetType="SCROLL_INSENSITIVE">
+		select * from (select a.*,rownum rn from (select * from t_report_rp_query   where 1=1 
+		<isNotEmpty prepend="and" property="reportId">
+			report_id=#reportId#
+		</isNotEmpty>
+		<isNotEmpty property="orderBy">order by  $orderBy$</isNotEmpty>  
+		<![CDATA[	
+			) a where rownum<= #endIndex#) b where b.rn >= #startIndex#
+		]]>
+
+	</select>
+    
+    <select id="findPagingCountByCondition"  resultClass="int" parameterClass="java.util.Map" resultSetType="SCROLL_INSENSITIVE">
+		select count(*)  from t_report_rp_query  where 1=1 
+		<isNotEmpty prepend="and" property="reportId">
+			report_id=#reportId#
+		</isNotEmpty>
+	</select>
+	
+
+    <insert id="insert" parameterClass="ReportRpQuery"  >
+        insert into t_report_rp_query(query_Id,report_id,f_chn,f_eng,input_type,is_need,priority,query_domains,sp_data) 
+        	values 
+        (#queryId#,#reportId#,#fChn#,#fEng#,#inputType#,#isNeed#,#priority#,#queryDomains#,#spData#)
+    </insert>
+
+</sqlMap>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="test" xmlns="http://jbpm.org/4.3/jpdl">
+   <start g="53,34,48,48" name="start1"/>
+   <end g="70,138,48,48" name="end1"/>
+   <task g="174,212,92,52" name="task1">
+      <transition g="-50,-22" name="to end1" to="end1"/>
+   </task>
+</process>

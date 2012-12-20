@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+     PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+     "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="SystemDictionary">
+	<delete id="deleteAllDictionary">
+		DELETE FROM DICTINFOTB
+	</delete>
+	
+	<insert id="insertSystemDictionary" parameterClass="com.web.form.administration.Dictionary">
+		INSERT INTO DICTINFOTB VALUES(
+		#dictType#,
+		#dictTypeDesc#,
+		#dictValue#,
+		#dictValueDesc#,
+		#locale#
+		)
+	</insert>
+</sqlMap>

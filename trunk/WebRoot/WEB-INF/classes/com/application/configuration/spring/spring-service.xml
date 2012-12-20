@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="CommunicationService"
+    	class="com.web.service.communication.CommunicationService">
+    	<property name="datagramEncoding">
+    		<value>GBK</value>
+    	</property>
+    	<property name="offlineCommunicationTimeout">
+    		<value>10000</value>
+    	</property>
+    	<property name="onlineCommunicationTimeout">
+    		<value>10000</value>
+    	</property>
+    	<property name="reverseTimes">
+    		<value>3</value>
+    	</property>
+    </bean>
+	
+	<bean id="PublicService" class="com.web.service.base.PublicService">
+		<property name="sqlDao_i">
+			<ref bean="ibatisDao1"/>
+		</property>
+	</bean>
+	
+	<!-- <bean id="WlPublicService" class="com.web.service.cchs.WlPublicService">
+		<property name="sqlDao_i">
+			<ref bean="ibatisDao1"/>
+		</property>
+	</bean>
+	
+	<bean id="ManagerCardService" class="com.web.service.bus.baseinfo.fhmng.ManagerCardService">
+		<property name="sqlDao_i">
+			<ref bean="ibatisDao1"/>
+		</property>
+	</bean> -->
+
+	<bean id="PageQueryService" class="com.web.service.base.PageQueryService">
+		<property name="sqlDao_i">
+			<ref bean="ibatisDao1"/>
+		</property>
+	</bean>
+	
+	<bean id="LogonService" class="com.web.service.administration.LogonService">
+		<property name="sqlDao_i">
+			<ref bean="ibatisDao1"/>
+		</property>
+	</bean>
+	
+	<bean id="AdministrationService" class="com.web.service.administration.AdministrationService">
+		<property name="sqlDao_i">
+			<ref bean="ibatisDao1"/>
+		</property>
+	</bean>
+
+	<bean id="ReportService" class="com.web.service.report.ReportService" scope="prototype">
+		<constructor-arg index="0">
+			<value>false</value>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<value>reporttemplate</value>
+		</constructor-arg>
+		<property name="sqlDao_i">
+			<ref bean="ibatisDao1"/>
+		</property>
+	</bean>
+	
+	<bean id="LogService" class="com.web.service.administration.LogService">
+		<property name="sqlDao_i">
+			<ref bean="ibatisDao1"/>
+		</property>
+	</bean>
+	
+	<!-- <bean id="IccardinfoService" class="com.web.service.cchs.IccardinfoService">
+		<property name="sqlDao_i">
+			<ref bean="ibatisDao1"/>
+		</property>
+	</bean>
+	
+	<bean id="BaseinfoService" class="com.web.service.cchs.BaseinfoService">
+		<property name="sqlDao_i">
+			<ref bean="ibatisDao1"/>
+		</property>
+	</bean>
+	<bean id="ParmaverService" class="com.web.service.bus.baseinfo.fhmng.ParmaverService">
+		<property name="sqlDao_i">
+			<ref bean="ibatisDao1"/>
+		</property>
+	</bean>
+	
+	<bean id="WateraccountremitService" class="com.web.service.cchs.WateraccountremitService">
+		<property name="sqlDao_i">
+			<ref bean="ibatisDao1"/>
+		</property>
+	</bean>
+	
+	<bean id="OrderImportedService" class="com.web.service.cchs.OrderImportedService">
+		<property name="sqlDao_i">
+			<ref bean="ibatisDao1"/>
+		</property>
+	</bean>
+	
+	add by luc
+	<bean id="CreatecrdbatchService" class="com.web.service.cchs.CreatecrdbatchService">
+		<property name="sqlDao_i">
+			<ref bean="ibatisDao1"/>
+		</property>
+	</bean> -->
+</beans>

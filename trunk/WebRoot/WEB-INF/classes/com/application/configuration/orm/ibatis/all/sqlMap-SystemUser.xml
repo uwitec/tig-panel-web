@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="SystemUser">
+	<resultMap class="com.web.form.administration.User" id="SystemUserMap" groupBy="userid">
+    	<result column="USERID" jdbcType="VARCHAR" property="userid" />
+	    <result column="USERCODE" jdbcType="VARCHAR" property="usercode" />
+	    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+	    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+	    <result column="SEX" jdbcType="DECIMAL" property="sex" />
+	    <result column="MAILBOX" jdbcType="VARCHAR" property="mailbox" />
+	    <result column="TELPHONE" jdbcType="VARCHAR" property="telephone" />
+	    <result column="CELLPHONE" jdbcType="VARCHAR" property="cellphone" />
+	    <result column="CREATEDATE" jdbcType="DATE" property="createdate" />
+	    <result column="UNITID" jdbcType="DECIMAL" property="unitid" />
+	    <result column="UNITNAME" jdbcType="VARCHAR" property="unitname" />
+	    <result column="STATE" jdbcType="DECIMAL" property="state" />
+	    <result column="OPERATORCARDID" jdbcType="VARCHAR" property="operatorcardid" />
+	    <result column="USERTYPE" jdbcType="DECIMAL" property="usertype" />
+	    <result column="SEXDESC" jdbcType="VARCHAR" property="sexdesc" />
+	    <result column="STATEDESC" jdbcType="VARCHAR" property="statedesc" />
+	    <result column="USERTYPEDESC" jdbcType="VARCHAR" property="usertypedesc" />
+    </resultMap>
+    
+    <resultMap class="com.web.form.administration.User" id="LogonUserMap" groupBy="userid">
+    	<result column="USERID" jdbcType="VARCHAR" property="userid" />
+	    <result column="USERCODE" jdbcType="VARCHAR" property="usercode" />
+	    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+	    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+	    <result column="SEX" jdbcType="DECIMAL" property="sex" />
+	    <result column="MAILBOX" jdbcType="VARCHAR" property="mailbox" />
+	    <result column="TELPHONE" jdbcType="VARCHAR" property="telephone" />
+	    <result column="CELLPHONE" jdbcType="VARCHAR" property="cellphone" />
+	    <result column="CREATEDATE" jdbcType="DATE" property="createdate" />
+	    <result column="STATE" jdbcType="DECIMAL" property="state" />
+	    <result column="OPERATORCARDID" jdbcType="VARCHAR" property="operatorcardid" />
+	    <result column="USERTYPE" jdbcType="DECIMAL" property="usertype" />
+		<result property="unit" resultMap="SystemUser.LogonUnitMap"/> <!-- M:1 --> 
+    	<result property="roles"  resultMap="SystemUser.LogonRoleMap"/><!-- M:N -->  
+    </resultMap>
+    
+    <resultMap class="com.web.form.administration.Unit" id="LogonUnitMap">
+    	<result property="nodeid" column="NODEID" />
+    	<result property="nodename" column="NODENAME" />
+    	<result property="nodelevel" column="NODELEVEL" />
+    	<result property="parentnodeid" column="PARENTNODEID"/>
+    </resultMap>
+    
+    <resultMap class="com.web.form.administration.Role" id="LogonRoleMap">
+		<result property="roleid" column="ROLEID" />
+		<result property="rolename" column="ROLENAME" />
+		<result property="roledescribe" column="ROLEDESCRIBE"/>
+		<result property="enabled" column="ENABLED"/>
+		<result property="unitid" column="UNITID"/>
+	</resultMap>
+	
+    <select id="selectLogonUser"
+    	parameterClass="com.web.form.administration.User"
+    	resultMap="LogonUserMap">
+    	<![CDATA[
+    		SELECT u.*,r.*,un.NODEID, un.NODENAME, un.PARENTNODEID, un.NODELEVEL FROM MNGUSERINFOTB u LEFT OUTER JOIN
+	    	MNGUSERROLETB ur ON u.USERID = ur.USER_ID LEFT JOIN MNGROLEINFOTB
+	    	r ON ur.ROLE_ID = r.ROLEID INNER JOIN MNGNODEINFOTB un ON
+	    	u.UNITID = un.NODEID where u.USERCODE = #usercode# AND u.PASSWORD = #password#
+    	]]>
+    	<isNotEmpty prepend="order by" property="sortString">
+			$sortString$
+		</isNotEmpty>
+    </select>
+    
+    
+	<select id="selectSystemUsersCount"
+    	parameterClass="com.web.form.administration.User"
+    	resultClass="java.lang.Integer">
+    	<![CDATA[
+    	SELECT count(*) FROM MNGUSERINFOTB u LEFT JOIN MNGNODEINFOTB un
+		ON u.UNITID = un.NODEID
+		INNER JOIN DICTINFOTB d1 ON u.SEX = d1.DICTVALUE AND d1.LOCALE = #locale# AND d1.DICTTYPE = '10002'
+		INNER JOIN DICTINFOTB d2 ON u.STATE = d2.DICTVALUE AND d2.LOCALE = #locale# AND d2.DICTTYPE = '10003'
+		INNER JOIN DICTINFOTB d3 ON u.USERTYPE = d3.DICTVALUE AND d3.LOCALE = #locale# AND d3.DICTTYPE = '10004'
+		WHERE u.USERID <> '0'
+    	]]>
+		<isNotEmpty prepend="and" property="unitid">
+			u.UNITID IN (SELECT ua.NODEID FROM MNGNODEINFOTB ua START WITH ua.NODEID = #unitid# CONNECT BY ua.PARENTNODEID = PRIOR ua.NODEID)
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="username">
+			u.USERNAME LIKE '%'||#username#||'%'
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="state">
+			u.STATE =#state:DECIMAL#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="usertype">
+			u.USERTYPE =#usertype:DECIMAL#
+		</isNotEmpty>
+		<isNotEmpty prepend="order by" property="sortString">
+			$sortString$
+		</isNotEmpty>
+    </select>
+
+
+    <select id="selectSystemUsers"
+    	parameterClass="com.web.form.administration.User"
+    	resultMap="SystemUserMap">
+		<!-- <![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]> -->
+		<![CDATA[
+			SELECT u.*, un.nodename AS UNITNAME, d1.DICTVALUEDESC AS SEXDESC, d2.DICTVALUEDESC AS STATEDESC, d3.DICTVALUEDESC AS USERTYPEDESC 
+			FROM (
+		]]>
+		<![CDATA[
+			select * from MNGUSERINFOTB 
+		]]>
+		<isNotEmpty prepend="order by" property="sortString">
+				$sortString$
+		</isNotEmpty>
+		<![CDATA[
+			LIMIT #rowStart#,#rowEnd#
+		]]>
+		<![CDATA[
+			)u 
+			LEFT JOIN MNGNODEINFOTB un ON u.UNITID = un.nodeid
+			INNER JOIN DICTINFOTB d1 ON u.SEX = d1.DICTVALUE AND d1.LOCALE = #locale# AND d1.DICTTYPE = '10002'
+			INNER JOIN DICTINFOTB d2 ON u.STATE = d2.DICTVALUE AND d2.LOCALE = #locale# AND d2.DICTTYPE = '10003'
+			INNER JOIN DICTINFOTB d3 ON u.USERTYPE = d3.DICTVALUE AND d3.LOCALE = #locale# AND d3.DICTTYPE = '10004'
+			WHERE u.USERID <> '0'
+		]]>
+		
+		<isNotEmpty prepend="and" property="unitid">
+			u.UNITID IN (SELECT ua.NODEID FROM MNGNODEINFOTB ua START WITH ua.NODEID = #unitid# CONNECT BY ua.PARENTNODEID = PRIOR ua.NODEID)
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="username">
+			u.USERNAME LIKE '%'||#username#||'%'
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="state">
+			u.STATE =#state:DECIMAL#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="usertype">
+			u.USERTYPE =#usertype:DECIMAL#
+		</isNotEmpty>
+		<!-- <![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]> -->
+    </select>
+
+
+  <select id="ibatorgenerated_selectByPrimaryKey" parameterClass="com.web.form.administration.User" resultMap="SystemUserMap">
+    select USERID, USERCODE, PASSWORD, USERNAME, SEX, MAILBOX, TELPHONE, CELLPHONE, CREATEDATE,
+      UNITID, STATE, OPERATORCARDID, USERTYPE
+    from MNGUSERINFOTB
+    where USERID = #userid:VARCHAR#
+  </select>
+  <delete id="deleteSystemUser" parameterClass="com.web.form.administration.User">
+    delete from MNGUSERINFOTB
+    where USERID = #userid:VARCHAR#
+  </delete>
+  
+  <insert id="ibatorgenerated_insert" parameterClass="com.web.form.administration.User">
+    insert into MNGUSERINFOTB (USERID, USERCODE, PASSWORD, USERNAME, SEX, MAILBOX, TELPHONE,
+      CELLPHONE, CREATEDATE, UNITID, STATE, OPERATORCARDID, USERTYPE)
+    values (#userid:VARCHAR#, #usercode:VARCHAR#, #password:VARCHAR#, #username:VARCHAR#,
+      #sex:DECIMAL#, #mailbox:VARCHAR#, #telephone:VARCHAR#, #cellphone:VARCHAR#, #createdate:DATE#,
+      #unitid:DECIMAL#, #state:DECIMAL#, #operatorcardid:VARCHAR#, #usertype:DECIMAL#)
+  </insert>
+  <insert id="insertSystemUser" parameterClass="com.web.form.administration.User">
+    insert into MNGUSERINFOTB
+    <dynamic prepend="(">
+      <isNotNull prepend="," property="userid">
+        USERID
+      </isNotNull>
+      <isNotNull prepend="," property="usercode">
+        USERCODE
+      </isNotNull>
+      <isNotNull prepend="," property="password">
+        PASSWORD
+      </isNotNull>
+      <isNotNull prepend="," property="username">
+        USERNAME
+      </isNotNull>
+      <isNotNull prepend="," property="sex">
+        SEX
+      </isNotNull>
+      <isNotNull prepend="," property="mailbox">
+        MAILBOX
+      </isNotNull>
+      <isNotNull prepend="," property="telephone">
+        TELPHONE
+      </isNotNull>
+      <isNotNull prepend="," property="cellphone">
+        CELLPHONE
+      </isNotNull>
+      <isNotNull prepend="," property="createdate">
+        CREATEDATE
+      </isNotNull>
+      <isNotNull prepend="," property="unitid">
+        UNITID
+      </isNotNull>
+      <isNotNull prepend="," property="state">
+        STATE
+      </isNotNull>
+      <isNotNull prepend="," property="operatorcardid">
+        OPERATORCARDID
+      </isNotNull>
+      <isNotNull prepend="," property="usertype">
+        USERTYPE
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(">
+      <isNotNull prepend="," property="userid">
+        #userid:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="usercode">
+        #usercode:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="password">
+        #password:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="username">
+        #username:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="sex">
+        #sex:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="mailbox">
+        #mailbox:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="telephone">
+        #telephone:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="cellphone">
+        #cellphone:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="createdate">
+        #createdate:DATE#
+      </isNotNull>
+      <isNotNull prepend="," property="unitid">
+        #unitid:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="state">
+        #state:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="operatorcardid">
+        #operatorcardid:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="usertype">
+        #usertype:DECIMAL#
+      </isNotNull>
+      )
+    </dynamic>
+  </insert>
+
+  <update id="updateSystemUser" parameterClass="com.web.form.administration.User">
+    update MNGUSERINFOTB
+    <dynamic prepend="set">
+      <isNotNull prepend="," property="usercode">
+        USERCODE = #usercode:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="password">
+        PASSWORD = #password:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="username">
+        USERNAME = #username:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="sex">
+        SEX = #sex:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="mailbox">
+        MAILBOX = #mailbox:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="telephone">
+        TELPHONE = #telephone:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="cellphone">
+        CELLPHONE = #cellphone:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="createdate">
+        CREATEDATE = #createdate:DATE#
+      </isNotNull>
+      <isNotNull prepend="," property="unitid">
+        UNITID = #unitid:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="state">
+        STATE = #state:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="operatorcardid">
+        OPERATORCARDID = #operatorcardid:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="usertype">
+        USERTYPE = #usertype:DECIMAL#
+      </isNotNull>
+    </dynamic>
+    where USERID = #userid:VARCHAR#
+  </update>
+  <update id="ibatorgenerated_updateByPrimaryKey" parameterClass="com.web.form.administration.User">
+    update MNGUSERINFOTB
+    set USERCODE = #usercode:VARCHAR#,
+      PASSWORD = #password:VARCHAR#,
+      USERNAME = #username:VARCHAR#,
+      SEX = #sex:DECIMAL#,
+      MAILBOX = #mailbox:VARCHAR#,
+      TELPHONE = #telephone:VARCHAR#,
+      CELLPHONE = #cellphone:VARCHAR#,
+      CREATEDATE = #createdate:DATE#,
+      UNITID = #unitid:DECIMAL#,
+      STATE = #state:DECIMAL#,
+      OPERATORCARDID = #operatorcardid:VARCHAR#,
+      USERTYPE = #usertype:DECIMAL#
+    where USERID = #userid:VARCHAR#
+  </update>
+  
+  <select id="selectCountByUserCode" parameterClass="java.lang.String" resultClass="java.lang.Integer">
+  	SELECT COUNT(*) FROM MNGUSERINFOTB u WHERE u.USERCODE = #usercode:VARCHAR#
+  </select>
+  <select id="selectCountByOperatorcardid" parameterClass="java.lang.String" resultClass="java.lang.Integer">
+  	SELECT COUNT(*) FROM MNGUSERINFOTB u WHERE u.OPERATORCARDID = #operatorcardid:VARCHAR#
+  </select>
+  <delete id="deleteUserRoleByUser" parameterClass="com.web.form.administration.User">
+  	DELETE FROM MNGUSERROLETB u WHERE u.USER_ID = #userid:VARCHAR#
+  </delete>
+  <insert id="insertUserRoleByUser" parameterClass="com.web.form.administration.User">
+  	INSERT INTO MNGUSERROLETB VALUES(#userid:VARCHAR#,#username:VARCHAR#)
+  </insert>
+  
+  
+  <sql id="selectRolesByUserIdSql">
+	SELECT r.* FROM MNGROLEINFOTB r 
+	INNER JOIN MNGUSERROLETB ur ON r.ROLEID = ur.ROLE_ID and ur.USER_ID = #userid#
+  </sql>
+	<select id="selectRolesByUserId" parameterClass="com.web.form.administration.User"
+		resultClass="com.web.form.administration.Role">
+		<include refid="selectRolesByUserIdSql" />
+	</select>
+	<select id="selectRolesByUnit" parameterClass="com.web.form.administration.User"
+		resultClass="com.web.form.administration.Role">
+		SELECT r.* FROM MNGROLEINFOTB r WHERE r.UNITID = #unitid# AND r.ROLEID
+		NOT IN (SELECT r1.ROLEID FROM (<include refid="selectRolesByUserIdSql"/>) r1)
+	</select>
+</sqlMap>

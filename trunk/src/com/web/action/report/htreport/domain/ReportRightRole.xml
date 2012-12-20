@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ReportRightRole">
+
+	<typeAlias alias="ReportRightRole" type="com.web.action.report.htreport.domain.ReportRightRole"/>
+	
+    <resultMap id="reportRightRoleModel" class="ReportRightRole">
+    	<result property="roleId"        column="role_id"    /> 
+    	<result property="roleName"        column="role_name"    /> 
+    	<result property="status"        column="status"    /> 
+    	<result property="notes"        column="notes"    /> 
+    	<result property="createUid"        column="create_uid"    /> 
+    	<result property="createTime"        column="create_time"    jdbcType="Timestamp" javaType="java.sql.Timestamp"  /> 
+    	<result property="lastModifyUid"        column="last_modify_uid"    /> 
+    	<result property="lastModifyTime"        column="last_modify_time"    jdbcType="Timestamp" javaType="java.sql.Timestamp"  /> 
+	</resultMap>
+	
+
+    <select id="getById" resultMap="reportRightRoleModel" parameterClass="string"  resultSetType="SCROLL_INSENSITIVE" >
+       	   select *  from t_report_right_role where role_id = #value#
+    </select>
+    
+    
+    <select id="findByCondition" resultMap="reportRightRoleModel" parameterClass="java.util.Map"  resultSetType="SCROLL_INSENSITIVE" >
+        select *  from t_report_right_role  
+        <dynamic prepend="where">
+			<isNotEmpty prepend="and" property="createUid">
+				create_uid=#createUid#
+			</isNotEmpty>
+		</dynamic>	
+    </select>
+    
+    
+    <select id="findByUserId" resultMap="reportRightRoleModel" parameterClass="java.util.Map"  resultSetType="SCROLL_INSENSITIVE" >
+        select *  from t_report_right_role  where status='1'
+          and ( role_id in (select role_id from t_report_right_user_role where user_id=#sessionUserId# )
+          or create_uid=#sessionUserId# )
+    </select>
+    
+    
+	 <select id="getCountByUserIdRoleId"  resultClass="int"  parameterClass="java.util.Map"  resultSetType="SCROLL_INSENSITIVE" >
+       	   select count(*)  from t_report_right_user_role where role_id = #roleId# and user_id=#userId# 
+    </select>
+  
+    
+    <select id="findPagingByCondition" resultMap="reportRightRoleModel" parameterClass="java.util.Map" resultSetType="SCROLL_INSENSITIVE">
+		select * from (select a.*,rownum rn from (select * from t_report_right_role
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="query">
+			(	
+				upper(role_name) like upper('%$query$%') and
+				upper(notes) like upper('%$query$%') 
+			)
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="status">
+				status=#status#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="createUid">
+			(	create_uid=#createUid# or role_id in(select role_id from t_report_right_user_role where user_id=#createUid# ) )
+			</isNotEmpty>
+		</dynamic>	
+		
+		<isNotEmpty property="orderBy">
+	  		order by  $orderBy$
+		</isNotEmpty>
+		<![CDATA[	
+			) a where rownum<= #endIndex#) b where b.rn >= #startIndex#
+		]]>
+
+	</select>
+	
+	<select id="findPagingCountByCondition"  resultClass="int" parameterClass="java.util.Map" resultSetType="SCROLL_INSENSITIVE">
+		select count(*)  from t_report_right_role
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="query">
+			(	
+				upper(role_name) like upper('%$query$%') and
+				upper(notes) like upper('%$query$%') 
+			)
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="status">
+				status=#status#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="createUid">
+			(	create_uid=#createUid# or role_id in(select role_id from t_report_right_user_role where user_id=#createUid# ) )
+			</isNotEmpty>
+		</dynamic>	
+	</select>
+    
+    
+    <insert id="insert" parameterClass="ReportRightRole"  >
+        insert into t_report_right_role(role_id,role_name,status,notes,create_uid,create_time,last_modify_uid,last_modify_time) 
+        	values 
+        (#roleId#,#roleName#,#status#,#notes#,#createUid#,#createTime#,#lastModifyUid#,#lastModifyTime#)
+    </insert>
+    
+    <insert id="insertReportRightRoleFunction" parameterClass="java.util.Map"  >
+        insert into t_report_right_role_function(role_id,fun_id) 
+        	values 
+        (#roleId#,#funId#)
+    </insert>
+    
+    <update id="update" parameterClass="ReportRightRole"   >
+        update t_report_right_role set
+			role_name        = #roleName#         ,
+			status      = #status#       ,
+			notes        = #notes#         ,
+			last_modify_uid  = #lastModifyUid#    ,
+			last_modify_time = #lastModifyTime#   
+        where role_id = #roleId#
+    </update>
+    
+    <delete id="deleteByObjId" parameterClass="string" >
+        delete from t_report_right_role where role_id = #value#
+    </delete>
+
+	
+	<delete id="deleteReportRightRoleFunctionByRoleId" parameterClass="string" >
+        delete from t_report_right_role_function where role_id = #value#
+    </delete>	
+    
+    <delete id="deleteReportRightUserRoleById" parameterClass="string" >
+        delete from t_report_right_user_role where role_id = #value#
+    </delete>
+
+</sqlMap>

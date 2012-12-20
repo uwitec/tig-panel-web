@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="SystemUserLog" >
+  <resultMap id="ibatorgenerated_BaseResultMap" class="com.web.form.administration.UserOprLog" >
+    <result column="UNITID" property="unitid" jdbcType="DECIMAL" />
+    <result column="LOGDATE" property="logdate" jdbcType="DECIMAL" />
+    <result column="LOGTIME" property="logtime" jdbcType="DECIMAL" />
+    <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="HOSTIP" property="hostip" jdbcType="VARCHAR" />
+    <result column="MSG" property="msg" jdbcType="VARCHAR" />
+  </resultMap>
+  
+ 	<select id="selectUserLogCount" parameterClass="com.web.form.administration.UserOprLog"
+		resultClass="java.lang.Integer">
+		<![CDATA[
+	   	SELECT count(*) FROM MNGUSEROPRLOGTB u LEFT JOIN MNGNODEINFOTB un
+		ON u.UNITID = un.NODEID
+	   	]]>
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="unitid">
+				u.UNITID = #unitid#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="logdate">
+				u.LOGDATE = #logdate#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="username">
+				u.USERNAME = #username#
+			</isNotEmpty>
+		</dynamic>
+		
+	</select>
+
+	<select id="selectUserLogs" parameterClass="com.web.form.administration.UserOprLog"
+		resultMap="ibatorgenerated_BaseResultMap">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		
+	   	<![CDATA[
+	   	SELECT u.*, un.nodename FROM MNGUSEROPRLOGTB u LEFT JOIN MNGNODEINFOTB un
+		ON u.UNITID = un.NODEID
+	   	]]>
+	   	<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="unitid">
+				u.UNITID = #unitid#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="logdate">
+				u.LOGDATE = #logdate#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="username">
+				u.USERNAME = #username#
+			</isNotEmpty>
+		</dynamic>
+		<isNotEmpty prepend="order by" property="sortString">
+			$sortString$
+		</isNotEmpty>
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+	   	]]>
+	</select>
+  
+<!--  <insert id="insertUserLog" parameterClass="com.web.form.administration.UserOprLog" >-->
+<!--    insert into MNGUSEROPRLOGTB (UNITID, LOGDATE, LOGTIME, USERNAME, HOSTIP, MSG)-->
+<!--    values (#unitid:DECIMAL#, #logdate:DECIMAL#, #logtime:DECIMAL#, #username:VARCHAR#,-->
+<!--      #hostip:VARCHAR#, #msg:VARCHAR#)-->
+<!--  </insert>-->
+  <insert id="insertUserLog" parameterClass="com.web.form.administration.UserOprLog" >
+    insert into MNGUSEROPRLOGTB
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="unitid" >
+        UNITID
+      </isNotNull>
+      <isNotNull prepend="," property="logdate" >
+        LOGDATE
+      </isNotNull>
+      <isNotNull prepend="," property="logtime" >
+        LOGTIME
+      </isNotNull>
+      <isNotNull prepend="," property="username" >
+        USERNAME
+      </isNotNull>
+      <isNotNull prepend="," property="hostip" >
+        HOSTIP
+      </isNotNull>
+      <isNotNull prepend="," property="msg" >
+        MSG
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="unitid" >
+        #unitid:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="logdate" >
+        #logdate:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="logtime" >
+        #logtime:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="username" >
+        #username:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="hostip" >
+        #hostip:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="msg" >
+        #msg:VARCHAR#
+      </isNotNull>
+      )
+    </dynamic>
+  </insert>
+</sqlMap>

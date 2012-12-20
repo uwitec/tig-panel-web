@@ -1,0 +1,1488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+     PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+     "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="PrivilegeQuery">
+
+	<select id="getUnitListCount"
+		parameterClass="com.web.form.administration.Unit"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM MNGNODEINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="nodelevel">
+				t.NODELEVEL = #nodelevel#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="parentnodeid">
+				t.PARENTNODEID = #parentnodeid# 
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="nodename">
+				t.NODENAME LIKE '%'||#nodename#||'%'
+			</isNotEmpty>
+		</dynamic>
+	</select>
+
+	<select id="getUnitList"
+		parameterClass="com.web.form.administration.Unit"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT NODEID AS id, NODENAME AS name FROM MNGNODEINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="nodelevel">
+				t.NODELEVEL = #nodelevel#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="parentnodeid">
+				t.PARENTNODEID = #parentnodeid# 
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="nodename">
+				t.NODENAME LIKE '%'||#nodename#||'%'
+			</isNotEmpty>
+		</dynamic>
+		order by NODEID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<!--MODIFY 获取单位号与相对应的单位编号 by qinliang 2011-4-22 start  -->
+  	<select id="selectUtilDES" resultClass="com.web.form.base.PrivilegeQueryForm">
+  		SELECT UNITID AS id, CHNSHORT AS name FROM BIUNITINFOTB t where t.HYID = 12
+  	</select>
+  
+  	<select id="selectUtilDESCount" resultClass="java.lang.Integer">
+  		select count(*) from BIUNITINFOTB t where t.HYID = 12
+  	</select>
+  	<!--MODIFY 获取单位号与相对应的单位编号 by qinliang 2011-4-22 end  -->
+	
+	<select id="getUnitListCount1"
+		parameterClass="com.web.form.administration.Unit"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM MNGNODEINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="nodename">
+				t.NODENAME LIKE '%'||#nodename#||'%'
+			</isNotEmpty>
+		</dynamic> 
+		START WITH t.NODEID = #parentnodeid#
+		CONNECT BY t.PARENTNODEID = PRIOR t.NODEID
+	</select>
+
+	<select id="getUnitList1"
+		parameterClass="com.web.form.administration.Unit"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT NODEID AS id, NODENAME AS name, NODELEVEL AS reserved FROM MNGNODEINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="nodename">
+				t.NODENAME LIKE '%'||#nodename#||'%'
+			</isNotEmpty>
+		</dynamic>
+		START WITH t.NODEID = #parentnodeid#
+		CONNECT BY t.PARENTNODEID = PRIOR t.NODEID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<!-- <select id="getMessageNodeCount"
+		parameterClass="com.web.form.administration.Bicommnodeinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM BICOMMNODEINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="nodename">
+				t.NODENAME LIKE '%'||#nodename#||'%'
+			</isNotEmpty>
+		</dynamic> 
+	</select>
+
+	<select id="getMessageNodes"
+		parameterClass="com.web.form.administration.Bicommnodeinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT t.NODEID AS id, t.NODENAME AS name FROM BICOMMNODEINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="nodename">
+				t.NODENAME LIKE '%'||#nodename#||'%'
+			</isNotEmpty>
+		</dynamic>
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select> -->
+	
+	<!-- <select id="selectBihyinfotb"
+		parameterClass="com.web.form.cchs.baseinfo.hybaseinfo.bihyinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT HYID AS id, HYSHTNAME AS name FROM BIHYINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="hyshtname">
+				t.HYSHTNAME LIKE '%'||#hyshtname#||'%'
+			</isNotEmpty>
+		</dynamic>
+		order by HYID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectBihyinfotbCount"
+		parameterClass="com.web.form.cchs.baseinfo.hybaseinfo.bihyinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM BIHYINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="hyshtname">
+				t.HYSHTNAME LIKE '%'||#hyshtname#||'%'
+			</isNotEmpty>
+		</dynamic>
+	</select> -->
+	
+	<!-- <select id="selectBiunitinfotb"
+		parameterClass="com.web.form.cchs.baseinfo.hybaseinfo.biunitinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT UNITID AS id, CHNSHORT AS name FROM BIUNITINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="chnshort">
+				t.CHNSHORT LIKE '%'||#chnshort#||'%' or t.UNITID LIKE '%'||#chnshort#||'%'
+			</isNotEmpty>
+		</dynamic>
+		order by UNITID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectBiunitinfotbCount"
+		parameterClass="com.web.form.cchs.baseinfo.hybaseinfo.biunitinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM BIUNITINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="chnshort">
+				t.CHNSHORT LIKE '%'||#chnshort#||'%' or t.UNITID LIKE '%'||#chnshort#||'%'
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectBinetinfotb"
+		parameterClass="com.web.form.cchs.baseinfo.hybaseinfo.binetinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT NETID AS id, NETSHORT AS name FROM BINETINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="netshort">
+				t.NETSHORT LIKE '%'||#netshort#||'%' or t.netid LIKE '%'||#netshort#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="unitid">
+				t.UNITID = #unitid# 
+			</isNotEmpty>
+		</dynamic>
+		order by NETID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectBinetinfotbCount"
+		parameterClass="com.web.form.cchs.baseinfo.hybaseinfo.binetinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM BINETINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="netshort">
+				t.NETSHORT LIKE '%'||#netshort#||'%' or t.netid LIKE '%'||#netshort#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="unitid">
+				t.UNITID = #unitid# 
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectBinetinfotb2type"
+		parameterClass="com.web.form.cchs.baseinfo.hybaseinfo.binetinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT NETID AS id, NETSHORT AS name FROM BINETINFOTB t
+		where t.NETTYPE = 2 
+		<dynamic >
+			<isNotEmpty prepend="and" property="netshort">
+				t.NETSHORT LIKE '%'||#netshort#||'%' or t.netid LIKE '%'||#netshort#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="unitid">
+				t.UNITID = #unitid# 
+			</isNotEmpty>
+			order by netid
+		</dynamic>
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectBinetinfotbCount2type"
+		parameterClass="com.web.form.cchs.baseinfo.hybaseinfo.binetinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM BINETINFOTB t
+		where t.NETTYPE = 2 
+		<dynamic >
+			<isNotEmpty prepend="and" property="netshort">
+				t.NETSHORT LIKE '%'||#netshort#||'%' or t.netid LIKE '%'||#netshort#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="unitid">
+				t.UNITID = #unitid# 
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectBisaminfotb"
+		parameterClass="com.web.form.cchs.baseinfo.hybaseinfo.bisaminfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT SAMID AS id, SAMTYPE AS name FROM BISAMINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="samtype">
+				t.SAMTYPE LIKE '%'||#samtype#||'%' or t.SAMID LIKE '%'||#samtype#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="samid">
+				t.SAMID = #samid# 
+			</isNotEmpty>
+		</dynamic>
+		order by SAMID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectBisaminfotbCount"
+		parameterClass="com.web.form.cchs.baseinfo.hybaseinfo.bisaminfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM BISAMINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="samtype">
+				t.SAMTYPE LIKE '%'||#samtype#||'%' or t.SAMID LIKE '%'||#samtype#||'%'
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectCrdtypeName"
+		parameterClass="com.web.form.cchs.common.bicardkindtb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT crdtype AS id, name AS name FROM bicardkindtb t 
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="name">
+				t.NAME LIKE '%'||#name#||'%' or t.CRDTYPE LIKE '%'||#name#||'%'
+			</isNotEmpty>
+		</dynamic>
+		order by crdtype
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectCrdtypeNameCount"
+		parameterClass="com.web.form.cchs.common.bicardkindtb"
+		resultClass="java.lang.Integer">
+		
+		SELECT COUNT(*) FROM bicardkindtb t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="crdtype">
+				t.NAME LIKE '%'||#crdtype#||'%' or t.CRDTYPE LIKE '%'||#crdtype#||'%'
+			</isNotEmpty>
+		</dynamic>
+			order by crdtype
+	</select>
+	<select id="querycardtypeandmediatype"
+		parameterClass="com.web.form.cchs.common.bicardkindtb"
+		resultClass="com.web.form.cchs.common.bicardkindtb">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		select crdtype ,name ,mediatype, 
+ 	      e.DICTVALUEDESC AS mediatypedesc
+ 			FROM  BICARDKINDTB t
+		  	    left join DICTINFOTB e on (t.mediatype = e.DICTVALUE AND e.DICTTYPE = '20002' AND e.LOCALE = 'zh_CN')
+             order by crdtype
+             <![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="querycardtypeandmediatypeCount"
+		parameterClass="com.web.form.cchs.common.bicardkindtb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM  BICARDKINDTB t
+		order by crdtype
+	</select>
+	
+	<select id="selectCnrqstservicetb"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cntxntypemaptb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT INNERTYPE AS id, TYPEDESC AS name FROM CNTXNTYPEMAPTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="typedesc">
+				t.TYPEDESC LIKE '%'||#typedesc#||'%' or t.INNERTYPE LIKE '%'||#typedesc#||'%'
+			</isNotEmpty>
+		</dynamic>
+		order by INNERTYPE
+		 <![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectCnrqstservicetbCount"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cntxntypemaptb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM CNTXNTYPEMAPTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="typedesc">
+				t.TYPEDESC LIKE '%'||#typedesc#||'%' or t.INNERTYPE LIKE '%'||#typedesc#||'%'
+			</isNotEmpty>
+		</dynamic>
+		order by INNERTYPE
+	</select>
+	外部交易
+	<select id="selectCntxntypemaptb"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cntxntypemaptb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT OUTERTYPE AS id, TYPEDESC AS name FROM CNTXNTYPEMAPTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="typedesc">
+				t.TYPEDESC LIKE '%'||#typedesc#||'%' or t.OUTERTYPE LIKE '%'||#typedesc#||'%'
+			</isNotEmpty>
+		</dynamic>
+		order by OUTERTYPE
+		 <![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectCntxntypemaptbCount"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cntxntypemaptb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM CNTXNTYPEMAPTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="typedesc">
+				t.TYPEDESC LIKE '%'||#typedesc#||'%' or t.OUTERTYPE LIKE '%'||#typedesc#||'%'
+			</isNotEmpty>
+		</dynamic>
+		order by OUTERTYPE
+	</select>
+	
+	<select id="selectInnercnerrcodetb"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cnerrcodetb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT ERRCODE AS id, ERRDESC AS name FROM CNERRCODETB t where t.ERRTYPE=3
+		<dynamic>
+			<isNotEmpty prepend="and" property="innerdesc">
+				t.ERRDESC LIKE '%'||#innerdesc#||'%' or t.ERRCODE LIKE '%'||#innerdesc#||'%'
+			</isNotEmpty>
+		</dynamic>
+		order by errcode
+		 <![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectInnercnerrcodetbCount"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cnerrcodetb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM CNERRCODETB t where t.ERRTYPE=3
+		<dynamic>
+		 
+			<isNotEmpty prepend="and" property="innerdesc">
+				t.ERRDESC LIKE '%'||#innerdesc#||'%' or t.ERRCODE LIKE '%'||#innerdesc#||'%'
+			</isNotEmpty>
+		</dynamic>
+		order by errcode
+	</select>
+	
+	<select id="selectOutercnerrcodetb"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cnerrcodetb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT ERRCODE AS id, ERRDESC AS name FROM CNERRCODETB t where t.ERRTYPE=1
+		<dynamic>
+			<isNotEmpty prepend="and" property="errdesc">
+				t.ERRDESC LIKE '%'||#errdesc#||'%' or t.ERRCODE LIKE '%'||#errdesc#||'%'
+			</isNotEmpty>
+		</dynamic>
+		order by errcode
+		 <![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectOutercnerrcodetbCount"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cnerrcodetb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM CNERRCODETB t where t.ERRTYPE=1
+		<dynamic>
+			<isNotEmpty prepend="and" property="errdesc">
+				t.ERRDESC LIKE '%'||#errdesc#||'%' or t.ERRCODE LIKE '%'||#errdesc#||'%'
+			</isNotEmpty>
+		</dynamic>
+		order by errcode
+	</select>
+	
+	<select id="querypkgtypeName"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cntxdtb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT PKGTYPE AS id, PKGDESC AS name FROM CNTXDTB t 
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="pkgdesc">
+				t.PKGDESC LIKE '%'||#pkgdesc#||'%' or t.PKGTYPE LIKE '%'||#pkgdesc#||'%'
+			</isNotEmpty>
+			</dynamic>
+			order by pkgtype
+			 <![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="querypkgtypeNameCount"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cntxdtb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM CNTXDTB t order by pkgtype
+	</select>
+	<select id="selectTpparamtb"
+		parameterClass="com.web.form.cchs.baseinfo.transpara.tpparamtb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT DATATYPE AS id, DATADESC AS name FROM TPPARAMTB t order by datatype
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectTpparamtbCount"
+		parameterClass="com.web.form.cchs.baseinfo.transpara.tpparamtb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM TPPARAMTB t  order by datatype
+	</select>
+	
+	<select id="selectbicardkindtb"
+		parameterClass="com.web.form.cchs.common.bicardkindtb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT CRDTYPE AS id, NAME AS name FROM BICARDKINDTB t order by crdtype
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectbicardkindtbCount"
+		parameterClass="com.web.form.cchs.common.bicardkindtb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM BICARDKINDTB t order by crdtype
+	</select>
+	
+	<select id="selectcnerrcodetb"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cnerrcodetb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT ERRCODE AS id, ERRDESC AS name FROM CNERRCODETB t order by ERRCODE
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectcnerrcodetbCount"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cnerrcodetb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM CNERRCODETB t  order by ERRCODE
+	</select>
+	查询固定的内部交易值
+	<select id="querySetCnrqstservicetb"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cnrqstservicetb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT RQSTTYPE AS id, SERVICEDESC AS name FROM CNRQSTSERVICETB t where rqsttype='3450' or rqsttype='3458' or rqsttype='3470'
+	    order by RQSTTYPE
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="querySetCnrqstservicetbCount"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cnrqstservicetb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM CNRQSTSERVICETB t order by RQSTTYPE
+	</select>
+	
+	<select id="querySetCntxntypemaptb"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cntxntypemaptb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT INNERTYPE AS id, TYPEDESC AS name FROM CNTXNTYPEMAPTB t where INNERTYPE='3450' or INNERTYPE='3458' or INNERTYPE='3470'
+		<dynamic >
+			<isNotEmpty prepend="and" property="typedesc">
+				t.INNERTYPE LIKE '%'||#typedesc#||'%' or t.TYPEDESC LIKE '%'||#typedesc#||'%'
+			</isNotEmpty>
+		</dynamic>
+	    order by INNERTYPE
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="querySetCntxntypemaptbCount"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cntxntypemaptb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM CNTXNTYPEMAPTB t order by INNERTYPE
+	</select>
+	公交
+	<select id="selectStfinfotb"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.stfinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT STFID AS id, STFNAME AS name FROM STFINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="stfname">
+				t.STFNAME LIKE '%'||#stfname#||'%' or t.STFID LIKE '%'||#stfname#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+		order by STFID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+		<select id="selectDriver"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.stfinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT STFID AS id, STFNAME||'('||STFID||')' AS name FROM STFINFOTB t WHERE 
+			t.STFTYPE = 1 
+		<dynamic>
+			<isNotEmpty prepend="and" property="stfname">
+				t.STFNAME LIKE '%'||#stfname#||'%' or t.STFID LIKE '%'||#stfname#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+		order by STFID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+		<select id="selectRecntstf"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.stfinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT STFID AS id, STFNAME AS name FROM STFINFOTB t WHERE 
+			t.STFTYPE = 3
+		<dynamic>
+			<isNotEmpty prepend="and" property="stfname">
+				t.STFNAME LIKE '%'||#stfname#||'%' or t.STFID LIKE '%'||#stfname#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+		or t.STFTYPE = 4 
+		<dynamic>
+			<isNotEmpty prepend="and" property="stfname">
+				t.STFNAME LIKE '%'||#stfname#||'%' or t.STFID LIKE '%'||#stfname#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+		order by STFID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+		<select id="selectCntstf"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.stfinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT STFID AS id, STFNAME AS name FROM STFINFOTB t WHERE 
+			t.STFTYPE = 2
+		<dynamic>
+			<isNotEmpty prepend="and" property="stfname">
+				t.STFNAME LIKE '%'||#stfname#||'%' or t.STFID LIKE '%'||#stfname#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+		or t.STFTYPE = 4 
+		<dynamic>
+			<isNotEmpty prepend="and" property="stfname">
+				t.STFNAME LIKE '%'||#stfname#||'%' or t.STFID LIKE '%'||#stfname#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+		order by STFID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectStfinfotbCount"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.stfinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM STFINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="stfname">
+				t.STFNAME LIKE '%'||#stfname#||'%' or t.STFID LIKE '%'||#stfname#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectDriverCount"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.stfinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM STFINFOTB t WHERE 
+			t.STFTYPE = 1 
+		<dynamic>
+			<isNotEmpty prepend="and" property="stfname">
+				t.STFNAME LIKE '%'||#stfname#||'%' or t.STFID LIKE '%'||#stfname#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectRecntstfCount"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.stfinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM STFINFOTB t WHERE 
+			t.STFTYPE = 3
+		<dynamic>
+			<isNotEmpty prepend="and" property="stfname">
+				t.STFNAME LIKE '%'||#stfname#||'%' or t.STFID LIKE '%'||#stfname#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+		or t.STFTYPE = 4 
+		<dynamic>
+			<isNotEmpty prepend="and" property="stfname">
+				t.STFNAME LIKE '%'||#stfname#||'%' or t.STFID LIKE '%'||#stfname#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectCntstfCount"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.stfinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM STFINFOTB t WHERE 
+			t.STFTYPE = 2
+		<dynamic>
+			<isNotEmpty prepend="and" property="stfname">
+				t.STFNAME LIKE '%'||#stfname#||'%' or t.STFID LIKE '%'||#stfname#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+		or t.STFTYPE = 4 
+		<dynamic>
+			<isNotEmpty prepend="and" property="stfname">
+				t.STFNAME LIKE '%'||#stfname#||'%' or t.STFID LIKE '%'||#stfname#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectBranchinfotb"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.branchinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT BRANCHID AS id, BRANCHCHN AS name FROM BRANCHINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="branchchn">
+				t.BRANCHCHN LIKE '%'||#branchchn#||'%' or t.BRANCHID LIKE '%'||#branchchn#||'%'
+			</isNotEmpty>
+		</dynamic>
+		order by BRANCHID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectBranchinfotbCount"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.branchinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM BRANCHINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="branchchn">
+				t.BRANCHCHN LIKE '%'||#branchchn#||'%' or t.BRANCHID LIKE '%'||#branchchn#||'%'
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectCollectinfotb"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.collectinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT COLLECTID AS id, COLLECTNAME AS name FROM COLLECTINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="collectname">
+				t.COLLECTNAME LIKE '%'||#collectname#||'%' or t.COLLECTID LIKE '%'||#collectname#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" >
+				t.COLLECTSTATE = 1
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+		order by COLLECTID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectCollectinfotbCount"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.collectinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM COLLECTINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="collectname">
+				t.COLLECTNAME LIKE '%'||#collectname#||'%' or t.COLLECTID LIKE '%'||#collectname#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectPosinfotb"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.posinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT POSID AS id, POSID AS name FROM POSINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="posiddesc">
+				t.POSID LIKE '%'||#posiddesc#||'%' 
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.BRANCHID=#branchid#
+			</isNotEmpty>
+		</dynamic>
+		order by POSID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectPosinfotbCount"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.posinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM POSINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="posiddesc">
+				t.POSID LIKE '%'||#posiddesc#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.BRANCHID=#branchid#
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectTerminfotb"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.terminfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT TERMID AS id, TERMID AS name FROM TERMINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="termiddesc">
+				t.TERMID LIKE '%'||#termiddesc#||'%' 
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+		order by TERMID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectTerminfotbCount"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.terminfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM TERMINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="termiddesc">
+				t.TERMID LIKE '%'||#termiddesc#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectArrayinfotb"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.arrayinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT ARRAYID AS id, ARRAYNAME AS name FROM ARRAYINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="arrayname">
+				(t.ARRAYNAME LIKE '%'||#arrayname#||'%' or t.ARRAYID LIKE '%'||#arrayname#||'%')
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+		order by ARRAYID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectArrayinfotbCount"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.arrayinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM ARRAYINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="arrayname">
+				t.ARRAYNAME LIKE '%'||#arrayname#||'%' or t.ARRAYID LIKE '%'||#arrayname#||'%'
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectLineinfotb"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.lineinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT LINEID AS id, LINENAME AS name FROM LINEINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="linename">
+			(	t.LINENAME LIKE '%'||#linename#||'%' or t.LINEID LIKE '%'||#linename#||'%')
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+		order by LINEID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectLineinfotb1"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.lineinfotb1"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT LINEID AS id, LINENAME AS name FROM  LINEINFOTB_1 t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="linename">
+			(	t.LINENAME LIKE '%'||#linename#||'%' or t.LINEID LIKE '%'||#linename#||'%')
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+		order by LINEID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectLineinfotbCount"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.lineinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM LINEINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="username">
+				t.LINENAME LIKE '%'||#linename#||'%' or t.LINEID LIKE '%'||#linename#||'%'
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectLineinfotbCount1"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.lineinfotb1"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM LINEINFOTB_1 t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="username">
+				t.LINENAME LIKE '%'||#linename#||'%' or t.LINEID LIKE '%'||#linename#||'%'
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectMngUserinfotb"
+		parameterClass="com.web.form.administration.User"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT userid AS id, username AS name FROM MNGUSERINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="username">
+				t.userid LIKE '%'||#username#||'%' or t.username LIKE '%'||#username#||'%'
+			</isNotEmpty>
+		</dynamic>
+		order by userid
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectMngUserinfotbCount"
+		parameterClass="com.web.form.administration.User"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM MNGUSERINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="linename">
+				t.userid LIKE '%'||#username#||'%' or t.username LIKE '%'||#username#||'%'
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectBusinfotb"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.businfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT BUSID AS id, BUSID AS name FROM BUSINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="busiddesc">
+				t.BUSID LIKE '%'||#busiddesc#||'%' 
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+		order by BUSID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectBusinfotbCount"
+		parameterClass="com.web.form.bus.baseinfo.oprmng.businfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM BUSINFOTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="busiddesc">
+				t.BUSID LIKE '%'||#busiddesc#||'%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="branchid">
+				t.branchid=#branchid#
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="selectParamantinfotb"
+		parameterClass="com.web.form.bus.baseinfo.fhmng.paramantinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		select BASEANT AS baseant,
+		       TEMPLATEID AS id,
+		       PROPONE AS propone,
+		       PROPTWO AS proptwo,
+		       PROPTHREE AS propthree,
+		       FARMODE AS farmode,
+		       ADDANT AS addant,
+		       NUMTWOANT AS numtwoant,
+		       NUMTHREEANT AS numthreeant,
+		       NUMFOURANT AS numfourant,
+		       NUMFIVEANT AS numfiveant,
+		       NUMSIXANT AS numsixant,
+		       NUMSEVENANT AS numsevenant,
+		       NUMEIGHTANT AS numeightant,
+		       NUMNINEANT AS numnineant,
+		       MAXANT AS maxant,
+		       CONCEANT AS conceant,
+		       CONCEPERCENT AS concepercent,
+		       NIGHTADDANT AS nightaddant,
+		       NIGHTADDSTART AS nightaddstart,
+		       NIGHTADDEND AS nightaddend,
+		       TIMESPAN AS timespan,
+		       TICKETTIMESPAN AS tickettimespan,
+		       CHANGELIMIT AS changelimit,
+		       MAXCHANGENUM AS maxchangenum,
+		       CHANGETIME AS changetime,
+		       CNTONE AS cntone,
+		       CNTTWO AS cnttwo,
+		       CNTTHREE AS cntthree,
+		       CNTFOUR AS cntfour,
+		       CNTFIVE AS cntfive,
+		       PARAMSTATE AS paramstate,
+		       CREATETIME AS createtime
+		  from PARAMANTINFOTB t
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+		
+	</select>
+	
+	<select id="selectParamantinfotbCount"
+		parameterClass="com.web.form.bus.baseinfo.fhmng.paramantinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM PARAMANTINFOTB t
+	</select>
+	
+	<select id="queryPosid"
+		parameterClass="com.web.form.cchs.baseinfo.hybaseinfo.biposinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT posid AS id FROM biposinfotb t 	<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="posid">
+				t.posid LIKE '%'||#posid#||'%' 
+			</isNotEmpty>
+			</dynamic>
+			order by posid
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="queryPosidCount"
+		parameterClass="com.web.form.cchs.baseinfo.hybaseinfo.biposinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM biposinfotb t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="posid">
+				t.posid LIKE '%'||#posid#||'%' 
+			</isNotEmpty>
+			</dynamic>
+			 order by posid
+	</select>
+     
+	<select id="selectCarddpt"
+		parameterClass="com.web.form.cchs.baseinfo.transpara.tpcardkindruletb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT FOREGIFT as id FROM bicardkindtb t 	
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="crdtype">
+			t.CRDTYPE = #crdtype:DECIMAL#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="mediatype">
+			t.MEDIATYPE = #mediatype:DECIMAL#
+			</isNotEmpty>
+			</dynamic>	
+			 <![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	<select id="selectCarddptCount"
+		parameterClass="com.web.form.cchs.baseinfo.transpara.tpcardkindruletb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM bicardkindtb t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="crdtype">
+			t.CRDTYPE = #crdtype:DECIMAL#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="mediatype">
+			t.MEDIATYPE = #mediatype:DECIMAL#
+			</isNotEmpty>
+			</dynamic>	
+	</select>
+	
+	查询报表标识	
+	<select id="queryT_report_rp_baseName"
+		parameterClass="com.web.form.report.reportconfig.t_report_rp_base"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT REPORT_ID AS id,REPORT_NAME AS name FROM t_report_rp_base t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="reportName">
+				t.REPORT_NAME LIKE '%'||#reportName#||'%' or t.REPORT_ID LIKE '%'||#reportName#||'%'
+			</isNotEmpty>
+		</dynamic>
+		 order by id
+		 <![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="queryT_report_rp_baseNameCount"
+		parameterClass="com.web.form.report.reportconfig.t_report_rp_base"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM t_report_rp_base t order by REPORT_ID
+	</select>
+	
+	查询清算设备编号	
+	<select id="queryPosid1"
+		parameterClass="com.web.form.cchs.baseinfo.hybaseinfo.biposinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT POSID AS id,POSID AS name FROM biposinfotb t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="samid">
+				t.POSID LIKE '%'||#samid#||'%'
+			</isNotEmpty>
+		</dynamic>
+		 order by posid
+		 <![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="queryPosidCount1"
+		parameterClass="com.web.form.cchs.baseinfo.hybaseinfo.biposinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM biposinfotb t 
+	</select>
+     
+     
+    <select id="queryticketcardtypecardtype"
+		parameterClass="com.web.form.administration.Dictionary"
+		resultClass="com.web.form.administration.Dictionary">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		select dictvalue,dictvaluedesc
+ 			FROM  DICTINFOTB t
+		  	    where  t.DICTTYPE = '30161' AND t.LOCALE = 'zh_CN'
+             order by dictvalue
+             <![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	 <select id="queryticketcardtypecardtype_foredit"
+		parameterClass="com.web.form.bus.baseinfo.fhmng.paramantinfotb"
+		resultClass="com.web.form.bus.baseinfo.fhmng.paramantinfotb">
+		select t.*,b.openrate,b.space_time spacetime,b.sign from(
+		select d.dictValue,d.dictvaluedesc FROM DICTINFOTB d
+		WHERE D.DICTTYPE = '30161' AND d.LOCALE = 'zh_CN') t
+		left join  PARAMCARDTYPEANTINTOTB b on t.dictvalue=b.card_type
+		and b.ticket_no=#ticketNo#
+		order by t.dictvalue
+	</select>
+	
+	<select id="queryticketcardtypecardtype_foredit1"
+		parameterClass="com.web.form.bus.baseinfo.fhmng.paramantinfotb"
+		resultClass="com.web.form.bus.baseinfo.fhmng.paramantinfotb">
+		select t.*,b.openrate,b.space_time spacetime,b.sign from(
+		select d.dictValue,d.dictvaluedesc FROM DICTINFOTB d
+		WHERE D.DICTTYPE = '30161' AND d.LOCALE = 'zh_CN') t
+		left join  PARAMCARDTYPEANTINTOTB_1 b on t.dictvalue=b.card_type
+		and b.ticket_no=#ticketNo#
+		order by t.dictvalue
+	</select>
+	
+	<select id="queryticketcardtypecardtype_foreditCount"
+		parameterClass="com.web.form.bus.baseinfo.fhmng.paramantinfotb"
+		resultClass="java.lang.Integer">
+		select count(*) from(
+		select d.dictValue,d.dictvaluedesc FROM DICTINFOTB d
+		WHERE D.DICTTYPE = '30161' AND d.LOCALE = 'zh_CN') t
+		left join  PARAMCARDTYPEANTINTOTB b on t.dictvalue=b.card_type
+		and b.ticket_no=#ticketNo#
+		order by t.dictvalue
+	</select>
+	
+	<select id="queryticketcardtypecardtype_foreditCount1"
+		parameterClass="com.web.form.bus.baseinfo.fhmng.paramantinfotb"
+		resultClass="java.lang.Integer">
+		select count(*) from(
+		select d.dictValue,d.dictvaluedesc FROM DICTINFOTB d
+		WHERE D.DICTTYPE = '30161' AND d.LOCALE = 'zh_CN') t
+		left join  PARAMCARDTYPEANTINTOTB_1 b on t.dictvalue=b.card_type
+		and b.ticket_no=#ticketNo#
+		order by t.dictvalue
+	</select>
+	
+	<select id="queryticketcardtypecardtypeCount"
+		parameterClass="com.web.form.administration.Dictionary"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM  DICTINFOTB t
+		  	    where  t.DICTTYPE = '30161' AND t.LOCALE = 'zh_CN'
+		order by dictvalue
+	</select>
+
+	系统高级参数
+	<select id="selectCnsysparamtb"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cnsysparamtb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		SELECT PRMID AS id, PRMDESC AS name FROM CNSYSPARAMTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="prmdesc">
+				t.PRMID LIKE '%'||#prmdesc#||'%' or t.PRMDESC LIKE '%'||#prmdesc#||'%'
+			</isNotEmpty>
+		</dynamic>
+		order by PRMID
+		<![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="selectCnsysparamtbCount"
+		parameterClass="com.web.form.cchs.baseinfo.systempara.cnsysparamtb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM CNSYSPARAMTB t
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="prmdesc">
+				t.PRMDESC LIKE '%'||#prmdesc#||'%' or t.PRMID LIKE '%'||#prmdesc#||'%'
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	
+	<select id="queryTicketNo"
+		parameterClass="com.web.form.bus.baseinfo.fhmng.paramantinfotb"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		select TICKET_NO AS id,TICKET_NO as name
+ 			FROM  PARAMANTINFOTB t
+             order by TICKET_NO
+             <![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="queryTicketNo1"
+		parameterClass="com.web.form.bus.baseinfo.fhmng.paramantinfotb1"
+		resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+		select TICKET_NO AS id,TICKET_NO as name
+ 			FROM  PARAMANTINFOTB_1 t
+             order by TICKET_NO
+             <![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="queryTicketNoCount"
+		parameterClass="com.web.form.bus.baseinfo.fhmng.paramantinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM  PARAMANTINFOTB t
+	</select>
+	
+	<select id="queryTicketNoCount1"
+		parameterClass="com.web.form.bus.baseinfo.fhmng.paramantinfotb"
+		resultClass="java.lang.Integer">
+		SELECT COUNT(*) FROM  PARAMANTINFOTB_1 t
+	</select>
+	
+	<select id="queryAreaID" parameterClass="com.web.form.bus.baseinfo.oprmng.areainfotb" resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]>
+			select 
+				t.areaid AS id,
+				t.areachn as name
+ 			FROM  areainfotb t
+            order by t.areaid
+        <![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="queryAreaIDCount" parameterClass="com.web.form.bus.baseinfo.oprmng.areainfotb" resultClass="java.lang.Integer">
+		select count(*) from areainfotb t
+	</select>
+	
+	add by luc 20120703
+	<select id="selectRespinfo" resultClass="com.web.form.base.PrivilegeQueryForm">
+	<![CDATA[
+	select * from ( select ROWNUM rn,s.* from (
+	 ]]>
+  		select t.dict_val as id,t.dict_val_desc as name from t_inf_dict t where t.dict_name='RESP_CODE'
+  		<![CDATA[
+  		 ) s where ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+  		 ]]>
+  	</select>
+  
+  	<select id="selectRespinfoCount" resultClass="java.lang.Integer">
+  		select count(*) from t_inf_dict t where t.dict_name='RESP_CODE'
+  	</select>
+  	
+  		
+	<select id="queryTaxiCompanyInfo" resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			select t1.*, ROWNUM from (
+		]]>
+		<![CDATA[
+			select t.taxicompanyid as id, t.taxicompanydesc as name
+			from TAXICOMPANYINFOTB t
+			where t.useflag='1'
+			order by t.taxicompanyid asc
+		]]>
+		<![CDATA[
+		) t1 where ROWNUM <= #rowEnd# and ROWNUM >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="queryTaxiCompanyInfoCount" resultClass="java.lang.Integer">
+		select count(*) from TAXICOMPANYINFOTB where t.useflag='1'
+	</select>
+	
+	<select id="queryTaxiGroupInfo" resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			select t1.*, ROWNUM from (
+		]]>
+		<![CDATA[
+			select t.taxigroupid as id, t.taxigroupdesc as name
+			from taxigroupinfotb t
+			where t.useflag='1'
+			order by t.taxigroupid asc
+		]]>
+		<![CDATA[
+		) t1 where ROWNUM <= #rowEnd# and ROWNUM >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="queryTaxiGroupInfoCount" resultClass="java.lang.Integer">
+		select count(*) from taxigroupinfotb where t.useflag='1'
+	</select>
+	
+	<select id="queryTaxiCompanyGroupInfo" resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			select t1.*, ROWNUM from (
+		]]>
+		<![CDATA[
+			select  t.taxigroupid as id, t1.taxicompanydesc || '  ' || t.taxigroupdesc as name
+			from taxigroupinfotb t
+			left join taxicompanyinfotb t1 on t.taxicompanyid=t1.taxicompanyid
+			where t.useflag='1' and t1.useflag='1'
+			order by t1.taxicompanyid, t.taxigroupid asc
+		]]>
+		<![CDATA[
+		) t1 where ROWNUM <= #rowEnd# and ROWNUM >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="queryTaxiCompanyGroupInfoCount" resultClass="java.lang.Integer">
+		select count(*)
+			from taxigroupinfotb t
+			left join taxicompanyinfotb t1 on t.taxicompanyid=t1.taxicompanyid
+			where t.useflag='1' and t1.useflag='1'
+	</select>
+	
+	<select id="queryGuaGuaUnitidName" resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			select t1.*, ROWNUM from (
+		]]>
+		<![CDATA[
+			select  t.unitid as id, t.unitdes as name
+			from RECHARGECARDUNITTB t
+			order by t.unitid, t.unitdes asc
+		]]>
+		<![CDATA[
+		) t1 where ROWNUM <= #rowEnd# and ROWNUM >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="queryGuaGuaUnitidNameoCount" resultClass="java.lang.Integer">
+		select count(*)
+			from RECHARGECARDUNITTB t
+	</select>
+	
+	<select id="queryOrderidName" resultClass="com.web.form.base.PrivilegeQueryForm">
+		<![CDATA[
+			select t1.*, ROWNUM from (
+		]]>
+		<![CDATA[
+			select  t.orderid as id, t.orderdes as name
+			from RechargeCardOrderTB t
+			order by t.orderdes asc
+		]]>
+		<![CDATA[
+		) t1 where ROWNUM <= #rowEnd# and ROWNUM >= #rowStart#
+		]]>
+	</select>
+	
+	<select id="queryOrderidNameCount" resultClass="java.lang.Integer">
+		select count(*)
+			from RechargeCardOrderTB t
+	</select> -->
+</sqlMap>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="SystemRole">
+  <resultMap class="com.web.form.administration.Role"
+		id="ibatorgenerated_BaseResultMap">
+		<result column="ROLEID" jdbcType="VARCHAR" property="roleid" />
+		<result column="ROLENAME" jdbcType="VARCHAR" property="rolename" />
+		<result column="UNITID" jdbcType="DECIMAL" property="unitid" />
+		<result column="ROLEDESCRIBE" jdbcType="VARCHAR" property="roledescribe" />
+		<result column="ENABLED" jdbcType="DECIMAL" property="enabled" />
+		<result column="UNITNAME" jdbcType="DECIMAL" property="unitname" />
+		<result column="STATUSDESC" jdbcType="DECIMAL" property="statusdesc" />
+	</resultMap>
+
+	<select id="selectSystemRolesCount"
+		parameterClass="com.web.form.administration.Role"
+		resultClass="java.lang.Integer">
+		<![CDATA[
+			SELECT COUNT(*) FROM MNGROLEINFOTB t INNER JOIN MNGNODEINFOTB u 
+			ON t.UNITID = u.NODEID INNER JOIN DICTINFOTB d
+			ON t.ENABLED = d.DICTVALUE AND d.LOCALE = #locale# AND d.DICTTYPE = '10001'
+	 	]]>
+	 	
+	 	<dynamic prepend="where">
+			<isNotNull prepend="and" property="unitid">
+				t.UNITID IN (SELECT u.NODEID FROM MNGNODEINFOTB u START WITH u.NODEID = #unitid# CONNECT BY u.PARENTNODEID = PRIOR u.NODEID)
+			</isNotNull>
+			<isNotEmpty prepend="and" property="rolename">
+				t.ROLENAME LIKE '%' || #rolename# || '%'
+			</isNotEmpty>
+			<isNotNull prepend="and" property="enabled">
+				t.ENABLED = #enabled#
+			</isNotNull>
+		</dynamic>		
+	</select>
+	
+	<select id="selectSystemRoles"
+		parameterClass="com.web.form.administration.Role"
+		resultMap="ibatorgenerated_BaseResultMap">
+		<!-- <![CDATA[
+			SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+		]]> -->
+		
+		<![CDATA[
+			SELECT t.*, u.NODENAME AS UNITNAME, d.DICTVALUEDESC AS STATUSDESC FROM (
+		]]>
+		<![CDATA[
+				select * from MNGROLEINFOTB 
+		]]>
+		<isNotEmpty prepend="order by" property="sortString">
+				$sortString$
+		</isNotEmpty>
+		<![CDATA[
+			LIMIT #rowStart#,#rowEnd#
+		]]>
+		<![CDATA[
+			) t 
+			INNER JOIN MNGNODEINFOTB u ON t.UNITID = u.NODEID 
+			INNER JOIN DICTINFOTB d ON t.ENABLED = d.DICTVALUE AND d.LOCALE = #locale# AND d.DICTTYPE = '10001'
+		]]>
+		
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="unitid">
+				t.UNITID IN (SELECT u.NODEID FROM MNGNODEINFOTB u START WITH u.NODEID = #unitid# CONNECT BY u.PARENTNODEID = PRIOR u.NODEID)
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="rolename">
+				t.ROLENAME LIKE '%' || #rolename# || '%'
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="enabled">
+				t.ENABLED = #enabled#
+			</isNotEmpty>
+		</dynamic>
+		<isNotEmpty prepend="order by" property="sortString">
+				$sortString$
+		</isNotEmpty>
+		
+		<!-- <![CDATA[
+			) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+		]]>
+		<isNotEmpty prepend="order by" property="sortString">
+				$sortString$
+		</isNotEmpty> -->
+	</select>
+  
+  <select id="ibatorgenerated_selectByPrimaryKey" parameterClass="com.web.form.administration.Role" resultMap="ibatorgenerated_BaseResultMap">
+    select ROLEID, ROLENAME, UNITID, ROLEDESCRIBE, ENABLED
+    from MNGROLEINFOTB
+    where ROLEID = #roleid:VARCHAR#
+  </select>
+  <delete id="deleteRole" parameterClass="com.web.form.administration.Role">
+    delete from MNGROLEINFOTB
+    where ROLEID = #roleid:VARCHAR#
+  </delete>
+  
+  <insert id="insertRole" parameterClass="com.web.form.administration.Role">
+    insert into MNGROLEINFOTB (ROLEID, ROLENAME, UNITID, ROLEDESCRIBE, ENABLED)
+    values (#roleid:VARCHAR#, #rolename:VARCHAR#, #unitid:DECIMAL#, #roledescribe:VARCHAR#,
+      #enabled:DECIMAL#)
+  </insert>
+  
+  <insert id="ibatorgenerated_insertSelective" parameterClass="com.web.form.administration.Role">
+    insert into MNGROLEINFOTB
+    <dynamic prepend="(">
+      <isNotNull prepend="," property="roleid">
+        ROLEID
+      </isNotNull>
+      <isNotNull prepend="," property="rolename">
+        ROLENAME
+      </isNotNull>
+      <isNotNull prepend="," property="unitid">
+        UNITID
+      </isNotNull>
+      <isNotNull prepend="," property="roledescribe">
+        ROLEDESCRIBE
+      </isNotNull>
+      <isNotNull prepend="," property="enabled">
+        ENABLED
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(">
+      <isNotNull prepend="," property="roleid">
+        #roleid:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="rolename">
+        #rolename:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="unitid">
+        #unitid:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="roledescribe">
+        #roledescribe:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="enabled">
+        #enabled:DECIMAL#
+      </isNotNull>
+      )
+    </dynamic>
+  </insert>
+  
+  <update id="ibatorgenerated_updateByPrimaryKeySelective" parameterClass="com.web.form.administration.Role">
+    update MNGROLEINFOTB
+    <dynamic prepend="set">
+      <isNotNull prepend="," property="rolename">
+        ROLENAME = #rolename:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="unitid">
+        UNITID = #unitid:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="roledescribe">
+        ROLEDESCRIBE = #roledescribe:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="enabled">
+        ENABLED = #enabled:DECIMAL#
+      </isNotNull>
+    </dynamic>
+    where ROLEID = #roleid:VARCHAR#
+  </update>
+  <update id="updateRole" parameterClass="com.web.form.administration.Role">
+    update MNGROLEINFOTB
+    set ROLENAME = #rolename:VARCHAR#,
+      UNITID = #unitid:DECIMAL#,
+      ROLEDESCRIBE = #roledescribe:VARCHAR#,
+      ENABLED = #enabled:DECIMAL#
+    where ROLEID = #roleid:VARCHAR#
+  </update>
+  
+  <delete id="deleteRoleModuleByRole" parameterClass="com.web.form.administration.Role">
+  	delete from MNGROLEMODULETB where ROLE_ID = #roleid:VARCHAR#
+  </delete>
+  <delete id="deleteUserRoleByRole" parameterClass="com.web.form.administration.Role">
+  	delete from MNGUSERROLETB where ROLE_ID = #roleid:VARCHAR#
+  </delete>
+  <insert id="insertRoleModuleByRole" parameterClass="com.web.form.administration.Role">
+  	insert into MNGROLEMODULETB values (#roleid:VARCHAR#, #rolename:VARCHAR#)
+  </insert>
+</sqlMap>

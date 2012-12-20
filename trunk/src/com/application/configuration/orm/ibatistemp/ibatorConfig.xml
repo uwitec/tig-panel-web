@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ibatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Apache iBATIS Ibator Configuration 1.0//EN" "http://ibatis.apache.org/dtd/ibator-config_1_0.dtd" >
+<ibatorConfiguration >
+	<classPathEntry location="D:\\liubing\\chongqingconsole\\WebRoot\\WEB-INF\\lib\\classes12.jar" />
+  <ibatorContext id="context1" >
+	 
+    <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@130.251.89.110:1521:orcl" userId="ykt_cq" password="123" />
+    <javaModelGenerator targetPackage="com.application.configuration.orm.ibatistemp" targetProject="chongqingconsole" />
+    <sqlMapGenerator targetPackage="com.application.configuration.orm.ibatistemp" targetProject="chongqingconsole" />
+	<daoGenerator targetPackage="com.application.configuration.orm.ibatistemp" targetProject="chongqingconsole" type="IBATIS" /> 
+    <table tableName="T_REPORT_RP_BASE">
+    </table>
+  </ibatorContext>
+</ibatorConfiguration>

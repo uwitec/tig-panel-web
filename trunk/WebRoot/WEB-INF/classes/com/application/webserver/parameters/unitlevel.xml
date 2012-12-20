@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE unit-level-config PUBLIC "-//HUATENG//DTD Unit Level DTD//EN" "http://www.huateng.com/Guatemala/unitlevel.dtd" >
+<unit-level-config>
+	<unit-level id="DEVELOP" desc="Development Center">
+		<level>0</level>
+		<attribute-name>devcenter</attribute-name>
+	</unit-level>
+
+	<unit-level id="CC" desc="Card Center">
+		<level>1</level>
+		<attribute-name>cardcenter</attribute-name>
+	</unit-level>
+
+	<unit-level id="UNIT" desc="Unit">
+		<level>2</level>
+		<attribute-name>operationunit</attribute-name>
+	</unit-level>
+
+	<unit-level id="NET" desc="Network">
+		<level>3</level>
+		<attribute-name>operationnet</attribute-name>
+	</unit-level>
+</unit-level-config>

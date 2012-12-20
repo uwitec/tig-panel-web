@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+			
+	<bean id="UnitFhClearingActionBean" class="com.web.action.report.UnitFhClearingAction">
+		<property name="query_form_name">
+			<value>com.web.form.report.Batfhunitaccdaytb</value>
+		</property>
+		<property name="query_sql">
+			<value>Report.getUnitFhReport</value>
+		</property>
+		<property name="report_template_name">
+			<value>unitfhreport</value>
+		</property>
+	</bean>
+	
+	<bean id="ReportResultActionBean" class="com.web.action.base.ReportResultAction">
+		<property name="reportService">
+			<ref bean="ReportService"/>
+		</property>
+	</bean>
+	
+	<bean id="t_report_rp_baseActionBean" class="com.web.action.report.reportconfig.t_report_rp_baseAction">
+		<property name="publicService">
+			<ref bean="PublicService"/>
+		</property>
+		<property name="jdbcDao">
+			<ref local="jdbcDao" />
+		</property>
+	</bean>
+	
+	<bean id="t_report_rp_queryActionBean" class="com.web.action.report.reportconfig.t_report_rp_queryAction">
+		<property name="publicService">
+			<ref bean="PublicService"/>
+		</property>
+		<property name="jdbcDao">
+			<ref local="jdbcDao" />
+		</property>
+	</bean>
+	
+	<bean id="t_report_outkeytbActionBean" class="com.web.action.report.reportconfig.t_report_outkeytbAction">
+		<property name="publicService">
+			<ref bean="PublicService"/>
+		</property>
+		<property name="jdbcDao">
+			<ref local="jdbcDao" />
+		</property>
+	</bean>
+	
+	<bean id="t_report_rp_columnActionBean" class="com.web.action.report.reportconfig.t_report_rp_columnAction">
+		<property name="publicService">
+			<ref bean="PublicService"/>
+		</property>
+		<property name="jdbcDao">
+			<ref local="jdbcDao" />
+		</property>
+	</bean>
+
+<!--
+	
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+         <property name="jndiName">
+         	 <value>jdbc/HBPAY_POOL</value>
+         </property>
+         <property name="resourceRef">
+         	<value>true</value>
+         </property>
+    </bean> 
+    
+	<bean id="dataSource2" class="org.springframework.jndi.JndiObjectFactoryBean">
+         <property name="jndiName">
+         	 <value>jdbc/HBPAY_POOL</value>
+         </property>
+         <property name="resourceRef">
+         	<value>true</value>
+         </property>
+    </bean>
+    
+      
+      
+      <bean id="oracle_datasource_report" class="oracle.jdbc.pool.OracleConnectionCacheImpl" destroy-method="close">
+		<property name="serverName"><value>130.251.102.101</value></property>
+		<property name="user"><value>qcbus</value></property>
+		<property name="password"><value>qcbus</value></property>
+		<property name="serviceName"><value>qcbus</value></property>
+		<property name="driverType"><value>thin</value></property>
+		<property name="networkProtocol"><value>tcp</value></property>
+		<property name="portNumber"><value>1521</value></property>
+		<property name="connectionProperties">
+			<props>
+				<prop key="MinLimit">100</prop>
+				<prop key="MaxLimit">500</prop>
+				<prop key="InitialLimit">150</prop>
+			</props>
+		</property>
+	</bean>     -->	
+
+    <!-- 配置ibatis的主配置文件 -->
+	<bean id="sqlMapClientReport" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean" scope="singleton">
+		<property name="configLocation">
+			<value>/WEB-INF/classes/com/application/configuration/orm/ibatis/reportSqlMapConfig.xml</value>
+		</property>
+		<property name="dataSource">
+			<ref bean="oracle_datasource1" />
+		</property>
+	</bean>
+	
+    <bean id ="jdbcTemplate"  class ="org.springframework.jdbc.core.JdbcTemplate">    
+         <property name ="dataSource">    
+            <ref bean ="oracle_datasource1"  />    
+         </property>    
+    </bean>    
+		
+	<bean id="messageSource"  scope="singleton" class="org.springframework.context.support.ReloadableResourceBundleMessageSource" >
+	     <property name="basenames">
+             <set><value>/webpages/report/system/resources</value></set>
+         </property>
+    </bean>
+
+    <bean id="beanUtil"  scope="singleton" class="com.web.action.report.htreport.util.SpringBeanUtil" ></bean>
+	
+	<!-- 配置ibatis的数据库Dao -->
+	<bean id="baseDao" class="com.web.action.report.htreport.dao.BaseDaoIbatis" scope="singleton">
+		<property name="sqlMapClient">
+			<ref local="sqlMapClientReport" />
+		</property>
+	</bean>
+	
+	<bean id="jdbcDao" class="com.web.action.report.htreport.dao.JDBCDaoImpl" scope="singleton">
+		 <property name ="dataSource">    
+            <ref bean ="oracle_datasource1"  />    
+         </property>  
+	</bean> 
+	
+
+
+	
+
+	
+	
+
+	
+
+	<!-- Service -->
+
+	
+
+
+
+	<bean id="selectHelper" class="com.web.action.report.htreport.comm.SelectHelper" scope="prototype" >
+		<property name="jdbcDao">
+			<ref local="jdbcDao" />
+		</property>
+	</bean>
+	
+	<bean id="reportService" class="com.web.action.report.htreport.report.service.ReportServiceImpl" scope="prototype" >
+		<property name="selectHelper">    
+            <ref bean="selectHelper" />
+        </property> 
+		<property name="baseDao">
+			<ref local="baseDao" />
+		</property>
+		<property name="jdbcDao">
+			<ref local="jdbcDao" />
+		</property>
+	</bean>
+	   
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="104857600"/>
+        <property name="maxInMemorySize" value="4096"/>
+    </bean>
+ 
+    
+    <bean id="comboRmtCtl"    class="com.web.action.report.htreport.web.ctl.ComboRmtCtl">   
+   		
+    </bean>
+    
+    <!-- 报表项 -->
+    <bean id="reportCtl"    class="com.web.action.report.htreport.report.ctl.ReportCtl">   
+     <!-- 
+      	<property name="methodNameResolver">    
+            <ref bean="paraMethodResolver"/>
+        </property>
+         --> 	
+         <property name="selectHelper">    
+            <ref bean="selectHelper" />
+        </property> 
+        <property name="reportService">    
+            <ref bean="reportService" />
+        </property> 
+    </bean>
+    
+    <bean id="sfwCtl"    class="com.web.action.report.htreport.report.ctl.SfwCtl">   
+        <property name="selectHelper">    
+            <ref bean="selectHelper" />
+        </property> 
+    </bean>
+	
+	
+</beans>

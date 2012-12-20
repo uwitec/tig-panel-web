@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ReportRpColumn">
+
+	<typeAlias alias="ReportRpColumn" type="com.web.action.report.htreport.domain.ReportRpColumn"/>
+	
+    <resultMap id="reportRpColumnModel" class="ReportRpColumn">
+    	<result property="columnId"        column="column_id"    /> 
+    	<result property="reportId"        column="report_id"    /> 
+    	<result property="columnName"        column="column_name"    /> 
+    	<result property="align"        column="align"    /> 
+    	<result property="fontColor"        column="font_color"    /> 
+    	<result property="bgColor"        column="bg_color"    /> 
+    	<result property="mergedFontColor"        column="merged_font_color"    /> 
+    	<result property="mergedBgColor"        column="merged_bg_color"    /> 
+    	<result property="merged"        column="merged"    /> 
+    	<result property="rollupType"        column="rollup_type"    /> 
+    	<result property="priority"        column="priority"    /> 
+    	<result property="isLastRowShow"        column="is_last_row_show"    /> 
+	</resultMap>
+	
+
+    <select id="findById" resultMap="reportRpColumnModel" parameterClass="string"  resultSetType="SCROLL_INSENSITIVE" >
+       	   select *  from t_report_rp_column where column_id = #value#
+    </select>
+    
+    
+    <select id="findByCondition" resultMap="reportRpColumnModel" parameterClass="java.util.Map"  resultSetType="SCROLL_INSENSITIVE" >
+        select *  from t_report_rp_column  where 1=1
+        <isNotEmpty prepend="and" property="reportId">
+			report_id=#reportId#
+		</isNotEmpty>
+		order by priority asc
+    </select>
+    
+    <select id="findPagingByCondition" resultMap="reportRpColumnModel" parameterClass="java.util.Map" resultSetType="SCROLL_INSENSITIVE">
+		select * from (select a.*,rownum rn from (select * from t_report_rp_column   where 1=1
+		<isNotEmpty prepend="and" property="reportId">
+			report_id=#reportId#
+		</isNotEmpty>
+		<isNotEmpty property="orderBy">order by  $orderBy$</isNotEmpty>  
+		<![CDATA[	
+			) a where rownum<= #endIndex#) b where b.rn >= #startIndex#
+		]]>
+
+	</select>
+    
+    <select id="findPagingCountByCondition"  resultClass="int" parameterClass="java.util.Map" resultSetType="SCROLL_INSENSITIVE">
+		select count(*)  from t_report_rp_column    where 1=1
+		<isNotEmpty prepend="and" property="reportId">
+			report_id=#reportId#
+		</isNotEmpty>
+	</select>
+
+
+</sqlMap>

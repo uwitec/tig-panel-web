@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <!-- 该配置文件进行基本的Spring和Hibernate的集成配置。
+          与业务相关的配置将放在其它的Spring配置文件中。 
+    -->
+    <!--
+    <bean id="oracle_datasource1" class="org.springframework.jndi.JndiObjectFactoryBean">
+         <property name="jndiName">
+         	 <value>jdbc/NCCONSLE_POOL</value>
+         </property>
+         <property name="resourceRef">
+         	<value>true</value>
+         </property>
+    </bean>  
+    -->
+    
+    <bean id="oracle_datasource1" class="org.springframework.jndi.JndiObjectFactoryBean">
+         <property name="jndiName">
+         	 <value>jdbc/MNGSYS_POOL</value>
+         </property>
+         <property name="resourceRef">
+         	<value>true</value>
+         </property>
+    </bean>  
+    
+    <!-- 公交二级
+    <bean id="sqlMapClient1"
+		class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>/WEB-INF/classes/com/application/configuration/orm/ibatis/sc_sqlMapConfig.xml</value>
+		</property>
+	</bean>
+	-->
+
+	<!-- 清算中心-->
+	<bean id="sqlMapClient1"
+		class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>/WEB-INF/classes/com/application/configuration/orm/ibatis/sqlMapConfig.xml</value>
+		</property>
+	</bean>
+    
+
+    <!-- 公交正式数据库链接 -->
+    <!-- 
+	<bean id="oracle_datasource1" class="oracle.jdbc.pool.OracleConnectionCacheImpl" destroy-method="close">
+		<property name="serverName"><value>10.0.3.20</value></property>
+		<property name="user"><value>hcbus</value></property>
+		<property name="password"><value>hcbus</value></property>
+		<property name="serviceName"><value>hcgjdb</value></property>
+		<property name="driverType"><value>thin</value></property>
+		<property name="networkProtocol"><value>tcp</value></property>
+		<property name="portNumber"><value>1521</value></property>
+		<property name="connectionProperties">
+			<props>
+				<prop key="MinLimit">100</prop>
+				<prop key="MaxLimit">500</prop>
+				<prop key="InitialLimit">150</prop>
+			</props>
+		</property>
+	</bean>
+	 -->
+	 
+	
+	
+	<!-- 公交测试数据库链接 
+	<bean id="oracle_datasource1" class="oracle.jdbc.pool.OracleConnectionCacheImpl" destroy-method="close">
+		<property name="serverName"><value>10.0.1.91</value></property>
+		<property name="user"><value>hcbus</value></property>
+		<property name="password"><value>hcbus</value></property>
+		<property name="serviceName"><value>devdb</value></property>
+		<property name="driverType"><value>thin</value></property>
+		<property name="networkProtocol"><value>tcp</value></property>
+		<property name="portNumber"><value>1521</value></property>
+		<property name="connectionProperties">
+			<props>
+				<prop key="MinLimit">100</prop>
+				<prop key="MaxLimit">500</prop>
+				<prop key="InitialLimit">150</prop>
+			</props>
+		</property>
+	</bean>
+	-->
+	<!--
+	<bean id="sqlMapClient1"
+		class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>/WEB-INF/classes/com/application/configuration/orm/ibatis/sc_sqlMapConfig.xml</value>
+		</property>
+	</bean> 
+	-->
+	<!-- 清算正式数据库链接 
+	<bean id="oracle_datasource1" class="oracle.jdbc.pool.OracleConnectionCacheImpl" destroy-method="close">
+		<property name="serverName"><value>10.0.1.10</value></property>
+		<property name="user"><value>nccc</value></property>
+		<property name="password"><value>111111</value></property>
+		<property name="serviceName"><value>hcykt</value></property>
+		<property name="driverType"><value>thin</value></property>
+		<property name="networkProtocol"><value>tcp</value></property>
+		<property name="portNumber"><value>1521</value></property>
+		<property name="connectionProperties">
+			<props>
+				<prop key="MinLimit">100</prop>
+				<prop key="MaxLimit">500</prop>
+				<prop key="InitialLimit">150</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="sqlMapClient1"
+		class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>/WEB-INF/classes/com/application/configuration/orm/ibatis/sqlMapConfig.xml</value>
+		</property>
+	</bean>-->
+	
+	<!-- 清算测试数据库链接 -->
+	<!-- <bean id="oracle_datasource1" class="oracle.jdbc.pool.OracleConnectionCacheImpl" destroy-method="close">
+		<property name="serverName"><value>10.0.1.88</value></property>
+		<property name="user"><value>ncbak</value></property>
+		<property name="password"><value>ncbak</value></property>
+		<property name="serviceName"><value>devdb</value></property>
+		<property name="driverType"><value>thin</value></property>
+		<property name="networkProtocol"><value>tcp</value></property>
+		<property name="portNumber"><value>1521</value></property>
+		<property name="connectionProperties">
+			<props>
+				<prop key="MinLimit">100</prop>
+				<prop key="MaxLimit">500</prop>
+				<prop key="InitialLimit">150</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="sqlMapClient1"
+		class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>/WEB-INF/classes/com/application/configuration/orm/ibatis/sqlMapConfig.xml</value>
+		</property>
+	</bean> -->
+
+	 <!-- 
+	<bean id="oracle_datasource1" class="oracle.jdbc.pool.OracleConnectionCacheImpl" destroy-method="close">
+		
+		<property name="serverName"><value>130.251.89.110</value></property>
+		<property name="user"><value>bus_cq</value></property>
+		<property name="password"><value>123</value></property>
+		<property name="serviceName"><value>orcl</value></property>
+		<property name="driverType"><value>thin</value></property>
+		<property name="networkProtocol"><value>tcp</value></property>
+		<property name="portNumber"><value>1521</value></property>
+		<property name="connectionProperties">
+			<props>
+				<prop key="MinLimit">100</prop>
+				<prop key="MaxLimit">500</prop>
+				<prop key="InitialLimit">150</prop>
+			</props>
+		</property>
+	</bean>
+   -->
+<!--	<bean id="sessionFactory1"-->
+<!--		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">-->
+<!--		<property name="dataSource">-->
+<!--			<ref local="oracle_datasource1" />-->
+<!--		</property>-->
+<!--		<property name="hibernateProperties">-->
+<!--			<props>-->
+<!--				<prop key="hibernate.dialect">-->
+<!--					org.hibernate.dialect.Oracle10gDialect-->
+<!--				</prop>-->
+<!--				<prop key="hibernate.show_sql">true</prop>-->
+<!--				<prop-->
+<!--					key="hibernate.jdbc.batch_size">-->
+<!--					30-->
+<!--				</prop>-->
+<!--				<prop key="hibernate.cache.provider_class">-->
+<!--					org.hibernate.cache.EhCacheProvider-->
+<!--				</prop>-->
+<!--				<prop key="hibernate.cache.use_query_cache">true</prop>-->
+<!--			</props>-->
+<!--		</property>-->
+<!--		<property name="configLocation">-->
+<!--			<value>/WEB-INF/classes/com/application/configuration/orm/hibernate/hibernate.cfg.xml</value>-->
+<!--		</property>-->
+<!--	</bean>-->
+	
+	
+	
+<!--	<bean id="hibernateDao1" class="com.dao.core.HibernateGenericDao">-->
+<!--		<property name="sessionFactory">-->
+<!--			<ref local="sessionFactory1" />-->
+<!--		</property>-->
+<!--	</bean>-->
+	
+	<bean id="ibatisDao1" class="com.dao.core.BatisGenericDao">
+		<property name="dataSource">
+			<ref local="oracle_datasource1" />
+		</property>
+		<property name="sqlMapClient">
+			<ref local="sqlMapClient1" />
+		</property>
+	</bean>
+	
+	
+	
+	
+<!--	<bean id="transactionManager1"-->
+<!--		class="org.springframework.orm.hibernate3.HibernateTransactionManager">-->
+<!--		<property name="sessionFactory">-->
+<!--			<ref local="sessionFactory1" />-->
+<!--		</property>-->
+<!--	</bean>-->
+	
+	<!-- 配置数据库的事务管理器，用于ibatis -->
+	<bean id="transactionManager2"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource"><ref local="oracle_datasource1"/></property>
+	</bean>
+
+	<!-- 配置数据库的事务属性。如哪些方法需要进行事务管理,用于hibernate -->
+<!--	<bean id="transactionAttributes1"-->
+<!--		class="org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource">-->
+<!--		<property name="properties">-->
+<!--			<props>-->
+<!--				<prop key="*_htransc">PROPAGATION_REQUIRED</prop>-->
+<!--			</props>-->
+<!--		</property>-->
+<!--	</bean>-->
+	
+	<!-- 配置数据库的事务属性。如哪些方法需要进行事务管理,用于ibatis -->
+	<bean id="transactionAttributes2"
+		class="org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource">
+		<property name="properties">
+			<props>
+				<prop key="*_itransc">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- 配置数据库事务拦截器,用于hibernate -->
+<!--	<bean id="transactionInterceptor1"-->
+<!--		class="org.springframework.transaction.interceptor.TransactionInterceptor">-->
+<!--		<property name="transactionManager">-->
+<!--			<ref local="transactionManager1" />-->
+<!--		</property>-->
+<!--		<property name="transactionAttributeSource">-->
+<!--			<ref local="transactionAttributes1" />-->
+<!--		</property>-->
+<!--	</bean>-->
+	
+	<!-- 配置数据库事务拦截器,用于ibatis -->
+	<bean id="transactionInterceptor2"
+		class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager">
+			<ref local="transactionManager2" />
+		</property>
+		<property name="transactionAttributeSource">
+			<ref local="transactionAttributes2" />
+		</property>
+	</bean>
+	
+	
+	<!-- 配置aop代理，当符合拦截条件时，自动激发拦截 -->
+	<bean id="transcationProxy"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor2</value>
+			</list>
+		</property>
+		<property name="beanNames">
+			<list>
+				<value>*Service</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Startup Object Bean -->
+	<bean id="AppStartupService" class="com.application.webserver.StartupObject">
+		<property name="sqlDao_i">
+			<ref local="ibatisDao1"/>
+		</property>
+	</bean>
+	
+	<!-- 定时器配置 -->
+	<!-- <bean id="busQuartzService" class="com.web.service.quartz.BusQuartzService">
+		<property name="sqlDao_i">
+			<ref bean="ibatisDao1"/>
+		</property>
+	</bean>
+	
+	<bean id="z" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="cronReportTriggerPublishSpider" />
+				<ref bean="sendAdjTrigger" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="cronReportTriggerPublishSpider" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="scheduledReportJobDetailPublishSpider" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/1 * * * ?</value>
+		</property>
+	</bean>
+	
+	<bean id="sendAdjTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="sendAdjJobDetail" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 4 * * ?</value>
+		</property>
+	</bean>
+	
+	<bean id="scheduledReportJobDetailPublishSpider" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="busConsoleQuartz" />
+		</property>
+		<property name="targetMethod">
+			<value>busStartQuartz</value>
+		</property>
+	</bean>
+	
+	<bean id="sendAdjJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="sendAdjQuartz" />
+		</property>
+		<property name="targetMethod">
+			<value>StartQuartz</value>
+		</property>
+	</bean>
+	
+	<bean id="sendAdjQuartz" class="com.web.quartz.SendAdjQuartz" autowire="byName">
+		<property name="busQuartzService">
+			<ref bean="busQuartzService"/>
+		</property>
+	</bean>
+
+	<bean id="busConsoleQuartz" class="com.web.quartz.ConsoleQuartz" autowire="byName">
+		<property name="busQuartzService">
+			<ref bean="busQuartzService"/>
+		</property>
+	</bean>
+	
+	<bean id="scheduledReportJobDetailPublishSpider" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="cchsConsoleQuartz" />
+		</property>
+		<property name="targetMethod">
+			<value>cchsStartQuartz</value>
+		</property>
+	</bean>
+
+	<bean id="cchsConsoleQuartz" class="com.web.quartz.ConsoleQuartz" autowire="byName">
+		<property name="busQuartzService">
+			<ref bean="busQuartzService"/>
+		</property>
+	</bean>
+    定时器END -->
+	
+	<bean id="localSequenceForSavetxndtl" class="com.dao.core.AppOracleSequenceForOffline">
+		<property name="dataSource">
+			<ref local="oracle_datasource1"/>
+		</property>
+		<property name="incrementerName">
+			<value>LOCALSEQFORSAVETXNDTL</value>
+		</property>
+		<property name="sequenceLength">
+			<value>10</value>
+		</property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="t_report_rp_query" >
+  <resultMap id="ibatorgenerated_BaseResultMap" class="com.web.form.report.reportconfig.t_report_rp_query" >
+	<result column="F_ENG" property="fEng" jdbcType="VARCHAR" />
+    <result column="REPORT_ID" property="report_id" jdbcType="DECIMAL" />
+    <result column="F_CHN" property="fChn" jdbcType="VARCHAR" />
+    <result column="INPUT_TYPE" property="inputType" jdbcType="CHAR" />
+    <result column="IS_NEED" property="isNeed" jdbcType="CHAR" />
+    <result column="PRIORITY" property="priority" jdbcType="DECIMAL" />
+    <result column="QUERY_ID" property="query_id" jdbcType="DECIMAL" />
+    <result column="QUERY_DOMAINS" property="queryDomains" jdbcType="VARCHAR" />
+    <result column="SP_DATA" property="spData" jdbcType="VARCHAR" />
+    <result column="OUT_KEY_NAME" property="outKeyName" jdbcType="VARCHAR" />
+    
+    <result column="IS_NEEDDESC" property="isNeeddesc" jdbcType="VARCHAR" />
+    <result column="INPUT_TYPEDESC" property="inputTypedesc" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <select id="select" resultMap="ibatorgenerated_BaseResultMap" parameterClass="com.web.form.report.reportconfig.t_report_rp_query" >
+	<![CDATA[
+		SELECT tt.*,
+			      q.DICTVALUEDESC AS IS_NEEDDESC,
+			      w.DICTVALUEDESC AS INPUT_TYPEDESC
+		FROM (
+	]]>
+	<![CDATA[
+		SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+	]]>
+	<![CDATA[ 
+    select F_ENG, REPORT_ID, F_CHN, INPUT_TYPE, IS_NEED, PRIORITY, QUERY_ID, QUERY_DOMAINS,
+      SP_DATA, OUT_KEY_NAME
+    from T_REPORT_RP_QUERY t
+      
+    ]]>
+    <dynamic prepend="where">
+		<isNotEmpty prepend="and" property="report_id">
+			REPORT_ID = #report_id:DECIMAL#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="query_id">
+			QUERY_ID = #query_id:DECIMAL#
+		</isNotEmpty>
+	</dynamic>	      
+	<![CDATA[
+		) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+	]]> 
+	<![CDATA[
+		) tt
+		  left join DICTINFOTB q on (tt.IS_NEED = q.DICTVALUE AND q.DICTTYPE = '40005' AND q.LOCALE = 'zh_CN')
+      left join DICTINFOTB w on (tt.INPUT_TYPE = w.DICTVALUE AND w.DICTTYPE = '40006' AND w.LOCALE = 'zh_CN')
+		order by REPORT_ID
+	]]>
+  </select>
+  
+  <delete id="delete" parameterClass="com.web.form.report.reportconfig.t_report_rp_query" >
+    delete from T_REPORT_RP_QUERY
+    where QUERY_ID = #query_id:DECIMAL#
+  </delete>
+
+  <insert id="insert" parameterClass="com.web.form.report.reportconfig.t_report_rp_query" >
+    insert into T_REPORT_RP_QUERY
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="fEng" >
+        F_ENG
+      </isNotNull>
+      <isNotNull prepend="," property="report_id" >
+        REPORT_ID
+      </isNotNull>
+      <isNotNull prepend="," property="query_id" >
+        QUERY_ID
+      </isNotNull>
+      <isNotNull prepend="," property="fChn" >
+        F_CHN
+      </isNotNull>
+      <isNotNull prepend="," property="inputType" >
+        INPUT_TYPE
+      </isNotNull>
+      <isNotNull prepend="," property="isNeed" >
+        IS_NEED
+      </isNotNull>
+      <isNotNull prepend="," property="priority" >
+        PRIORITY
+      </isNotNull>
+      <isNotNull prepend="," property="queryDomains" >
+        QUERY_DOMAINS
+      </isNotNull>
+      <isNotNull prepend="," property="spData" >
+        SP_DATA
+      </isNotNull>
+      <isNotNull prepend="," property="outKeyName" >
+        OUT_KEY_NAME
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="fEng" >
+        #fEng:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="report_id" >
+        #report_id:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="query_id" >
+        #query_id:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="fChn" >
+        #fChn:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="inputType" >
+        #inputType:CHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="isNeed" >
+        #isNeed:CHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="priority" >
+        #priority:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="queryDomains" >
+        #queryDomains:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="spData" >
+        #spData:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="outKeyName" >
+        #outKeyName:VARCHAR#
+      </isNotNull>
+      )
+    </dynamic>
+  </insert>
+  
+  <select id="selectCount" parameterClass="com.web.form.report.reportconfig.t_report_rp_query" resultClass="java.lang.Integer" >
+	<![CDATA[ 
+    select count(*) from T_REPORT_RP_QUERY
+    ]]>
+    <dynamic prepend="where">
+		<isNotEmpty prepend="and" property="query_id">
+			QUERY_ID = #query_id:DECIMAL#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="report_id">
+			REPORT_ID = #report_id:DECIMAL#
+		</isNotEmpty>
+	</dynamic>	
+	<isNotEmpty prepend="order by" property="sortString">
+		$sortString$
+	</isNotEmpty>        
+  </select>
+
+  <update id="update" parameterClass="com.web.form.report.reportconfig.t_report_rp_query" >
+    update T_REPORT_RP_QUERY
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="fChn" >
+        F_CHN = #fChn:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="inputType" >
+        INPUT_TYPE = #inputType:CHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="isNeed" >
+        IS_NEED = #isNeed:CHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="priority" >
+        PRIORITY = #priority:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="fEng" >
+        F_ENG = #fEng:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="queryDomains" >
+        QUERY_DOMAINS = #queryDomains:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="spData" >
+        SP_DATA = #spData:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="outKeyName" >
+        OUT_KEY_NAME = #outKeyName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="report_id" >
+        REPORT_ID = #report_id:DECIMAL#
+      </isNotNull>
+    </dynamic>
+    where QUERY_ID = #query_id:DECIMAL#
+  </update>
+</sqlMap>
