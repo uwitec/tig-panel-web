@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="admin" extends="BasePackage">
+		<!-- spring managed -->
+		<action name="systemmodule_*" class="ModuleActionBean" method="{1}">
+			<interceptor-ref name="SystemConsoleInterceptorStack"></interceptor-ref>
+			<result name="success">/webpages/administration/moduleinfo.jsp</result>
+		</action>
+		
+		<action name="systemrole_*" class="RoleActionBean" method="{1}">
+			<interceptor-ref name="SystemConsoleInterceptorStack"></interceptor-ref>
+			<result name="success">/webpages/administration/roleinfo.jsp</result>
+		</action>
+		
+		<action name="systemuser_*" class="UserActionBean" method="{1}">
+			<interceptor-ref name="SystemConsoleInterceptorStack"></interceptor-ref>
+			<result name="success">/webpages/administration/userinfo.jsp</result>
+		</action>
+		
+		<action name="systemunit_*" class="UnitActionBean" method="{1}">
+			<interceptor-ref name="SystemConsoleInterceptorStack"></interceptor-ref>
+			<result name="success">/webpages/administration/unitinfo.jsp</result>
+			<result name="unitLv2">/webpages/administration/unitLv1info.jsp</result>
+			<result name="unitLv3">/webpages/administration/unitLv2info.jsp</result>
+		</action>
+
+		<action name="systemlog_*" class="LogActionBean" method="{1}">
+			<interceptor-ref name="SystemConsoleInterceptorStack"></interceptor-ref>
+			<result name="success">/webpages/administration/loginfo.jsp</result>
+		</action>
+		
+		<action name="operatorinfo_*" class="OperatorinfoActionBean" method="{1}">
+          <interceptor-ref name="SystemConsoleInterceptorStack" /> 
+        <result name="success">/webpages/administration/operatorinfo.jsp</result> 
+     </action>
+		
+	</package>
+</struts>

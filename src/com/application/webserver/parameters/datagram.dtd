@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT datagram-config (field+)>
+<!ATTLIST datagram-config  name         CDATA  #REQUIRED>
+<!ATTLIST datagram-config  classname    CDATA  #REQUIRED>
+
+<!ELEMENT field (default-value?)>
+<!ATTLIST field property        CDATA                                                       #REQUIRED>
+<!ATTLIST field type            (B|A|N|S|AN|ANS|MMDD|YYYYMMDD|HHMMSS|YYYYMMDDHHMMSS|ALLVAR|NLLVAR|ANLLVAR|ANSLLVAR|ALLLVAR|NLLLVAR|ANLLLVAR|ANSLLLVAR|BLLVAR|BLLLVAR|CHINESE|CHINESELLVAR|CHINESELLLVAR|ANSLLVAROTHER|ANSLLLVAROTHER|ANSOTHER)          #REQUIRED>
+<!ATTLIST field pendingdir      (LEADING|TRAILING)                                          #REQUIRED>
+<!ATTLIST field pendingchar     (ZERO|SPACE)                                                #REQUIRED>
+<!ATTLIST field length          CDATA                                                       #REQUIRED>
+<!ATTLIST field format          (BCD|BINARY|ASCII|HEX|ASCIIOTHER)                                      #REQUIRED>
+
+
+<!ELEMENT default-value (#PCDATA)>

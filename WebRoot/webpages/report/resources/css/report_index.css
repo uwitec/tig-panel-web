@@ -1,0 +1,120 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+* {
+	font: 12px Verdana,Arial,Tahoma;
+}
+img {
+	border: none;
+}
+a {
+	color: #36C;
+	text-decoration: none;
+}
+a: hover {
+	color: #F33;
+	text-decoration: underline;
+}
+
+.center {
+	margin: 0 auto;
+}
+.w820 {
+	width: 820px;
+	position: absolute;
+}
+.mt1 {
+	margin-top: 8px;
+}
+.mt2 {
+	margin-top: 16px;
+}
+.clear {
+	overflow: hidden;
+}
+.tbox {
+	width: 95%;
+	border-bottom: 1px solid #BFD4E0;
+	overflow: hidden;
+}
+.tbox dt {
+	height: 22px;
+	line-height:22px;
+	background: #EBF3FB;
+	border: 1px solid #BFD4E0;
+	overflow: hidden;
+	clear: both;
+	text-align: left;
+}
+
+.tbox dd {
+	border-left: 1px solid #BFD4E0;
+	border-right: 1px solid #BFD4E0;
+	padding: 4px 4px 0;
+}
+.resultDD{
+	
+}
+
+.btn_a img{
+	width:15px;
+	height:15px;
+}
+
+.btn_a a{
+	BORDER-RIGHT: #93B3CA 1px solid;
+	BORDER-TOP: #93B3CA 1px solid;
+	BORDER-LEFT: #93B3CA 1px solid;
+	COLOR: #000000;
+	BORDER-BOTTOM: #93B3CA 1px solid;
+	TEXT-DECORATION: none;
+	PADDING:2px,4px,2px,4px;
+	font-weight:lighter;
+	background-color:#F3FAF3;
+}
+
+.btn_a a:visited { 
+	BORDER-RIGHT: #93B3CA 1px solid;
+	BORDER-TOP: #93B3CA 1px solid;
+	BORDER-LEFT: #93B3CA 1px solid;
+	COLOR: #000000;
+	BORDER-BOTTOM: #93B3CA 1px solid;
+	TEXT-DECORATION: none;
+	PADDING:2px,4px,2px,4px;
+	font-weight:lighter;
+	background-color:#F3FAF3;
+}
+
+.btn_a a:hover {
+	BORDER-RIGHT: #93B3CA 1px solid;
+	BORDER-TOP: #93B3CA 1px solid;
+	BORDER-LEFT: #93B3CA 1px solid;
+	COLOR: #000000;
+	BORDER-BOTTOM: #93B3CA 1px solid;
+	TEXT-DECORATION: none;
+	PADDING:2px,4px,2px,4px;
+	font-weight:lighter;
+	background-color:#F0FFE1;
+}
+.btn_a a:active  {
+	BORDER-RIGHT: #93B3CA 1px solid;
+	BORDER-TOP: #93B3CA 1px solid;
+	BORDER-LEFT: #93B3CA 1px solid;
+	COLOR: #000000;
+	BORDER-BOTTOM: #93B3CA 1px solid;
+	TEXT-DECORATION: none;
+	font-weight:lighter;
+	PADDING:2px,4px,2px,4px;
+}
+
+
+
+#load-ing-common{
+	position:absolute;right:5px;top:25px;
+	background:#FFFFE1 url(../image/loading.gif) no-repeat 4px 2px ;
+	z-index: 1;
+    height:20px;line-height:20px;width:150px;font-size:12px;padding-left:30px;
+    color:#090A00; 
+    border:1px #9EB1C2 solid;
+}

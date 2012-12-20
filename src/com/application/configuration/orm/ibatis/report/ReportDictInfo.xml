@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ReportDictInfo">
+
+	<typeAlias alias="ReportDictInfo" type="com.web.action.report.htreport.domain.ReportDictInfo"/>
+	<typeAlias alias="ReportDictCode" type="com.web.action.report.htreport.domain.ReportDictCode"/>
+	
+    <resultMap id="reportDictInfoModel" class="ReportDictInfo">
+		<result property="dictId"           column="dict_id"             />
+		<result property="dictEng"          column="dict_eng"            />
+		<result property="dictChn"          column="dict_chn"            />
+		<result property="dictStatus"        column="dict_status"          />
+		<result property="notes"            column="notes"               />
+		<result property="createUid"         column="create_uid"          />
+		<result property="createTime"        column="create_time"     jdbcType="Timestamp" javaType="java.sql.Timestamp"         />
+		<result property="lastModifyUid"    column="last_modify_uid"   />
+		<result property="lastModifyTime"   column="last_modify_time" jdbcType="Timestamp" javaType="java.sql.Timestamp"    />
+	</resultMap>
+	
+	<resultMap id="reportDictCodeModel" class="ReportDictCode">
+		<result property="codeValue"     column="code_value"          />
+		<result property="codeDesc"      column="code_desc"           />
+		<result property="dictId"        column="dict_id"             />
+		<result property="priority"      column="priority"            />
+	</resultMap>
+	
+
+    <select id="getReportDictCodeByDictId" resultMap="reportDictCodeModel" parameterClass="string"  resultSetType="SCROLL_INSENSITIVE" >
+       	   select *  from t_report_dict_code where dict_id = #value# order by priority asc
+    </select>
+    
+
+    
+    <select id="findByCondition" resultMap="reportDictInfoModel" parameterClass="java.util.Map"  resultSetType="SCROLL_INSENSITIVE" >
+        select *  from t_report_dict_info  
+        <dynamic prepend="WHERE">
+			<isNotEmpty prepend="AND" property="dictStatus">
+		        dict_status=#dictStatus# 
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="dictEng">
+		        dict_eng=#dictEng# 
+			</isNotEmpty>
+		</dynamic>
+    </select>
+    
+    
+	<select id="findPagingByCondition" resultMap="reportDictInfoModel" parameterClass="java.util.Map" resultSetType="SCROLL_INSENSITIVE">
+		select * from (select a.*,rownum rn from (select * from t_report_dict_info
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="query">
+			(	
+				upper(dict_eng) like upper('%$query$%') or
+				upper(dict_chn) like upper('%$query$%') or
+				upper(notes) like upper('%$query$%') 
+			)
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="dictStatus">
+				dict_status=#dictStatus#
+			</isNotEmpty>
+		</dynamic>	
+		<isNotEmpty property="orderBy">
+			order by   	$orderBy$
+		</isNotEmpty>
+		<![CDATA[	
+			) a where rownum<= #endIndex#) b where b.rn >= #startIndex#
+		]]>
+
+	</select>
+	
+	<select id="findPagingCountByCondition"  resultClass="int" parameterClass="java.util.Map" resultSetType="SCROLL_INSENSITIVE">
+		select count(*)  from t_report_dict_info
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="query">
+			(	
+				upper(dict_eng) like upper('%$query$%') or
+				upper(dict_chn) like upper('%$query$%') or
+				upper(notes) like upper('%$query$%') 
+			)
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="dictStatus">
+				dict_status=#dictStatus#
+			</isNotEmpty>
+		</dynamic>	
+	</select>
+  
+    
+    
+    <insert id="insert" parameterClass="ReportDictInfo"  >
+        insert into t_report_dict_info(dict_id,dict_eng,dict_chn,dict_status,notes,create_uid,create_time) 
+        	values 
+        (#dictId#,#dictEng#,#dictChn#,#dictStatus#,#notes#,#createUid#,#createTime#)
+    </insert>
+    
+    <insert id="insertReportDictCode" parameterClass="ReportDictCode"  >
+        insert into t_report_dict_code(code_value,code_desc,dict_id,priority) 
+        	values 
+        (#codeValue#,#codeDesc#,#dictId#,#priority#)
+    </insert>
+    
+    <update id="update" parameterClass="ReportDictInfo"   >
+        update t_report_dict_info set
+			dict_eng		 =#dictEng#        ,
+			dict_chn		 =#dictChn#        ,
+			dict_status		 =#dictStatus#      ,
+			notes			 =#notes#          ,
+			last_modify_uid	 =#lastModifyUid#  ,
+			last_modify_time =#lastModifyTime#
+        where dict_id = #dictId#
+    </update>
+    
+    <delete id="deleteByObjId" parameterClass="string" >
+        delete from t_report_dict_info where dict_id = #value#
+    </delete>
+
+	
+	<delete id="deleteReportDictCodeById" parameterClass="string" >
+        delete from t_report_dict_code where dict_id = #value#
+    </delete>	
+
+
+</sqlMap>

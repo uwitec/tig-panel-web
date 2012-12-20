@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE user-level-config PUBLIC "-//HUATENG//DTD User Level DTD//EN" "http://www.huateng.com/Guatemala/userlevel.dtd" >
+<user-level-config>
+	<user-level id="administrator" desc="Administrator">
+		<level>0</level>
+		<attribute-name>administrator</attribute-name>
+	</user-level>
+
+	<user-level id="user" desc="User">
+		<level>1</level>
+		<attribute-name>user</attribute-name>
+	</user-level>
+</user-level-config>

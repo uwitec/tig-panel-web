@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT user-level-config (user-level+)>
+
+<!ELEMENT user-level (level, attribute-name)>
+<!ATTLIST user-level id        ID      #REQUIRED>
+<!ATTLIST user-level desc      CDATA   #REQUIRED>
+
+<!ELEMENT level (#PCDATA)>
+<!ELEMENT attribute-name (#PCDATA)>

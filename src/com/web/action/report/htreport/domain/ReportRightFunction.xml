@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ReportRightFunction">
+
+	<typeAlias alias="ReportRightFunction" type="com.web.action.report.htreport.domain.ReportRightFunction"/>
+	
+    <resultMap id="reportRightFunctionModel" class="ReportRightFunction">
+    	<result property="funId"        column="fun_id"    /> 
+    	<result property="menuName"        column="menu_name"    /> 
+    	<result property="parentId"        column="parent_id"    /> 
+    	<result property="url"        column="url"    /> 
+    	<result property="status"        column="status"    /> 
+    	<result property="funType"        column="fun_type"    /> 
+    	<result property="priority"        column="priority"    /> 
+    	<result property="btn"        column="btn"    /> 
+    	<result property="notes"        column="notes"    /> 
+    	<result property="createUid"        column="create_uid"    /> 
+    	<result property="createTime"        column="create_time"    jdbcType="Timestamp" javaType="java.sql.Timestamp"  /> 
+    	<result property="lastModifyUid"        column="last_modify_uid"    /> 
+    	<result property="lastModifyTime"        column="last_modify_time"    jdbcType="Timestamp" javaType="java.sql.Timestamp"  /> 
+	</resultMap>
+	
+
+    <select id="getById" resultMap="reportRightFunctionModel" parameterClass="string"  resultSetType="SCROLL_INSENSITIVE" >
+       	SELECT *  FROM t_report_right_function WHERE fun_id = #value#
+    </select>
+    
+    <select id="findByCondition" resultMap="reportRightFunctionModel" parameterClass="java.util.Map"  resultSetType="SCROLL_INSENSITIVE" >
+        SELECT *  FROM t_report_right_function 
+        <dynamic prepend="WHERE">
+			<isNotEmpty prepend="AND" property="parentId">
+		        parent_id=#parentId# 
+			</isNotEmpty>
+		</dynamic>
+		order by priority asc
+    </select>
+    
+    <select id="getAll" resultMap="reportRightFunctionModel"  resultSetType="SCROLL_INSENSITIVE" >
+        SELECT *  FROM t_report_right_function 
+    </select>
+    
+    <select id="getChildrenCount" resultClass="int" parameterClass="java.util.Map" resultSetType="SCROLL_INSENSITIVE" >
+        select count(fun_id) from t_report_right_function where parent_id=#parentId# 
+		<isNotEmpty prepend="AND" property="rightType">
+		        fun_type=#funType# 
+		</isNotEmpty>
+    </select>
+    
+        
+    <select id="getCountByRoleIdFunId"  resultClass="int"  parameterClass="java.util.Map"  resultSetType="SCROLL_INSENSITIVE" >
+       	   select count(*)  from t_report_right_role_function where role_id = #roleId# and fun_id=#funId# 
+       	   <isNotEmpty prepend="AND" property="funType">
+		        fun_type=#funType# 
+		   </isNotEmpty>
+    </select>
+    
+    
+    <select id="getTreesByUserId" resultMap="reportRightFunctionModel" parameterClass="java.util.Map" resultSetType="SCROLL_INSENSITIVE" >
+        	select * from t_report_right_function 
+        	where status=1 
+				<isNotEmpty prepend="AND" property="rightType">
+			        fun_type=#funType# 
+			    </isNotEmpty>
+                and parent_id=#parentId# 
+        	    and fun_id in(select fun_id from t_report_right_role_function where
+        	      	role_id in(select role_id from t_report_right_user_role where user_id=#userId# )  
+        	        and role_id in(select role_id from t_report_right_role where status=1  )
+        	    ) 
+        	 order by priority  asc
+    </select>
+ 
+    
+    <insert id="insert" parameterClass="ReportRightFunction"  >
+        insert into t_report_right_function(fun_id,menu_name,parent_id,url,status,fun_type,priority,btn,notes,create_uid,create_time,last_modify_uid,last_modify_time) 
+        	values 
+        (#funId#,#menuName#,#parentId#,#url#,#status#,#funType#,#priority#,#btn#,#notes#,#createUid#,#createTime#,#lastModifyUid#,#lastModifyTime#)
+    </insert>
+    
+     <update id="update" parameterClass="ReportRightFunction"   >
+        update t_report_right_function set
+        		menu_name = #menuName#
+        		,parent_id = #parentId#
+        		,url = #url#
+        		,status = #status#
+        		,fun_type = #funType#
+        		,priority = #priority#
+        		,btn = #btn#
+        		,notes = #notes#
+        		,last_modify_uid = #lastModifyUid#
+        		,last_modify_time = #lastModifyTime#
+        where fun_id = #funId#
+    </update>
+    
+    <delete id="deleteByObjId" >
+        delete from t_report_right_function where fun_id = #value#
+    </delete>
+
+	
+	<delete id="deleteRoleFunctionById" parameterClass="string">
+        delete from t_report_right_role_function where fun_id = #value#
+    </delete>	
+
+</sqlMap>

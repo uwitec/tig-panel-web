@@ -1,0 +1,44 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+<!--	<mapping class="com.web.form.administration.Unit" />-->
+<!--	<mapping class="com.web.form.administration.User" />-->
+<!--	<mapping class="com.web.form.administration.Role" />-->
+<!--	<mapping class="com.web.form.administration.Module" />-->
+<!--	<mapping class="com.web.form.administration.Tpsettratetb" />-->
+<!--	<mapping class="com.web.form.administration.Tpfhunitdelaytb" />-->
+<!--	<mapping class="com.web.form.administration.Tpfhamtlimittb" />-->
+<!--	<mapping class="com.web.form.administration.Tpauthinfounittb" />-->
+<!--	-->
+<!--	<mapping class="com.web.form.businfomanagement.Bilineinfotb" />-->
+<!--	<mapping class="com.web.form.businfomanagement.Bilinestationinfotb" />-->
+<!--	<mapping class="com.web.form.businfomanagement.BilinestationinfotbId" />-->
+<!--	<mapping class="com.web.form.businfomanagement.Bistfinfotb" />-->
+<!--	<mapping class="com.web.form.businfomanagement.Bibusinfotb" />-->
+<!--	<mapping class="com.web.form.businfomanagement.Biposinfotb" />-->
+<!--	<mapping class="com.web.form.businfomanagement.Bisaminfotb" />-->
+<!--	<mapping class="com.web.form.businfomanagement.Biterminfotb" />-->
+<!--	<mapping class="com.web.form.businfomanagement.Bistfcardinfotb" />-->
+<!--	<mapping class="com.web.form.businfomanagement.Bimngcardinfotb" />-->
+<!--	<mapping class="com.web.form.businfomanagement.BimngcardinfotbId" />-->
+<!--	-->
+<!--	-->
+<!--	<mapping class="com.web.form.businfomanagement.Tpfareversiontb"/>-->
+<!--	<mapping class="com.web.form.businfomanagement.TpfareversiontbId"/>-->
+<!--	<mapping class="com.web.form.businfomanagement.Tplinesectioninfotb"/>-->
+<!--	<mapping class="com.web.form.businfomanagement.TplinesectioninfotbId"/>-->
+<!--	<mapping class="com.web.form.businfomanagement.Tpmultfareinfotb"/>-->
+<!--	<mapping class="com.web.form.businfomanagement.TpmultfareinfotbId"/>-->
+<!--	<mapping class="com.web.form.businfomanagement.Tpoffersinfotb"/>-->
+<!--	<mapping class="com.web.form.businfomanagement.TpoffersinfotbId"/>-->
+<!--	<mapping class="com.web.form.businfomanagement.Tpparamconfiginfotb"/>-->
+<!--	<mapping class="com.web.form.businfomanagement.TpparamconfiginfotbId"/>-->
+<!--	-->
+<!--	-->
+<!--	<mapping class="com.web.form.customservice.Bispecialpersoninfotb" />-->
+<!--	<mapping class="com.web.form.busopermanagement.Tldispatchinfotb" />-->
+</session-factory>
+</hibernate-configuration>

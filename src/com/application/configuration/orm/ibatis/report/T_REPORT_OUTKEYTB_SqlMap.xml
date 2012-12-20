@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="t_report_outkeytb" >
+  <resultMap id="ibatorgenerated_BaseResultMap" class="com.web.form.report.reportconfig.t_report_outkeytb" >
+    <result column="OUTKEYID" property="outkeyid" jdbcType="DECIMAL" />
+    <result column="OUTKEYNAME" property="outkeyname" jdbcType="VARCHAR" />
+    <result column="OUTKEYTABLE" property="outkeytable" jdbcType="VARCHAR" />
+    <result column="OUTKEYSQL" property="outkeysql" jdbcType="VARCHAR" />
+    <result column="OUTKEYDESC" property="outkeydesc" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <select id="select" resultMap="ibatorgenerated_BaseResultMap" parameterClass="com.web.form.report.reportconfig.t_report_outkeytb" >
+	<![CDATA[
+		SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+	]]>
+	<![CDATA[ 
+    select OUTKEYID, OUTKEYNAME, OUTKEYTABLE, OUTKEYSQL, OUTKEYDESC
+    from T_REPORT_OUTKEYTB    
+    ]]>
+    <dynamic prepend="where">
+		<isNotEmpty prepend="and" property="outkeyid">
+			OUTKEYID = #outkeyid:DECIMAL#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="outkeyname">
+			OUTKEYNAME = #outkeyname:VARCHAR#
+		</isNotEmpty>
+	</dynamic>		     
+	<![CDATA[
+		) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+	]]>
+  </select>
+
+  <delete id="delete" parameterClass="com.web.form.report.reportconfig.t_report_outkeytb" >
+    delete from T_REPORT_OUTKEYTB
+    where OUTKEYID = #outkeyid:DECIMAL#
+  </delete>
+
+  <insert id="insert" parameterClass="com.web.form.report.reportconfig.t_report_outkeytb" >
+    insert into T_REPORT_OUTKEYTB
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="outkeyid" >
+        OUTKEYID
+      </isNotNull>
+      <isNotNull prepend="," property="outkeyname" >
+        OUTKEYNAME
+      </isNotNull>
+      <isNotNull prepend="," property="outkeytable" >
+        OUTKEYTABLE
+      </isNotNull>
+      <isNotNull prepend="," property="outkeysql" >
+        OUTKEYSQL
+      </isNotNull>
+      <isNotNull prepend="," property="outkeydesc" >
+        OUTKEYDESC
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="outkeyid" >
+        #outkeyid:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="outkeyname" >
+        #outkeyname:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="outkeytable" >
+        #outkeytable:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="outkeysql" >
+        #outkeysql:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="outkeydesc" >
+        #outkeydesc:VARCHAR#
+      </isNotNull>
+      )
+    </dynamic>
+  </insert>
+  
+  <select id="selectCount" parameterClass="com.web.form.report.reportconfig.t_report_outkeytb" resultClass="java.lang.Integer" >
+	<![CDATA[ 
+    select count(*) from T_REPORT_OUTKEYTB
+    ]]>
+    <dynamic prepend="where">
+		<isNotEmpty prepend="and" property="outkeyid">
+			OUTKEYID = #outkeyid:DECIMAL#
+		</isNotEmpty>
+	</dynamic>	
+	<isNotEmpty prepend="order by" property="sortString">
+		$sortString$
+	</isNotEmpty> 
+	<isNotEmpty prepend="and" property="outkeyname">
+		OUTKEYNAME = #outkeyname:VARCHAR#
+	</isNotEmpty>      
+  </select>
+
+  <update id="update" parameterClass="com.web.form.report.reportconfig.t_report_outkeytb" >
+    update T_REPORT_OUTKEYTB
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="outkeyname" >
+        OUTKEYNAME = #outkeyname:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="outkeytable" >
+        OUTKEYTABLE = #outkeytable:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="outkeysql" >
+        OUTKEYSQL = #outkeysql:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="outkeydesc" >
+        OUTKEYDESC = #outkeydesc:VARCHAR#
+      </isNotNull>
+    </dynamic>
+    where OUTKEYID = #outkeyid:DECIMAL#
+  </update>
+</sqlMap>

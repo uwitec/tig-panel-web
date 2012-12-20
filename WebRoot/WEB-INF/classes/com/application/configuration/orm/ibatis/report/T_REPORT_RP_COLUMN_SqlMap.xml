@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="t_report_rp_column" >
+  <resultMap id="ibatorgenerated_BaseResultMap" class="com.web.form.report.reportconfig.t_report_rp_column" >
+    <result column="COLUMN_ID" property="column_id" jdbcType="DECIMAL" />
+    <result column="REPORT_ID" property="report_id" jdbcType="DECIMAL" />
+    <result column="COLUMN_NAME" property="columnName" jdbcType="VARCHAR" />
+    <result column="ALIGN" property="align" jdbcType="VARCHAR" />
+    <result column="FONT_COLOR" property="fontColor" jdbcType="VARCHAR" />
+    <result column="BG_COLOR" property="bgColor" jdbcType="VARCHAR" />
+    <result column="MERGED" property="merged" jdbcType="VARCHAR" />
+    <result column="ROLLUP_TYPE" property="rollupType" jdbcType="VARCHAR" />
+    <result column="MERGED_FONT_COLOR" property="mergedFontColor" jdbcType="VARCHAR" />
+    <result column="MERGED_BG_COLOR" property="mergedBgColor" jdbcType="VARCHAR" />
+    <result column="PRIORITY" property="priority" jdbcType="DECIMAL" />
+    <result column="IS_LAST_ROW_SHOW" property="isLastRowShow" jdbcType="VARCHAR" />
+    
+    <result column="IS_LAST_ROW_SHOWDESC" property="isLastRowShowdesc" jdbcType="VARCHAR" />
+    <result column="ALIGNDESC" property="aligndesc" jdbcType="VARCHAR" />
+    <result column="FONT_COLORDESC" property="fontColordesc" jdbcType="VARCHAR" />
+    <result column="BG_COLORDESC" property="bgColordesc" jdbcType="VARCHAR" />
+    <result column="MERGEDDESC" property="mergeddesc" jdbcType="VARCHAR" />
+    <result column="ROLLUP_TYPEDESC" property="rollupTypedesc" jdbcType="VARCHAR" />
+    <result column="MERGED_FONT_COLORDESC" property="mergedFontColordesc" jdbcType="VARCHAR" />
+    <result column="MERGED_BG_COLORDESC" property="mergedBgColordesc" jdbcType="VARCHAR" />    
+  </resultMap>
+
+  <select id="select" resultMap="ibatorgenerated_BaseResultMap" parameterClass="com.web.form.report.reportconfig.t_report_rp_column" >
+	<![CDATA[
+		SELECT tt.*,
+			      q.DICTVALUEDESC AS IS_LAST_ROW_SHOWDESC,
+			      w.DICTVALUEDESC AS ALIGNDESC,
+			      c.DICTVALUEDESC AS FONT_COLORDESC,
+			      d.DICTVALUEDESC AS BG_COLORDESC,
+			      e.DICTVALUEDESC AS MERGEDDESC,
+			      f.DICTVALUEDESC AS ROLLUP_TYPEDESC,
+			      g.DICTVALUEDESC AS MERGED_FONT_COLORDESC,
+			      h.DICTVALUEDESC AS MERGED_BG_COLORDESC
+		FROM (
+	]]>
+	<![CDATA[
+		SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+	]]>
+	<![CDATA[ 
+    select COLUMN_ID, REPORT_ID, COLUMN_NAME, ALIGN, FONT_COLOR, BG_COLOR, MERGED, ROLLUP_TYPE,
+      MERGED_FONT_COLOR, MERGED_BG_COLOR, PRIORITY, IS_LAST_ROW_SHOW
+    from T_REPORT_RP_COLUMN t
+     
+    ]]>
+    <dynamic prepend="where">
+		<isNotEmpty prepend="and" property="column_id">
+			COLUMN_ID = #column_id:DECIMAL#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="report_id">
+			REPORT_ID = #report_id:DECIMAL#
+		</isNotEmpty>
+	</dynamic>	
+	<![CDATA[
+		 order by report_id,priority
+		) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+	]]>
+	<![CDATA[
+		) tt
+		  left join DICTINFOTB q on (tt.IS_LAST_ROW_SHOW = q.DICTVALUE AND q.DICTTYPE = '40007' AND q.LOCALE = 'zh_CN')
+      left join DICTINFOTB w on (tt.ALIGN = w.DICTVALUE AND w.DICTTYPE = '40001' AND w.LOCALE = 'zh_CN')
+      left join DICTINFOTB c on (tt.FONT_COLOR = c.DICTVALUE AND c.DICTTYPE = '40002' AND c.LOCALE = 'zh_CN')
+      left join DICTINFOTB d on (tt.BG_COLOR = d.DICTVALUE AND d.DICTTYPE = '40003' AND d.LOCALE = 'zh_CN')
+      left join DICTINFOTB e on (tt.MERGED = e.DICTVALUE AND e.DICTTYPE = '40005' AND e.LOCALE = 'zh_CN')
+      left join DICTINFOTB f on (tt.ROLLUP_TYPE = f.DICTVALUE AND f.DICTTYPE = '40000' AND f.LOCALE = 'zh_CN')
+      left join DICTINFOTB g on (tt.MERGED_FONT_COLOR = g.DICTVALUE AND g.DICTTYPE = '40002' AND g.LOCALE = 'zh_CN')
+      left join DICTINFOTB h on (tt.MERGED_BG_COLOR = h.DICTVALUE AND h.DICTTYPE = '40003' AND h.LOCALE = 'zh_CN')
+      order by report_id,priority
+	]]>
+  </select>
+  
+  <delete id="delete" parameterClass="com.web.form.report.reportconfig.t_report_rp_column" >
+    delete from T_REPORT_RP_COLUMN
+    where COLUMN_ID = #column_id:DECIMAL#
+  </delete>
+
+  <insert id="insert" parameterClass="com.web.form.report.reportconfig.t_report_rp_column" >
+    insert into T_REPORT_RP_COLUMN
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="column_id" >
+        COLUMN_ID
+      </isNotNull>
+      <isNotNull prepend="," property="report_id" >
+        REPORT_ID
+      </isNotNull>
+      <isNotNull prepend="," property="columnName" >
+        COLUMN_NAME
+      </isNotNull>
+      <isNotNull prepend="," property="align" >
+        ALIGN
+      </isNotNull>
+      <isNotNull prepend="," property="fontColor" >
+        FONT_COLOR
+      </isNotNull>
+      <isNotNull prepend="," property="bgColor" >
+        BG_COLOR
+      </isNotNull>
+      <isNotNull prepend="," property="merged" >
+        MERGED
+      </isNotNull>
+      <isNotNull prepend="," property="rollupType" >
+        ROLLUP_TYPE
+      </isNotNull>
+      <isNotNull prepend="," property="mergedFontColor" >
+        MERGED_FONT_COLOR
+      </isNotNull>
+      <isNotNull prepend="," property="mergedBgColor" >
+        MERGED_BG_COLOR
+      </isNotNull>
+      <isNotNull prepend="," property="priority" >
+        PRIORITY
+      </isNotNull>
+      <isNotNull prepend="," property="isLastRowShow" >
+        IS_LAST_ROW_SHOW
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="column_id" >
+        #column_id:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="report_id" >
+        #report_id:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="columnName" >
+        #columnName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="align" >
+        #align:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="fontColor" >
+        #fontColor:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="bgColor" >
+        #bgColor:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="merged" >
+        #merged:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="rollupType" >
+        #rollupType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="mergedFontColor" >
+        #mergedFontColor:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="mergedBgColor" >
+        #mergedBgColor:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="priority" >
+        #priority:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="isLastRowShow" >
+        #isLastRowShow:VARCHAR#
+      </isNotNull>
+      )
+    </dynamic>
+  </insert>
+  
+  <select id="selectCount" parameterClass="com.web.form.report.reportconfig.t_report_rp_column" resultClass="java.lang.Integer" >
+	<![CDATA[ 
+    select count(*) from T_REPORT_RP_COLUMN
+    ]]>
+    <dynamic prepend="where">
+		<isNotEmpty prepend="and" property="column_id">
+			COLUMN_ID = #column_id:DECIMAL#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="report_id">
+			REPORT_ID = #report_id:DECIMAL#
+		</isNotEmpty>
+	</dynamic>	
+	<isNotEmpty prepend="order by" property="sortString">
+		$sortString$
+	</isNotEmpty>  
+  </select>
+
+  <update id="update" parameterClass="com.web.form.report.reportconfig.t_report_rp_column" >
+    update T_REPORT_RP_COLUMN
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="report_id" >
+        REPORT_ID = #report_id:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="columnName" >
+        COLUMN_NAME = #columnName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="align" >
+        ALIGN = #align:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="fontColor" >
+        FONT_COLOR = #fontColor:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="bgColor" >
+        BG_COLOR = #bgColor:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="merged" >
+        MERGED = #merged:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="rollupType" >
+        ROLLUP_TYPE = #rollupType:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="mergedFontColor" >
+        MERGED_FONT_COLOR = #mergedFontColor:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="mergedBgColor" >
+        MERGED_BG_COLOR = #mergedBgColor:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="priority" >
+        PRIORITY = #priority:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="isLastRowShow" >
+        IS_LAST_ROW_SHOW = #isLastRowShow:VARCHAR#
+      </isNotNull>
+    </dynamic>
+    where COLUMN_ID = #column_id:DECIMAL#
+  </update>
+</sqlMap>

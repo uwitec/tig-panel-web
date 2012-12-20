@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="report" extends="BasePackage">
+	    <!--清算处理 Start-->
+	    <!--单位消费清算报表-->
+		<action name="unitfhclearing_*" class="UnitFhClearingActionBean" method="{1}">
+			<interceptor-ref name="SystemConsoleInterceptorStack"></interceptor-ref>
+			<result name="success">/webpages/report/unitclearing.jsp</result>
+			<result name="reportresult" type="redirectAction">
+				<param name="actionName">/report/reportresult_queryResult</param>
+				<param name="querycondition_str">${querycondition_str}</param>
+				<param name="report_parameter_str">${report_parameter_str}</param>
+				<param name="query_form_name">${query_form_name}</param>
+				<param name="query_sql">${query_sql}</param>
+				<param name="report_template_name">${report_template_name}</param>
+			</result>
+			<result name="exportresult" type="redirectAction">
+				<param name="actionName">/report/reportresult_exportXlsResult</param>
+				<param name="querycondition_str">${querycondition_str}</param>
+				<param name="report_parameter_str">${report_parameter_str}</param>
+				<param name="query_form_name">${query_form_name}</param>
+				<param name="query_sql">${query_sql}</param>
+				<param name="report_template_name">${report_template_name}</param>
+			</result>
+		</action>
+		
+		<action name="reportresult_*" class="ReportResultActionBean" method="{1}">
+			<interceptor-ref name="SystemConsoleInterceptorStack"></interceptor-ref>
+		</action>
+	</package>
+	
+	<package name="webpages.report" extends="BasePackage">
+
+		<action name="combormt_*?*" class="comboRmtCtl" method="{1}">
+			
+		</action>
+		
+		<action name="report_*?*" class="reportCtl" method="{1}">
+			<result name="reportPrint.jsp">
+			/webpages/report/reportPrint.jsp
+			</result>
+		</action>
+	
+		<action name="sfw_*?*" class="sfwCtl" method="{1}">
+			
+		</action>
+	</package>	
+	
+	<package name="webpages.report.reportconfig" extends="BasePackage">
+	
+		<action name="t_report_rp_base_*" class="t_report_rp_baseActionBean" method="{1}">
+			<interceptor-ref name="SystemConsoleInterceptorStack"></interceptor-ref>
+			<result name="success">/webpages/report/reportconfig/t_report_rp_base.jsp</result>
+		</action>	
+
+		<action name="t_report_rp_query_*" class="t_report_rp_queryActionBean" method="{1}">
+			<interceptor-ref name="SystemConsoleInterceptorStack"></interceptor-ref>
+			<result name="success">/webpages/report/reportconfig/t_report_rp_query.jsp</result>
+		</action>	
+
+		<action name="t_report_rp_column_*" class="t_report_rp_columnActionBean" method="{1}">
+			<interceptor-ref name="SystemConsoleInterceptorStack"></interceptor-ref>
+			<result name="success">/webpages/report/reportconfig/t_report_rp_column.jsp</result>
+		</action>		
+
+		<action name="t_report_outkeytb_*" class="t_report_outkeytbActionBean" method="{1}">
+			<interceptor-ref name="SystemConsoleInterceptorStack"></interceptor-ref>
+			<result name="success">/webpages/report/reportconfig/t_report_outkeytb.jsp</result>
+		</action>		
+		
+	</package>	
+	
+	
+</struts>

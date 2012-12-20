@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<settings cacheModelsEnabled="true" enhancementEnabled="true"
+		lazyLoadingEnabled="true" maxRequests="512" maxSessions="256"
+		maxTransactions="50" useStatementNamespaces="true" />
+		
+	<sqlMap resource="com/application/configuration/orm/ibatis/all/sqlMap-PrivilegeQuery.xml"/>
+
+	<sqlMap resource="com/application/configuration/orm/ibatis/all/sqlMap-SystemBase.xml"/>
+	<sqlMap resource="com/application/configuration/orm/ibatis/all/sqlMap-UnitInfo.xml"/>
+	<sqlMap resource="com/application/configuration/orm/ibatis/all/sqlMap-SystemUser.xml"/>
+	<sqlMap resource="com/application/configuration/orm/ibatis/all/sqlMap-SystemModule.xml"/>
+	<sqlMap resource="com/application/configuration/orm/ibatis/all/sqlMap-SystemModuleInternational.xml"/>
+	<sqlMap resource="com/application/configuration/orm/ibatis/all/sqlMap-SystemRole.xml"/>
+	<sqlMap resource="com/application/configuration/orm/ibatis/all/sqlMap-SystemDictionary.xml"/>
+	<sqlMap resource="com/application/configuration/orm/ibatis/all/sqlMap-UserLog.xml"/>
+	<sqlMap resource="com/application/configuration/orm/ibatis/all/sqlMap-Report.xml"/>
+	
+	<!-- report					报表配置-->	
+	<sqlMap resource="com/application/configuration/orm/ibatis/report/T_REPORT_RP_BASE_SqlMap.xml"/>
+	<sqlMap resource="com/application/configuration/orm/ibatis/report/T_REPORT_RP_QUERY_SqlMap.xml"/>
+	<sqlMap resource="com/application/configuration/orm/ibatis/report/T_REPORT_RP_COLUMN_SqlMap.xml"/>
+	<sqlMap resource="com/application/configuration/orm/ibatis/report/T_REPORT_OUTKEYTB_SqlMap.xml"/>
+	
+</sqlMapConfig>

@@ -1,0 +1,4662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE system-dictionary-config PUBLIC "-//HUATENG//DTD System Dictionary DTD//EN" "http://www.huateng.com/Guatemala/systemdictionary.dtd">
+<system-dictionary-config>
+	<dictionary-item id="60007" desc="statueType">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.60007.statueType.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.60007.statueType.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.60007.statueType.2</value-description>
+		</item>
+		<item>
+			<value>9</value>
+			<value-description>dictionary.60007.statueType.9</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="10001" desc="rolestatus">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.10001.rolestatus.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.10001.rolestatus.2</value-description>
+		</item>
+	</dictionary-item>
+
+	<dictionary-item id="10002" desc="gender">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.10002.gender.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.10002.gender.2</value-description>
+		</item>
+	</dictionary-item>
+
+
+	<dictionary-item id="10003" desc="userstatus">
+		<item>
+			<value>1</value>
+			
+			<value-description>dictionary.10003.userstatus.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.10003.userstatus.2</value-description>
+		</item>
+	</dictionary-item>
+
+	<dictionary-item id="10004" desc="usertype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.10004.usertype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.10004.usertype.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="10005" desc="usertype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.10005.logflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.10005.logflag.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20001" desc="cardstate">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20001.cardstate.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20001.cardstate.1</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20001.cardstate.3</value-description>
+		</item>
+		<item>
+			<value>9</value>
+			<value-description>dictionary.20001.cardstate.9</value-description>
+		</item>
+		<item>
+			<value>10</value>
+			<value-description>dictionary.20001.cardstate.10</value-description>
+		</item>
+		<item>
+			<value>11</value>
+			<value-description>dictionary.20001.cardstate.11</value-description>
+		</item>
+		<item>
+			<value>12</value>
+			<value-description>dictionary.20001.cardstate.12</value-description>
+		</item>
+		<item>
+			<value>13</value>
+			<value-description>dictionary.20001.cardstate.13</value-description>
+		</item>
+		<item>
+			<value>14</value>
+			<value-description>dictionary.20001.cardstate.14</value-description>
+		</item>
+		<item>
+			<value>15</value>
+			<value-description>dictionary.20001.cardstate.15</value-description>
+		</item>
+		<item>
+			<value>16</value>
+			<value-description>dictionary.20001.cardstate.16</value-description>
+		</item>
+		<item>
+			<value>21</value>
+			<value-description>dictionary.20001.cardstate.21</value-description>
+		</item>
+		<item>
+			<value>22</value>
+			<value-description>dictionary.20001.cardstate.22</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20002" desc="crdphsctype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20002.crdphsctype.1</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20002.crdphsctype.3</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20003" desc="crdsalemode">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20003.crdsalemode.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20003.crdsalemode.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20004" desc="crdtestflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20004.crdtestflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20004.crdtestflag.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20005" desc="hylvl">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20005.hylvl.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20005.hylvl.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20005.hylvl.3</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20100" desc="crdacctype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20100.crdacctype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20100.crdacctype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20100.crdacctype.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20100.crdacctype.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.20100.crdacctype.5</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20101" desc="stptype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20101.stptype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20101.stptype.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20102" desc="stpattr">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20102.stpattr.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20102.stpattr.1</value-description>
+		</item>
+		<item>
+			<value>9999</value>
+			<value-description>dictionary.20102.stpattr.9999</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20103" desc="stpbusitype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20103.stpbusitype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20103.stpbusitype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20103.stpbusitype.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20103.stpbusitype.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.20103.stpbusitype.5</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20104" desc="stpstate">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20104.stpstate.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20104.stpstate.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20105" desc="stpconfirm">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20105.stpconfirm.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20105.stpconfirm.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20200" desc="disflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20200.disflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20200.disflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20200.disflag.2</value-description>
+		</item>
+	</dictionary-item>	
+	
+	<dictionary-item id="20006" desc="unittype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20006.unittype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20006.unittype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20006.unittype.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20007" desc="unitstat">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20007.unitstat.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20007.unitstat.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20007.unitstat.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20008" desc="unittestflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20008.unittestflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20008.unittestflag.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20009" desc="unitlvl">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20009.unitlvl.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20009.unitlvl.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20009.unitlvl.3</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20010" desc="nettype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20010.nettype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20010.nettype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20010.nettype.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20010.nettype.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.20010.nettype.5</value-description>
+		</item>
+	</dictionary-item>	
+	
+	<dictionary-item id="20011" desc="netstat">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20011.netstat.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20011.netstat.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20011.netstat.2</value-description>
+		</item>
+	</dictionary-item>	
+	
+	<dictionary-item id="20012" desc="samtype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20012.samtype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20012.samtype.1</value-description>
+		</item>
+	</dictionary-item>		
+	
+	<dictionary-item id="20013" desc="samstat">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20013.samstat.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20013.samstat.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20013.samstat.2</value-description>
+		</item>
+	</dictionary-item>				
+	
+	<dictionary-item id="20014" desc="poskind">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20014.poskind.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20014.poskind.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20014.poskind.2</value-description>
+		</item>
+	</dictionary-item>					
+	
+	<dictionary-item id="20015" desc="postype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20015.postype.1</value-description>
+		</item>
+	</dictionary-item>					
+	
+	<dictionary-item id="20016" desc="posstat">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20016.posstat.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20016.posstat.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20016.posstat.2</value-description>
+		</item>
+	</dictionary-item>						
+	
+	<dictionary-item id="20017" desc="poschkstat">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20017.poschkstat.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20017.poschkstat.1</value-description>
+		</item>
+	</dictionary-item>						
+	
+	<dictionary-item id="20018" desc="posstestflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20018.posstestflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20018.posstestflag.1</value-description>
+		</item>
+	</dictionary-item>								
+	
+	<dictionary-item id="20019" desc="settkind">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20019.settkind.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20019.settkind.2</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20020" desc="posrsvd">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20020.posrsvd.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20020.posrsvd.1</value-description>
+		</item>
+	</dictionary-item>								
+	
+	<dictionary-item id="20021" desc="paper_type">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20021.paper_type.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20021.paper_type.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20021.paper_type.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20021.paper_type.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20021.paper_type.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.20021.paper_type.5</value-description>
+		</item>
+		<item>
+			<value>6</value>
+			<value-description>dictionary.20021.paper_type.6</value-description>
+		</item>
+		<item>
+			<value>7</value>
+			<value-description>dictionary.20021.paper_type.7</value-description>
+		</item>
+		<item>
+			<value>8</value>
+			<value-description>dictionary.20021.paper_type.8</value-description>
+		</item>
+		<item>
+			<value>9</value>
+			<value-description>dictionary.20021.paper_type.9</value-description>
+		</item>
+	</dictionary-item>								
+	
+	<dictionary-item id="20022" desc="usertype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20022.usertype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20022.usertype.1</value-description>
+		</item>
+	</dictionary-item>									
+	
+	<dictionary-item id="20023" desc="status">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20023.status.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20023.status.1</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20023.status.3</value-description>
+		</item>
+		<item>
+			<value>9</value>
+			<value-description>dictionary.20023.status.9</value-description>
+		</item>
+		<item>
+			<value>11</value>
+			<value-description>dictionary.20023.status.11</value-description>
+		</item>
+		<item>
+			<value>12</value>
+			<value-description>dictionary.20023.status.12</value-description>
+		</item>
+		<item>
+			<value>13</value>
+			<value-description>dictionary.20023.status.13</value-description>
+		</item>
+	</dictionary-item>									
+	
+	<dictionary-item id="20024" desc="status">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20024.status.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20024.status.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20024.status.3</value-description>
+		</item>
+	</dictionary-item>										
+	
+	<dictionary-item id="20025" desc="rtn_val_type">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20025.rtn_val_type.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20025.rtn_val_type.2</value-description>
+		</item>
+	</dictionary-item>											
+	
+	<dictionary-item id="20026" desc="mediatype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20026.mediatype.1</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20026.mediatype.3</value-description>
+		</item>
+	</dictionary-item>												
+	
+	<dictionary-item id="20027" desc="status">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20027.status.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20027.status.2</value-description>
+		</item>
+	</dictionary-item>													
+	
+	<dictionary-item id="20028" desc="tjrlstate">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20028.tjrlstate.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20028.tjrlstate.1</value-description>
+		</item>
+	</dictionary-item>														
+	
+	<dictionary-item id="20029" desc="paramstate">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20029.paramstate.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20029.paramstate.1</value-description>
+		</item>
+	</dictionary-item>															
+	
+	<dictionary-item id="20030" desc="flag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20030.flag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20030.flag.1</value-description>
+		</item>
+	</dictionary-item>															
+	
+	<dictionary-item id="20031" desc="datatype">
+		<item>
+			<value>BL</value>
+			<value-description>dictionary.20031.datatype.BL</value-description>
+		</item>
+		<item>
+			<value>EC</value>
+			<value-description>dictionary.20031.datatype.EC</value-description>
+		</item>
+		<item>
+			<value>FP</value>
+			<value-description>dictionary.20031.datatype.FP</value-description>
+		</item>
+		<item>
+			<value>J0</value>
+			<value-description>dictionary.20031.datatype.J0</value-description>
+		</item>
+		<item>
+			<value>J1</value>
+			<value-description>dictionary.20031.datatype.J1</value-description>
+		</item>
+		<item>
+			<value>J2</value>
+			<value-description>dictionary.20031.datatype.J2</value-description>
+		</item>
+		<item>
+			<value>J3</value>
+			<value-description>dictionary.20031.datatype.J3</value-description>
+		</item>
+		<item>
+			<value>JB</value>
+			<value-description>dictionary.20031.datatype.JB</value-description>
+		</item>
+		<item>
+			<value>JF</value>
+			<value-description>dictionary.20031.datatype.JF</value-description>
+		</item>
+	</dictionary-item>															
+	
+	<dictionary-item id="20032" desc="reload_rule_param">
+		<item>
+			<value>0000</value>
+			<value-description>dictionary.20032.reload_rule_param.0000</value-description>
+		</item>
+		<item>
+			<value>0001</value>
+			<value-description>dictionary.20032.reload_rule_param.0001</value-description>
+		</item>
+		<item>
+			<value>0010</value>
+			<value-description>dictionary.20032.reload_rule_param.0010</value-description>
+		</item>
+		<item>
+			<value>0011</value>
+			<value-description>dictionary.20032.reload_rule_param.0011</value-description>
+		</item>
+		<item>
+			<value>0100</value>
+			<value-description>dictionary.20032.reload_rule_param.0100</value-description>
+		</item>
+		<item>
+			<value>0101</value>
+			<value-description>dictionary.20032.reload_rule_param.0101</value-description>
+		</item>
+		<item>
+			<value>0110</value>
+			<value-description>dictionary.20032.reload_rule_param.0110</value-description>
+		</item>
+		<item>
+			<value>0111</value>
+			<value-description>dictionary.20032.reload_rule_param.0111</value-description>
+		</item>
+		<item>
+			<value>1000</value>
+			<value-description>dictionary.20032.reload_rule_param.1000</value-description>
+		</item>
+		<item>
+			<value>1001</value>
+			<value-description>dictionary.20032.reload_rule_param.1001</value-description>
+		</item>
+		<item>
+			<value>1010</value>
+			<value-description>dictionary.20032.reload_rule_param.1010</value-description>
+		</item>
+	</dictionary-item>															
+	
+	<dictionary-item id="20033" desc="pkgtype">
+		<item>
+			<value>10</value>
+			<value-description>dictionary.20033.pkgtype.10</value-description>
+		</item>
+		<item>
+			<value>30</value>
+			<value-description>dictionary.20033.pkgtype.30</value-description>
+		</item>
+		<item>
+			<value>40</value>
+			<value-description>dictionary.20033.pkgtype.40</value-description>
+		</item>
+	</dictionary-item>															
+	
+	<dictionary-item id="20034" desc="chk">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20034.chk.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20034.chk.1</value-description>
+		</item>
+	</dictionary-item>															
+	
+	<dictionary-item id="20035" desc="chg_type">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20035.chg_type.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20035.chg_type.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20035.chg_type.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20035.chg_type.4</value-description>
+		</item>
+	</dictionary-item>															
+	
+	<dictionary-item id="20036" desc="datatype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20036.datatype.1</value-description>
+		</item>
+	</dictionary-item>															
+	
+	<dictionary-item id="20037" desc="dirstatus">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20037.dirstatus.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20037.dirstatus.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20037.dirstatus.2</value-description>
+		</item>
+	</dictionary-item>															
+	
+	<dictionary-item id="20038" desc="errtype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20038.errtype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20038.errtype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20038.errtype.3</value-description>
+		</item>
+	</dictionary-item>															
+	
+	<dictionary-item id="20039" desc="erractn">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20039.erractn.0</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20039.erractn.2</value-description>
+		</item>
+	</dictionary-item>															
+	
+	<dictionary-item id="20040" desc="erradjf">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20040.erradjf.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20040.erradjf.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20040.erradjf.3</value-description>
+		</item>
+	</dictionary-item>																
+	
+	<dictionary-item id="20041" desc="subjectid">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20041.subjectid.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20041.subjectid.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20041.subjectid.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20041.subjectid.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.20041.subjectid.5</value-description>
+		</item>
+		<item>
+			<value>10</value>
+			<value-description>dictionary.20041.subjectid.10</value-description>
+		</item>
+		<item>
+			<value>11</value>
+			<value-description>dictionary.20041.subjectid.11</value-description>
+		</item>
+		<item>
+			<value>12</value>
+			<value-description>dictionary.20041.subjectid.12</value-description>
+		</item>
+		<item>
+			<value>20</value>
+			<value-description>dictionary.20041.subjectid.20</value-description>
+		</item>
+		<item>
+			<value>21</value>
+			<value-description>dictionary.20041.subjectid.21</value-description>
+		</item>
+		<item>
+			<value>22</value>
+			<value-description>dictionary.20041.subjectid.22</value-description>
+		</item>
+		<item>
+			<value>23</value>
+			<value-description>dictionary.20041.subjectid.23</value-description>
+		</item>
+		<item>
+			<value>24</value>
+			<value-description>dictionary.20041.subjectid.24</value-description>
+		</item>
+		<item>
+			<value>25</value>
+			<value-description>dictionary.20041.subjectid.25</value-description>
+		</item>
+		<item>
+			<value>26</value>
+			<value-description>dictionary.20041.subjectid.26</value-description>
+		</item>
+		<item>
+			<value>27</value>
+			<value-description>dictionary.20041.subjectid.27</value-description>
+		</item>
+	</dictionary-item>																
+	
+	<dictionary-item id="20042" desc="transmode">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20042.transmode.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20042.transmode.1</value-description>
+		</item>
+	</dictionary-item>																
+	
+	<dictionary-item id="20043" desc="forwardflag">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20043.forwardflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20043.forwardflag.2</value-description>
+		</item>
+	</dictionary-item>																
+	
+	<dictionary-item id="20044" desc="pointchgflag">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20044.pointchgflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20044.pointchgflag.2</value-description>
+		</item>
+	</dictionary-item>																
+	
+	<dictionary-item id="20045" desc="smsflag">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20045.smsflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20045.smsflag.2</value-description>
+		</item>
+	</dictionary-item>																
+	
+	<dictionary-item id="20046" desc="prmid">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20046.prmid.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20046.prmid.1</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20046.prmid.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.20046.prmid.5</value-description>
+		</item>
+		<item>
+			<value>6</value>
+			<value-description>dictionary.20046.prmid.6</value-description>
+		</item>
+		<item>
+			<value>7</value>
+			<value-description>dictionary.20046.prmid.7</value-description>
+		</item>
+		<item>
+			<value>8</value>
+			<value-description>dictionary.20046.prmid.8</value-description>
+		</item>
+		<item>
+			<value>9</value>
+			<value-description>dictionary.20046.prmid.9</value-description>
+		</item>
+		<item>
+			<value>10</value>
+			<value-description>dictionary.20046.prmid.10</value-description>
+		</item>
+		<item>
+			<value>11</value>
+			<value-description>dictionary.20046.prmid.11</value-description>
+		</item>
+		<item>
+			<value>12</value>
+			<value-description>dictionary.20046.prmid.12</value-description>
+		</item>
+		<item>
+			<value>14</value>
+			<value-description>dictionary.20046.prmid.14</value-description>
+		</item>
+		<item>
+			<value>16</value>
+			<value-description>dictionary.20046.prmid.16</value-description>
+		</item>
+		<item>
+			<value>17</value>
+			<value-description>dictionary.20046.prmid.17</value-description>
+		</item>
+		<item>
+			<value>20</value>
+			<value-description>dictionary.20046.prmid.20</value-description>
+		</item>
+		<item>
+			<value>21</value>
+			<value-description>dictionary.20046.prmid.21</value-description>
+		</item>
+		<item>
+			<value>29</value>
+			<value-description>dictionary.20046.prmid.29</value-description>
+		</item>
+		<item>
+			<value>32</value>
+			<value-description>dictionary.20046.prmid.32</value-description>
+		</item>
+		<item>
+			<value>33</value>
+			<value-description>dictionary.20046.prmid.33</value-description>
+		</item>
+		<item>
+			<value>34</value>
+			<value-description>dictionary.20046.prmid.34</value-description>
+		</item>
+		<item>
+			<value>35</value>
+			<value-description>dictionary.20046.prmid.35</value-description>
+		</item>
+		<item>
+			<value>36</value>
+			<value-description>dictionary.20046.prmid.36</value-description>
+		</item>
+	</dictionary-item>																	
+	
+	<dictionary-item id="20047" desc="prmstat">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20047.prmstat.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20047.prmstat.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20047.prmstat.2</value-description>
+		</item>
+	</dictionary-item>																		
+	
+	<dictionary-item id="20048" desc="prmtype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20048.prmtype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20048.prmtypet.2</value-description>
+		</item>
+	</dictionary-item>																			
+	
+	<dictionary-item id="20049" desc="pkgsign">
+		<item>
+			<value>FH</value>
+			<value-description>dictionary.20049.pkgsign.FH</value-description>
+		</item>
+		<item>
+			<value>SV</value>
+			<value-description>dictionary.20049.pkgsign.SV</value-description>
+		</item>
+		<item>
+			<value>IC</value>
+			<value-description>dictionary.20049.pkgsign.IC</value-description>
+		</item>
+	</dictionary-item>																			
+	
+	<dictionary-item id="20050" desc="pkgtype">
+		<item>
+			<value>10</value>
+			<value-description>dictionary.20050.pkgtype.10</value-description>
+		</item>
+		<item>
+			<value>11</value>
+			<value-description>dictionary.20050.pkgtype.11</value-description>
+		</item>
+		<item>
+			<value>12</value>
+			<value-description>dictionary.20050.pkgtype.12</value-description>
+		</item>
+		<item>
+			<value>30</value>
+			<value-description>dictionary.20050.pkgtype.30</value-description>
+		</item>
+		<item>
+			<value>20</value>
+			<value-description>dictionary.20050.pkgtype.20</value-description>
+		</item>
+		<item>
+			<value>21</value>
+			<value-description>dictionary.20050.pkgtype.21</value-description>
+		</item>
+		<item>
+			<value>22</value>
+			<value-description>dictionary.20050.pkgtype.22</value-description>
+		</item>
+		<item>
+			<value>23</value>
+			<value-description>dictionary.20050.pkgtype.23</value-description>
+		</item>
+		<item>
+			<value>24</value>
+			<value-description>dictionary.20050.pkgtype.24</value-description>
+		</item>
+		<item>
+			<value>25</value>
+			<value-description>dictionary.20050.pkgtype.25</value-description>
+		</item>
+		<item>
+			<value>40</value>
+			<value-description>dictionary.20050.pkgtype.40</value-description>
+		</item>
+	</dictionary-item>																				
+	
+	<dictionary-item id="20051" desc="pkgtxntype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20051.pkgtxntype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20051.pkgtxntype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20051.pkgtxntype.2</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20051.pkgtxntype.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.20051.pkgtxntype.5</value-description>
+		</item>
+		<item>
+			<value>6</value>
+			<value-description>dictionary.20051.pkgtxntype.6</value-description>
+		</item>
+	</dictionary-item>																						
+	
+	<dictionary-item id="20052" desc="unitidtype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20052.unitidtype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20052.unitidtype.1</value-description>
+		</item>
+	</dictionary-item>																						
+	
+	<dictionary-item id="20053" desc="gentype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20053.gentype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20053.gentype.1</value-description>
+		</item>
+	</dictionary-item>																							
+	
+	<dictionary-item id="20054" desc="autodown">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20054.autodown.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20054.autodown.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20054.autodown.2</value-description>
+		</item>
+	</dictionary-item>																										
+	
+	<dictionary-item id="20055" desc="accclearstat">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20055.accclearstat.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20055.accclearstat.1</value-description>
+		</item>
+	</dictionary-item>																											
+	
+	<dictionary-item id="20056" desc="battype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20056.battype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20056.battype.2</value-description>
+		</item>
+	</dictionary-item>																										
+	
+	<dictionary-item id="20057" desc="mission">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20057.mission.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20057.mission.1</value-description>
+		</item>
+	</dictionary-item>																												
+	
+	<dictionary-item id="20058" desc="batpermission">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20058.batpermission.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20058.batpermission.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20058.batpermission.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20058.batpermission.3</value-description>
+		</item>
+	</dictionary-item>																								
+	
+	<dictionary-item id="20059" desc="monpermission">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20059.monpermission.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20059.monpermission.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20060" desc="cutstatflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20060.cutstatflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20060.cutstatflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20060.cutstatflag.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20061" desc="nodestat">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20061.nodestat.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20061.nodestat.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20062" desc="status">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20062.status.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20062.status.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20062.status.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20062.status.3</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20063" desc="schednessary">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20063.schednessary.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20063.schednessary.1</value-description>
+		</item>
+	</dictionary-item>																												
+	
+	<dictionary-item id="20064" desc="schedisuse">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20064.schedisuse.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20064.schedisuse.1</value-description>
+		</item>
+	</dictionary-item>																									
+	
+	<dictionary-item id="20065" desc="scheddisflag">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20065.scheddisflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20065.scheddisflag.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20065.scheddisflag.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20065.scheddisflag.4</value-description>
+		</item>
+	</dictionary-item>																									
+	
+	<dictionary-item id="20066" desc="tjrltranstype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20066.tjrltranstype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20066.tjrltranstype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20066.tjrltranstype.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20066.tjrltranstype.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.20066.tjrltranstype.5</value-description>
+		</item>
+		<item>
+			<value>6</value>
+			<value-description>dictionary.20066.tjrltranstype.6</value-description>
+		</item>
+		<item>
+			<value>7</value>
+			<value-description>dictionary.20066.tjrltranstype.7</value-description>
+		</item>
+		<item>
+			<value>9</value>
+			<value-description>dictionary.20066.tjrltranstype.9</value-description>
+		</item>
+		<item>
+			<value>50</value>
+			<value-description>dictionary.20066.tjrltranstype.50</value-description>
+		</item>
+		<item>
+			<value>60</value>
+			<value-description>dictionary.20066.tjrltranstype.60</value-description>
+		</item>
+		<item>
+			<value>61</value>
+			<value-description>dictionary.20066.tjrltranstype.61</value-description>
+		</item>
+		<item>
+			<value>62</value>
+			<value-description>dictionary.20066.tjrltranstype.62</value-description>
+		</item>
+		<item>
+			<value>63</value>
+			<value-description>dictionary.20066.tjrltranstype.63</value-description>
+		</item>		
+		<item>
+			<value>64</value>
+			<value-description>dictionary.20066.tjrltranstype.64</value-description>
+		</item>
+		<item>
+			<value>70</value>
+			<value-description>dictionary.20066.tjrltranstype.70</value-description>
+		</item>
+		<item>
+			<value>71</value>
+			<value-description>dictionary.20066.tjrltranstype.71</value-description>
+		</item>
+		<item>
+			<value>72</value>
+			<value-description>dictionary.20066.tjrltranstype.72</value-description>
+		</item>
+		<item>
+			<value>73</value>
+			<value-description>dictionary.20066.tjrltranstype.73</value-description>
+		</item>		
+		<item>
+			<value>74</value>
+			<value-description>dictionary.20066.tjrltranstype.74</value-description>
+		</item>
+		<item>
+			<value>75</value>
+			<value-description>dictionary.20066.tjrltranstype.75</value-description>
+		</item>
+		<item>
+			<value>76</value>
+			<value-description>dictionary.20066.tjrltranstype.76</value-description>
+		</item>
+		<item>
+			<value>77</value>
+			<value-description>dictionary.20066.tjrltranstype.77</value-description>
+		</item>
+		<item>
+			<value>78</value>
+			<value-description>dictionary.20066.tjrltranstype.78</value-description>
+		</item>
+		<item>
+			<value>79</value>
+			<value-description>dictionary.20066.tjrltranstype.79</value-description>
+		</item>
+		<item>
+			<value>80</value>
+			<value-description>dictionary.20066.tjrltranstype.80</value-description>
+		</item>
+		<item>
+			<value>81</value>
+			<value-description>dictionary.20066.tjrltranstype.81</value-description>
+		</item>
+		<item>
+			<value>82</value>
+			<value-description>dictionary.20066.tjrltranstype.82</value-description>
+		</item>
+		<item>
+			<value>83</value>
+			<value-description>dictionary.20066.tjrltranstype.83</value-description>
+		</item>
+		<item>
+			<value>84</value>
+			<value-description>dictionary.20066.tjrltranstype.84</value-description>
+		</item>
+		<item>
+			<value>85</value>
+			<value-description>dictionary.20066.tjrltranstype.85</value-description>
+		</item>
+		<item>
+			<value>86</value>
+			<value-description>dictionary.20066.tjrltranstype.86</value-description>
+		</item>
+		<item>
+			<value>87</value>
+			<value-description>dictionary.20066.tjrltranstype.87</value-description>
+		</item>
+		<item>
+			<value>88</value>
+			<value-description>dictionary.20066.tjrltranstype.88</value-description>
+		</item>
+		<item>
+			<value>89</value>
+			<value-description>dictionary.20066.tjrltranstype.89</value-description>
+		</item>
+		<item>
+			<value>90</value>
+			<value-description>dictionary.20066.tjrltranstype.90</value-description>
+		</item>
+		<item>
+			<value>99</value>
+			<value-description>dictionary.20066.tjrltranstype.99</value-description>
+		</item>	
+	</dictionary-item>																												
+	
+	<dictionary-item id="20067" desc="tjrlcdphykind">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20067.tjrlcdphykind.1</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20067.tjrlcdphykind.3</value-description>
+		</item>
+	</dictionary-item>																													
+	
+	<dictionary-item id="20068" desc="tjrltestflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20068.tjrltestflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20068.tjrltestflag.1</value-description>
+		</item>
+	</dictionary-item>																														
+	
+	<dictionary-item id="20069" desc="tjrladjflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20069.tjrladjflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20069.tjrladjflag.1</value-description>
+		</item>
+	</dictionary-item>																														
+	
+	<dictionary-item id="20070" desc="tjrlsalemode">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20070.tjrlsalemode.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20070.tjrlsalemode.1</value-description>
+		</item>
+	</dictionary-item>																														
+	
+	<dictionary-item id="20071" desc="tjrlsvflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20071.tjrlsvflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20071.tjrlsvflag.1</value-description>
+		</item>
+	</dictionary-item>																														
+	
+	<dictionary-item id="20072" desc="cardstat">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20072.cardstat.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20072.cardstat.1</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20072.cardstat.3</value-description>
+		</item>
+		<item>
+			<value>9</value>
+			<value-description>dictionary.20072.cardstat.9</value-description>
+		</item>
+		<item>
+			<value>11</value>
+			<value-description>dictionary.20072.cardstat.11</value-description>
+		</item>
+		<item>
+			<value>12</value>
+			<value-description>dictionary.20072.cardstat.12</value-description>
+		</item>
+		<item>
+			<value>13</value>
+			<value-description>dictionary.20072.cardstat.13</value-description>
+		</item>
+	</dictionary-item>																														
+	
+	<dictionary-item id="20073" desc="chipbadtype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20073.chipbadtype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20073.chipbadtype.1</value-description>
+		</item>
+	</dictionary-item>																														
+	
+	<dictionary-item id="20074" desc="cardfacebadtype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20074.cardfacebadtype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20074.cardfacebadtype.1</value-description>
+		</item>
+	</dictionary-item>																														
+	
+	<dictionary-item id="20075" desc="txndelayflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20075.txndelayflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20075.txndelayflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20075.txndelayflag.2</value-description>
+		</item>
+	</dictionary-item>																															
+	
+	<dictionary-item id="20076" desc="txnprocflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20076.txnprocflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20076.txnprocflag.1</value-description>
+		</item>
+	</dictionary-item>																															
+	
+	<dictionary-item id="20077" desc="txncfmflag">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20077.txncfmflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20077.txncfmflag.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20077.txncfmflag.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20077.txncfmflag.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.20077.txncfmflag.5</value-description>
+		</item>
+		<item>
+			<value>6</value>
+			<value-description>dictionary.20077.txncfmflag.6</value-description>
+		</item>
+		<item>
+			<value>7</value>
+			<value-description>dictionary.20077.txncfmflag.7</value-description>
+		</item>
+		<item>
+			<value>8</value>
+			<value-description>dictionary.20077.txncfmflag.8</value-description>
+		</item>
+		<item>
+			<value>9</value>
+			<value-description>dictionary.20077.txncfmflag.9</value-description>
+		</item>
+	</dictionary-item>																															
+	
+	<dictionary-item id="20078" desc="rlmonfeeflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20078.rlmonfeeflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20078.rlmonfeeflag.1</value-description>
+		</item>
+	</dictionary-item>																																
+	
+	<dictionary-item id="20079" desc="rladjflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20079.rladjflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20079.rladjflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20079.rladjflag.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20079.rladjflag.3</value-description>
+		</item>
+	</dictionary-item>																																
+	
+	<dictionary-item id="20080" desc="disflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20080.disflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20080.disflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20080.disflag.2</value-description>
+		</item>
+	</dictionary-item>																																
+	
+	<dictionary-item id="20081" desc="olauthchk">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20081.olauthchk.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20081.olauthchk.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20081.olauthchk.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20081.olauthchk.3</value-description>
+		</item>
+	</dictionary-item>																																	
+	
+	<dictionary-item id="20082" desc="oltxnsrc">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20082.oltxnsrc.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20082.oltxnsrc.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20082.oltxnsrc.2</value-description>
+		</item>
+	</dictionary-item>																																	
+	
+	<dictionary-item id="20083" desc="tjbckflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20083.tjbckflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20083.tjbckflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20083.tjbckflag.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20083.tjbckflag.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20083.tjbckflag.4</value-description>
+		</item>
+	</dictionary-item>																																	
+	
+	<dictionary-item id="20084" desc="tjtotalflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20084.tjtotalflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20084.tjtotalflag.1</value-description>
+		</item>
+	</dictionary-item>																																	
+	
+	<dictionary-item id="20085" desc="authstate">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20085.authstate.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20085.authstate.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20085.authstate.2</value-description>
+		</item>
+	</dictionary-item>																																	
+	
+	<dictionary-item id="20086" desc="pkgtype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20086.pkgtype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20086.pkgtype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20086.pkgtype.2</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20086.pkgtype.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.20086.pkgtype.5</value-description>
+		</item>
+		<item>
+			<value>6</value>
+			<value-description>dictionary.20086.pkgtype.6</value-description>
+		</item>
+	</dictionary-item>																																	
+	
+	<dictionary-item id="20087" desc="pkgmode">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20087.pkgmode.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20087.pkgmode.2</value-description>
+		</item>
+	</dictionary-item>																																	
+	
+	<dictionary-item id="20088" desc="pkgstatus">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20088.pkgstatus.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20088.pkgstatus.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20088.pkgstatus.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20088.pkgstatus.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20088.pkgstatus.4</value-description>
+		</item>
+	</dictionary-item>																																	
+	
+	<dictionary-item id="20089" desc="pkgtestflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20089.pkgtestflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20089.pkgtestflag.1</value-description>
+		</item>
+	</dictionary-item>																																	
+	
+	<dictionary-item id="20090" desc="susadjflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20090.susadjflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20090.susadjflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20090.susadjflag.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20090.susadjflag.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20090.susadjflag.4</value-description>
+		</item>
+	</dictionary-item>	
+
+<!-- 闁稿浚鍏涘锔撅拷娑欘殰閸氾拷 --> 	
+	
+	
+	<dictionary-item id="20091" desc="branchstate">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20091.branchstate.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20091.branchstate.1</value-description>
+		</item>
+	</dictionary-item>						
+	
+	<dictionary-item id="20092" desc="feetype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20092.feetype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20092.feetype.1</value-description>
+		</item>
+	</dictionary-item>						
+	
+	<dictionary-item id="20093" desc="directinfo">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20093.directinfo.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20093.directinfo.1</value-description>
+		</item>
+	</dictionary-item>						
+	
+	<dictionary-item id="20094" desc="cardstate">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20094.cardstate.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20094.cardstate.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20094.cardstate.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20094.cardstate.3</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20095" desc="writecardparm">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20095.writecardparm.1</value-description>
+		</item>
+	</dictionary-item>				
+	
+	<dictionary-item id="20099" desc="df_open_purse">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20099.df_open_purse.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20099.df_open_purse.1</value-description>
+		</item>
+	</dictionary-item>					
+	
+	<dictionary-item id="20106" desc="comm_safe_type">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20106.comm_safe_type.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20106.comm_safe_type.1</value-description>
+		</item>
+	</dictionary-item>						
+	
+	<dictionary-item id="20107" desc="sex">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20107.sex.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20107.sex.1</value-description>
+		</item>
+	</dictionary-item>						
+	
+	<dictionary-item id="20108" desc="crdtype">
+		<item>
+			<value>0501</value>
+			<value-description>dictionary.20108.crdtype.0501</value-description>
+		</item>
+		<item>
+			<value>0502</value>
+			<value-description>dictionary.20108.crdtype.0502</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20109" desc="upflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20109.upflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20109.upflag.1</value-description>
+		</item>
+	</dictionary-item>								
+	
+	<dictionary-item id="20110" desc="poskind">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20110.poskind.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20110.poskind.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20110.poskind.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20110.poskind.3</value-description>
+		</item>
+	</dictionary-item>									
+	
+	<dictionary-item id="20111" desc="poscollecttype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20111.poscollecttype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20111.poscollecttype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20111.poscollecttype.2</value-description>
+		</item>
+	</dictionary-item>									
+	
+	<dictionary-item id="20112" desc="directflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20112.directflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20112.directflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20112.directflag.2</value-description>
+		</item>
+	</dictionary-item>									
+	
+	<dictionary-item id="20113" desc="blcardflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20113.blcardflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20113.blcardflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20113.blcardflag.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20113.blcardflag.3</value-description>
+		</item>
+	</dictionary-item>									
+	
+	<dictionary-item id="20114" desc="reserved">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20114.reserved.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20114.reserved.1</value-description>
+		</item>
+		<item>
+			<value>9</value>
+			<value-description>dictionary.20114.reserved.9</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20115" desc="farmode">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20115.farmode.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20115.farmode.1</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20116" desc="premode">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20116.premode.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20116.premode.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20116.premode.2</value-description>
+		</item>
+	</dictionary-item>								
+	
+	<dictionary-item id="20117" desc="paramstate">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20117.paramstate.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20117.paramstate.1</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20118" desc="timetype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20118.timetype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20118.timetype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20118.timetype.2</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20119" desc="paramtype">
+		<item>
+			<value>P0</value>
+			<value-description>dictionary.20119.paramtype.P0</value-description>
+		</item>
+		<item>
+			<value>P1</value>
+			<value-description>dictionary.20119.paramtype.P1</value-description>
+		</item>
+		<item>
+			<value>P2</value>
+			<value-description>dictionary.20119.paramtype.P2</value-description>
+		</item>
+		<item>
+			<value>P3</value>
+			<value-description>dictionary.20119.paramtype.P3</value-description>
+		</item>
+	</dictionary-item>								
+	
+	<dictionary-item id="20120" desc="codetype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20120.codetype.1</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20120.codetype.3</value-description>
+		</item>
+	</dictionary-item>								
+	
+	<dictionary-item id="20121" desc="createflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20121.createflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20121.createflag.1</value-description>
+		</item>
+	</dictionary-item>								
+	
+	<dictionary-item id="20122" desc="tableflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20122.tableflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20122.tableflag.1</value-description>
+		</item>	
+	</dictionary-item>							
+	
+	<dictionary-item id="20123" desc="creattime">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20123.creattime.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20123.creattime.1</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20124" desc="usetag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20124.usetag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20124.usetag.1</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20125" desc="configtype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20125.configtype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20125.configtype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20125.configtype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20125.configtype.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20125.configtype.4</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20126" desc="type">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20126.type.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20126.type.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20126.type.2</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20126.type.4</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20127" desc="merged">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20127.merged.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20127.merged.1</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20128" desc="rolluptype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20128.rolluptype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20128.rolluptype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20128.rolluptype.2</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20129" desc="localstatus">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20129.localstatus.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20129.localstatus.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20129.localstatus.2</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20130" desc="pkgstatus">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20130.pkgstatus.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20130.pkgstatus.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20130.pkgstatus.2</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20131" desc="sign">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20131.sign.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20131.sign.1</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20132" desc="usertype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20132.usertype.0</value-description>
+		</item>
+		<item>
+			<value>9</value>
+			<value-description>dictionary.20132.usertype.9</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20133" desc="pretype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20133.pretype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20133.pretype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20133.pretype.2</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20134" desc="susatt">
+		<item>
+			<value>00</value>
+			<value-description>dictionary.20134.susatt.00</value-description>
+		</item>
+		<item>
+			<value>01</value>
+			<value-description>dictionary.20134.susatt.01</value-description>
+		</item>
+		<item>
+			<value>02</value>
+			<value-description>dictionary.20134.susatt.02</value-description>
+		</item>
+		<item>
+			<value>03</value>
+			<value-description>dictionary.20134.susatt.03</value-description>
+		</item>
+		<item>
+			<value>04</value>
+			<value-description>dictionary.20134.susatt.04</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20135" desc="recollectflag">
+		<item>
+			<value>10</value>
+			<value-description>dictionary.20135.recollectflag.10</value-description>
+		</item>
+		<item>
+			<value>11</value>
+			<value-description>dictionary.20135.recollectflag.11</value-description>
+		</item>
+		<item>
+			<value>20</value>
+			<value-description>dictionary.20135.recollectflag.20</value-description>
+		</item>
+		<item>
+			<value>21</value>
+			<value-description>dictionary.20135.recollectflag.21</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20136" desc="collectflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20136.collectflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20136.collectflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20136.collectflag.2</value-description>
+		</item>
+	</dictionary-item>											
+	
+	<dictionary-item id="20137" desc="createfileflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20137.createfileflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20137.createfileflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20137.createfileflag.2</value-description>
+		</item>
+	</dictionary-item>							
+	
+	<dictionary-item id="20138" desc="usertype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20138.usertype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20138.usertype.1</value-description>
+		</item>
+	</dictionary-item>			
+	
+	<dictionary-item id="30140" desc="kind">
+		<item>
+			<value>0001</value>
+			<value-description>dictionary.30140.kind.0001</value-description>
+		</item>
+		<item>
+			<value>0002</value>
+			<value-description>dictionary.30140.kind.0002</value-description>
+		</item>
+		<item>
+			<value>0101</value>
+			<value-description>dictionary.30140.kind.0101</value-description>
+		</item>
+		<item>
+			<value>0103</value>
+			<value-description>dictionary.30140.kind.0103</value-description>
+		</item>
+		<item>
+			<value>0105</value>
+			<value-description>dictionary.30140.kind.0105</value-description>
+		</item>
+		<item>
+			<value>0107</value>
+			<value-description>dictionary.30140.kind.0107</value-description>
+		</item>
+		<item>
+			<value>0201</value>
+			<value-description>dictionary.30140.kind.0201</value-description>
+		</item>
+		<item>
+			<value>0203</value>
+			<value-description>dictionary.30140.kind.0203</value-description>
+		</item>
+		<item>
+			<value>0401</value>
+			<value-description>dictionary.30140.kind.0401</value-description>
+		</item>
+		<item>
+			<value>0403</value>
+			<value-description>dictionary.30140.kind.0403</value-description>
+		</item>
+		<item>
+			<value>0405</value>
+			<value-description>dictionary.30140.kind.0405</value-description>
+		</item>
+		<item>
+			<value>0901</value>
+			<value-description>dictionary.30140.kind.0901</value-description>
+		</item>
+	</dictionary-item>				
+	
+	<dictionary-item id="30141" desc="propone">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.30141.propone.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30141.propone.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="30142" desc="pocketkind">
+		<item>
+			<value>0001</value>
+			<value-description>dictionary.30142.pocketkind.0001</value-description>
+		</item>
+		<item>
+			<value>0002</value>
+			<value-description>dictionary.30142.pocketkind.0002</value-description>
+		</item>
+		<item>
+			<value>0101</value>
+			<value-description>dictionary.30142.pocketkind.0101</value-description>
+		</item>
+		<item>
+			<value>0103</value>
+			<value-description>dictionary.30142.pocketkind.0103</value-description>
+		</item>
+		<item>
+			<value>0105</value>
+			<value-description>dictionary.30142.pocketkind.0105</value-description>
+		</item>
+		<item>
+			<value>0107</value>
+			<value-description>dictionary.30142.pocketkind.0107</value-description>
+		</item>
+		<item>
+			<value>0201</value>
+			<value-description>dictionary.30142.pocketkind.0201</value-description>
+		</item>
+		<item>
+			<value>0203</value>
+			<value-description>dictionary.30142.pocketkind.0203</value-description>
+		</item>
+		<item>
+			<value>0401</value>
+			<value-description>dictionary.30142.pocketkind.0401</value-description>
+		</item>
+		<item>
+			<value>0403</value>
+			<value-description>dictionary.30142.pocketkind.0403</value-description>
+		</item>
+		<item>
+			<value>0405</value>
+			<value-description>dictionary.30142.pocketkind.0405</value-description>
+		</item>
+		<item>
+			<value>0901</value>
+			<value-description>dictionary.30142.pocketkind.0901</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20142" desc="tbname">
+		<item>
+			<value>BIACTCARDACCTB</value>
+			<value-description>dictionary.20142.tbname.BIACTCARDACCTB</value-description>
+		</item>
+		<item>
+			<value>BISLPCARDACCTB</value>
+			<value-description>dictionary.20142.tbname.BISLPCARDACCTB</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20140" desc="tjrlcdphykind">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20140.phykind.1</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20140.phykind.3</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20141" desc="pkgstatus2">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20141.pkgstatus2.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20141.pkgstatus2.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20141.pkgstatus2.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20141.pkgstatus2.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20141.pkgstatus2.4</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20145" desc="feeflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20145.feeflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20145.feeflag.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20146" desc="runstat">
+		<item>
+			<value>00</value>
+			<value-description>dictionary.20146.runstat.00</value-description>
+		</item>
+		<item>
+			<value>01</value>
+			<value-description>dictionary.20146.runstat.01</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20147" desc="enabled">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20147.enabled.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20147.enabled.1</value-description>
+		</item>
+	</dictionary-item>
+		<dictionary-item id="20148" desc="dtlbatchflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20148.dtlbatchflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20148.dtlbatchflag.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20168" desc="disflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20168.disflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20168.disflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20168.disflag.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20168.disflag.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.20168.disflag.4</value-description>
+		</item>
+		<item>
+			<value>9</value>
+			<value-description>dictionary.20168.disflag.9</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20172" desc="userflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20172.userflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20172.userflag.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20170" desc="downflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20170.downflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20170.downflag.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20171" desc="paraid">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20171.paraid.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20171.paraid.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20171.paraid.3</value-description>
+		</item>
+	</dictionary-item>
+	
+	<!-- add by luc  -->
+	<dictionary-item id="21000" desc="txn_num">
+		<item>
+			<value>1105</value>
+			<value-description>dictionary.21000.txn_num.1</value-description>
+		</item>
+		<item>
+			<value>1505</value>
+			<value-description>dictionary.21000.txn_num.2</value-description>
+		</item>
+		<item>
+			<value>1335</value>
+			<value-description>dictionary.21000.txn_num.3</value-description>
+		</item>
+	</dictionary-item>
+	
+	
+	<dictionary-item id="30142" desc="proptwo">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30142.proptwo.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.30142.proptwo.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="30143" desc="propthree">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.30143.propthree.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30143.propthree.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.30143.propthree.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="30144" desc="changelimit">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.30144.changelimit.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30144.changelimit.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.30144.changelimit.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="30145" desc="paramstate">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.30145.paramstate.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30145.paramstate.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="20149" desc="changertype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20149.changertype.1</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20149.changertype.3</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="20150" desc="startstate">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20150.startstate.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20150.startstate.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20150.startstate.2</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="20151" desc="chksign">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20151.chksign.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20151.chksign.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20151.chksign.2</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="20152" desc="chkbalancereturn">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20152.chkbalancereturn.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20152.chkbalancereturn.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="20153" desc="chkchargereturn">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20153.chkchargereturn.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20153.chkchargereturn.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="20154" desc="chkrecharge">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20154.chkrecharge.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20154.chkrecharge.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="20155" desc="chkrechange">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20155.chkrechange.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20155.chkrechange.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="20156" desc="chklost">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20156.chklost.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20156.chklost.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="20157" desc="chkquit">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20157.chkquit.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20157.chkquit.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="20158" desc="chkdateavailable">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20158.chkdateavailable.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20158.chkdateavailable.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="20159" desc="issuesn">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20159.issuesn.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20159.issuesn.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20160" desc="txn_kind">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20160.txn_kind.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20160.txn_kind.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20161" desc="mon_reloade_time_span">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20161.mon_reloade_time_span.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20161.mon_reloade_time_span.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.20161.mon_reloade_time_span.3</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20162" desc="mon_burse_year_check">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20162.mon_burse_year_check.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20162.mon_burse_year_check.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="20163" desc="stptype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20163.stptype.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="20164" desc="cardphykind_map">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20164.cardphykind_map.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20164.cardphykind_map.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20164.cardphykind_map.2</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="20165" desc="tjrlsflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20165.tjrlsflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20165.tjrlsflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20165.tjrlsflag.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20166" desc="monthflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20166.monthflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20166.monthflag.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20167" desc="chkrepeat">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20167.chkrepeat.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20167.chkrepeat.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="20169" desc="chksign">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.20169.chksign.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.20169.chksign.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.20169.chksign.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	
+	<dictionary-item id="30146" desc="tickettype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30146.tickettype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.30146.tickettype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.30146.tickettype.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.30146.tickettype.4</value-description>
+		</item>
+		<item>
+			<value>11</value>
+			<value-description>dictionary.30146.tickettype.11</value-description>
+		</item>
+		<item>
+			<value>12</value>
+			<value-description>dictionary.30146.tickettype.12</value-description>
+		</item>
+		<item>
+			<value>13</value>
+			<value-description>dictionary.30146.tickettype.13</value-description>
+		</item>
+		<item>
+			<value>14</value>
+			<value-description>dictionary.30146.tickettype.14</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="30147" desc="reccrttype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30147.reccrttype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.30147.reccrttype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.30147.reccrttype.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.30147.reccrttype.4</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="30148" desc="txntype">
+		<item>
+			<value>01</value>
+			<value-description>dictionary.30148.txntype.01</value-description>
+		</item>
+		<item>
+			<value>17</value>
+			<value-description>dictionary.30148.txntype.17</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="30149" desc="createfileflag">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30149.createfileflag.0</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.30149.createfileflag.1</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.30149.createfileflag.2</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="30150" desc="walauthor">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.30150.walauthor.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30150.walauthor.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="30151" desc="filetype">
+		<item>
+			<value>00</value>
+			<value-description>dictionary.30151.filetype.00</value-description>
+		</item>
+		<item>
+			<value>BL</value>
+			<value-description>dictionary.30151.filetype.BL</value-description>
+		</item>
+		<item>
+			<value>M3</value>
+			<value-description>dictionary.30151.filetype.M3</value-description>
+		</item>
+		<item>
+			<value>B1</value>
+			<value-description>dictionary.30151.filetype.B1</value-description>
+		</item>
+		<item>
+			<value>M2</value>
+			<value-description>dictionary.30151.filetype.M2</value-description>
+		</item>
+		<item>
+			<value>B2</value>
+			<value-description>dictionary.30151.filetype.B2</value-description>
+		</item>
+		<item>
+			<value>B3</value>
+			<value-description>dictionary.30151.filetype.B3</value-description>
+		</item>
+		<item>
+			<value>B4</value>
+			<value-description>dictionary.30151.filetype.B4</value-description>
+		</item>
+		<item>
+			<value>B5</value>
+			<value-description>dictionary.30151.filetype.B5</value-description>
+		</item>
+		<item>
+			<value>B6</value>
+			<value-description>dictionary.30151.filetype.B6</value-description>
+		</item>
+		<item>
+			<value>B7</value>
+			<value-description>dictionary.30151.filetype.B7</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="30152" desc="cardstate">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.30152.cardstate.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30152.cardstate.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.30152.cardstate.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.30152.cardstate.3</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="30153" desc="writeissuccess">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.30153.writeissuccess.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30153.writeissuccess.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="30154" desc="stftype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30154.stftype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.30154.stftype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.30154.stftype.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.30154.stftype.4</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="30155" desc="txntype">
+		<item>
+			<value>8451</value>
+			<value-description>dictionary.30155.txntype.8451</value-description>
+		</item>
+		<item>
+			<value>8452</value>
+			<value-description>dictionary.30155.txntype.8452</value-description>
+		</item>
+		<item>
+			<value>8470</value>
+			<value-description>dictionary.30155.txntype.8470</value-description>
+		</item>
+		<item>
+			<value>8472</value>
+			<value-description>dictionary.30155.txntype.8472</value-description>
+		</item>
+		<item>
+			<value>8473</value>
+			<value-description>dictionary.30155.txntype.8473</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="30156" desc="codetype">
+		<item>
+			<value>0001</value>
+			<value-description>dictionary.30156.codetype.0001</value-description>
+		</item>
+		<item>
+			<value>0002</value>
+			<value-description>dictionary.30156.codetype.0002</value-description>
+		</item>
+		<item>
+			<value>0003</value>
+			<value-description>dictionary.30156.codetype.0003</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="30157" desc="flag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.30157.flag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30157.flag.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="30158" desc="crdtype">
+		<item>
+			<value>8001</value>
+			<value-description>dictionary.30158.crdtype.8001</value-description>
+		</item>
+		<item>
+			<value>9001</value>
+			<value-description>dictionary.30158.crdtype.9001</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30158.crdtype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.30158.crdtype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.30158.crdtype.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.30158.crdtype.4</value-description>
+		</item>
+		<item>
+			<value>101</value>
+			<value-description>dictionary.30158.crdtype.101</value-description>
+		</item>
+		<item>
+			<value>103</value>
+			<value-description>dictionary.30158.crdtype.103</value-description>
+		</item>
+		<item>
+			<value>105</value>
+			<value-description>dictionary.30158.crdtype.105</value-description>
+		</item>
+		<item>
+			<value>107</value>
+			<value-description>dictionary.30158.crdtype.107</value-description>
+		</item>
+		<item>
+			<value>201</value>
+			<value-description>dictionary.30158.crdtype.201</value-description>
+		</item>
+		<item>
+			<value>203</value>
+			<value-description>dictionary.30158.crdtype.203</value-description>
+		</item>
+		<item>
+			<value>301</value>
+			<value-description>dictionary.30158.crdtype.301</value-description>
+		</item>
+		<item>
+			<value>109</value>
+			<value-description>dictionary.30158.crdtype.109</value-description>
+		</item>
+		<item>
+			<value>403</value>
+			<value-description>dictionary.30158.crdtype.403</value-description>
+		</item>
+		<item>
+			<value>405</value>
+			<value-description>dictionary.30158.crdtype.405</value-description>
+		</item>
+		<item>
+			<value>901</value>
+			<value-description>dictionary.30158.crdtype.901</value-description>
+		</item>
+		<item>
+			<value>1001</value>
+			<value-description>dictionary.30158.crdtype.1001</value-description>
+		</item>
+		<item>
+			<value>1101</value>
+			<value-description>dictionary.30158.crdtype.1101</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="30159" desc="crdstat">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.30159.crdstat.0</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.30159.crdstat.3</value-description>
+		</item>
+		<item>
+			<value>12</value>
+			<value-description>dictionary.30159.crdstat.12</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="30160" desc="ttype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30160.ttype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.30160.ttype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.30160.ttype.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.30160.ttype.4</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="30161" desc="ticketcardtype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30161.ticketcardtype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.30161.ticketcardtype.2</value-description>
+		</item>
+		<item>
+			<value>101</value>
+			<value-description>dictionary.30161.ticketcardtype.3</value-description>
+		</item>
+		<item>
+			<value>103</value>
+			<value-description>dictionary.30161.ticketcardtype.4</value-description>
+		</item>
+		<item>
+			<value>105</value>
+			<value-description>dictionary.30161.ticketcardtype.5</value-description>
+		</item>
+		<item>
+			<value>107</value>
+			<value-description>dictionary.30161.ticketcardtype.6</value-description>
+		</item>
+		<item>
+			<value>201</value>
+			<value-description>dictionary.30161.ticketcardtype.7</value-description>
+		</item>
+		<item>
+			<value>203</value>
+			<value-description>dictionary.30161.ticketcardtype.8</value-description>
+		</item>
+		<item>
+			<value>5001</value>
+			<value-description>dictionary.30161.ticketcardtype.9</value-description>
+		</item>
+		<item>
+			<value>50A3</value>
+			<value-description>dictionary.30161.ticketcardtype.10</value-description>
+		</item>
+		<item>
+			<value>50A4</value>
+			<value-description>dictionary.30161.ticketcardtype.11</value-description>
+		</item>
+		<item>
+			<value>50B4</value>
+			<value-description>dictionary.30161.ticketcardtype.12</value-description>
+		</item>
+		<item>
+			<value>50A2</value>
+			<value-description>dictionary.30161.ticketcardtype.13</value-description>
+		</item>
+		<item>
+			<value>50B3</value>
+			<value-description>dictionary.30161.ticketcardtype.14</value-description>
+		</item>
+		<item>
+			<value>51B1</value>
+			<value-description>dictionary.30161.ticketcardtype.15</value-description>
+		</item>
+		<item>
+			<value>50A5</value>
+			<value-description>dictionary.30161.ticketcardtype.16</value-description>
+		</item>
+		<item>
+			<value>50A6</value>
+			<value-description>dictionary.30161.ticketcardtype.17</value-description>
+		</item>
+		<item>
+			<value>51B0</value>
+			<value-description>dictionary.30161.ticketcardtype.18</value-description>
+		</item>
+		<item>
+			<value>51B2</value>
+			<value-description>dictionary.30161.ticketcardtype.19</value-description>
+		</item>
+		<item>
+			<value>901</value>
+			<value-description>dictionary.30161.ticketcardtype.20</value-description>
+		</item>
+		<item>
+			<!-- <value>109</value> -->
+			<value>401</value>
+			<value-description>dictionary.30161.ticketcardtype.21</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.30161.ticketcardtype.22</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.30161.ticketcardtype.23</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.30161.ticketcardtype.24</value-description>
+		</item>
+		<item>
+			<value>6</value>
+			<value-description>dictionary.30161.ticketcardtype.25</value-description>
+		</item>
+		<item>
+			<value>7</value>
+			<value-description>dictionary.30161.ticketcardtype.26</value-description>
+		</item>
+		<item>
+			<value>8</value>
+			<value-description>dictionary.30161.ticketcardtype.27</value-description>
+		</item>
+		<item>
+			<value>9</value>
+			<value-description>dictionary.30161.ticketcardtype.28</value-description>
+		</item>
+		<item>
+			<value>10</value>
+			<value-description>dictionary.30161.ticketcardtype.29</value-description>
+		</item>
+		<item>
+			<value>11</value>
+			<value-description>dictionary.30161.ticketcardtype.30</value-description>
+		</item>
+		<item>
+			<value>12</value>
+			<value-description>dictionary.30161.ticketcardtype.31</value-description>
+		</item>
+		<item>
+			<value>13</value>
+			<value-description>dictionary.30161.ticketcardtype.32</value-description>
+		</item>
+		<item>
+			<value>14</value>
+			<value-description>dictionary.30161.ticketcardtype.33</value-description>
+		</item>
+		<item>
+			<value>15</value>
+			<value-description>dictionary.30161.ticketcardtype.34</value-description>
+		</item>
+		<item>
+			<value>406</value>
+			<value-description>dictionary.30161.ticketcardtype.35</value-description>
+		</item>
+		<item>
+			<value>407</value>
+			<value-description>dictionary.30161.ticketcardtype.36</value-description>
+		</item>
+		<item>
+			<value>408</value>
+			<value-description>dictionary.30161.ticketcardtype.37</value-description>
+		</item>
+		<item>
+			<value>409</value>
+			<value-description>dictionary.30161.ticketcardtype.38</value-description>
+		</item>
+		<item>
+			<value>403</value>
+			<value-description>dictionary.30161.ticketcardtype.403</value-description>
+		</item>
+		<item>
+			<value>1001</value>
+			<value-description>dictionary.30161.ticketcardtype.1001</value-description>
+		</item>
+		<item>
+			<value>1101</value>
+			<value-description>dictionary.30161.ticketcardtype.1101</value-description>
+		</item>
+		<item>
+			<value>405</value>
+			<value-description>dictionary.30161.ticketcardtype.405</value-description>
+		</item>
+		<item>
+			<value>902</value>
+			<value-description>dictionary.30161.ticketcardtype.902</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="30162" desc="moneykind">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.30162.moneykind.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30162.moneykind.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="30163" desc="moneytype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.30163.moneytype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30163.moneytype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.30163.moneytype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.30163.moneytype.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.30163.moneytype.4</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="30164" desc="pkgtype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.30164.pkgtype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.30164.pkgtype.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="30165" desc="transtype">
+		<item>
+			<value>01</value>
+			<value-description>dictionary.30165.transtype.01</value-description>
+		</item>
+		<item>
+			<value>02</value>
+			<value-description>dictionary.30165.transtype.02</value-description>
+		</item>
+		<item>
+			<value>03</value>
+			<value-description>dictionary.30165.transtype.03</value-description>
+		</item>
+		<item>
+			<value>04</value>
+			<value-description>dictionary.30165.transtype.04</value-description>
+		</item>
+		<item>
+			<value>05</value>
+			<value-description>dictionary.30165.transtype.05</value-description>
+		</item>
+		<item>
+			<value>06</value>
+			<value-description>dictionary.30165.transtype.06</value-description>
+		</item>
+		<item>
+			<value>07</value>
+			<value-description>dictionary.30165.transtype.07</value-description>
+		</item>
+		<item>
+			<value>09</value>
+			<value-description>dictionary.30165.transtype.09</value-description>
+		</item>
+		<item>
+			<value>60</value>
+			<value-description>dictionary.30165.transtype.60</value-description>
+		</item>
+		<item>
+			<value>61</value>
+			<value-description>dictionary.30165.transtype.61</value-description>
+		</item>
+		<item>
+			<value>62</value>
+			<value-description>dictionary.30165.transtype.62</value-description>
+		</item>
+		<item>
+			<value>63</value>
+			<value-description>dictionary.30165.transtype.63</value-description>
+		</item>
+		<item>
+			<value>64</value>
+			<value-description>dictionary.30165.transtype.64</value-description>
+		</item>
+		<item>
+			<value>70</value>
+			<value-description>dictionary.30165.transtype.70</value-description>
+		</item>
+		<item>
+			<value>71</value>
+			<value-description>dictionary.30165.transtype.71</value-description>
+		</item>
+		<item>
+			<value>72</value>
+			<value-description>dictionary.30165.transtype.72</value-description>
+		</item>
+		<item>
+			<value>73</value>
+			<value-description>dictionary.30165.transtype.73</value-description>
+		</item>
+		<item>
+			<value>77</value>
+			<value-description>dictionary.30165.transtype.77</value-description>
+		</item>
+		<item>
+			<value>78</value>
+			<value-description>dictionary.30165.transtype.78</value-description>
+		</item>
+		<item>
+			<value>79</value>
+			<value-description>dictionary.30165.transtype.79</value-description>
+		</item>
+		<item>
+			<value>80</value>
+			<value-description>dictionary.30165.transtype.80</value-description>
+		</item>
+		<item>
+			<value>81</value>
+			<value-description>dictionary.30165.transtype.81</value-description>
+		</item>
+		<item>
+			<value>82</value>
+			<value-description>dictionary.30165.transtype.82</value-description>
+		</item>
+		<item>
+			<value>83</value>
+			<value-description>dictionary.30165.transtype.83</value-description>
+		</item>
+		<item>
+			<value>84</value>
+			<value-description>dictionary.30165.transtype.84</value-description>
+		</item>
+		<item>
+			<value>85</value>
+			<value-description>dictionary.30165.transtype.85</value-description>
+		</item>
+		<item>
+			<value>86</value>
+			<value-description>dictionary.30165.transtype.86</value-description>
+		</item>
+		<item>
+			<value>87</value>
+			<value-description>dictionary.30165.transtype.87</value-description>
+		</item>
+		<item>
+			<value>88</value>
+			<value-description>dictionary.30165.transtype.88</value-description>
+		</item>
+		<item>
+			<value>89</value>
+			<value-description>dictionary.30165.transtype.89</value-description>
+		</item>
+		<item>
+			<value>90</value>
+			<value-description>dictionary.30165.transtype.90</value-description>
+		</item>
+		<item>
+			<value>99</value>
+			<value-description>dictionary.30165.transtype.99</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="40000" desc="rollup_type">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.40000.rollup_type.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.40000.rollup_type.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.40000.rollup_type.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.40000.rollup_type.4</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="40001" desc="align">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.40001.align.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.40001.align.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.40001.align.3</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="40002" desc="font_color">
+		<item>
+			<value>#FF9900</value>
+			<value-description>dictionary.40002.font_color.#FF9900</value-description>
+		</item>
+		<item>
+			<value>#000000</value>
+			<value-description>dictionary.40002.font_color.#000000</value-description>
+		</item>
+		<item>
+			<value>#FF0000</value>
+			<value-description>dictionary.40002.font_color.#FF0000</value-description>
+		</item>
+		<item>
+			<value>#0000FF</value>
+			<value-description>dictionary.40002.font_color.#0000FF</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="40003" desc="bg_color">
+		<item>
+			<value>#FFFFFF</value>
+			<value-description>dictionary.40003.bg_color.#FFFFFF</value-description>
+		</item>
+		<item>
+			<value>#F5F5F5</value>
+			<value-description>dictionary.40003.bg_color.#F5F5F5</value-description>
+		</item>
+		<item>
+			<value>#F0FFF0</value>
+			<value-description>dictionary.40003.bg_color.#F0FFF0</value-description>
+		</item>
+		<item>
+			<value>#F5FFFA</value>
+			<value-description>dictionary.40003.bg_color.#F5FFFA</value-description>
+		</item>
+		<item>
+			<value>#FDF5E6</value>
+			<value-description>dictionary.40003.bg_color.#FDF5E6</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="40004" desc="status">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.40004.status.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.40004.status.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="40005" desc="boolean">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.40005.boolean.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.40005.boolean.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="40006" desc="input_type">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.40006.input_type.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.40006.input_type.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.40006.input_type.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.40006.input_type.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.40006.input_type.5</value-description>
+		</item>
+		<item>
+			<value>6</value>
+			<value-description>dictionary.40006.input_type.6</value-description>
+		</item>
+		<item>
+			<value>7</value>
+			<value-description>dictionary.40006.input_type.7</value-description>
+		</item>
+		<item>
+			<value>8</value>
+			<value-description>dictionary.40006.input_type.8</value-description>
+		</item>
+		<item>
+			<value>9</value>
+			<value-description>dictionary.40006.input_type.9</value-description>
+		</item>
+		<item>
+			<value>10</value>
+			<value-description>dictionary.40006.input_type.10</value-description>
+		</item>
+		<item>
+			<value>11</value>
+			<value-description>dictionary.40006.input_type.11</value-description>
+		</item>
+		<item>
+		<value>12</value>
+			<value-description>dictionary.40006.input_type.12</value-description>
+		</item>
+		<item>
+		<value>13</value>
+			<value-description>dictionary.40006.input_type.13</value-description>
+		</item>
+		<item>
+		<value>14</value>
+			<value-description>dictionary.40006.input_type.14</value-description>
+		</item>
+		<item>
+		<value>15</value>
+			<value-description>dictionary.40006.input_type.15</value-description>
+		</item>
+		<item>
+		<value>16</value>
+			<value-description>dictionary.40006.input_type.16</value-description>
+		</item>
+		<item>
+		<value>17</value>
+			<value-description>dictionary.40006.input_type.17</value-description>
+		</item>
+		<item>
+		<value>18</value>
+			<value-description>dictionary.40006.input_type.18</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="40007" desc="is_show">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.40007.is_show.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.40007.is_show.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="40008" desc="reportdatatype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.40008.reportdatatype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.40008.reportdatatype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.40008.reportdatatype.3</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="40009" desc="bus_reloade_time_flag">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.40009.bus_reloade_time_flag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.40009.bus_reloade_time_flag.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.40009.bus_reloade_time_flag.3</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="40010" desc="bus_burse_type">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.40010.bus_burse_type.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.40010.bus_burse_type.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.40010.bus_burse_type.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="50001" desc="bus_cashkind">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.50001.bus_cashkind.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.50001.bus_cashkind.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="50002" desc="bus_cashtype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.50002.bus_cashtype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.50002.bus_cashtype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.50002.bus_cashtype.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.50002.bus_cashtype.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.50002.bus_cashtype.5</value-description>
+		</item>
+		<item>
+			<value>6</value>
+			<value-description>dictionary.50002.bus_cashtype.6</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="50003" desc="bus_pockettype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.50003.bus_pockettype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.50003.bus_pockettype.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="50004" desc="remitflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.50004.remitflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.50004.remitflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.50004.remitflag.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="50005" desc="clearflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.50005.clearflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.50005.clearflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.50005.clearflag.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="50006" desc="regtype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.50006.regtype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.50006.regtype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.50006.regtype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.50006.regtype.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.50006.regtype.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.50006.regtype.5</value-description>
+		</item>
+		<item>
+			<value>6</value>
+			<value-description>dictionary.50006.regtype.6</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="50007" desc="getflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.50007.getflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.50007.getflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.50007.getflag.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.50007.getflag.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.50007.getflag.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.50007.getflag.5</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="50008" desc="fillcardflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.50008.fillcardflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.50008.fillcardflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.50008.fillcardflag.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.50008.fillcardflag.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.50008.fillcardflag.4</value-description>
+		</item>
+		
+		<item>
+			<value>5</value>
+			<value-description>dictionary.50008.fillcardflag.5</value-description>
+		</item>
+		
+		<item>
+			<value>6</value>
+			<value-description>dictionary.50008.fillcardflag.6</value-description>
+		</item>
+		
+		<item>
+			<value>7</value>
+			<value-description>dictionary.50008.fillcardflag.7</value-description>
+		</item>
+		<item>
+			<value>99</value>
+			<value-description>dictionary.50008.fillcardflag.99</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="50009" desc="cardovertxntype">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.50009.cardovertxntype.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.50009.cardovertxntype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.50009.cardovertxntype.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="50010" desc="cashcleartype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.50010.cashcleartype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.50010.cashcleartype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.50010.cashcleartype.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.50010.cashcleartype.4</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="50011" desc="persontype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.50011.persontype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.50011.persontype.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="50012" desc="rersontype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.50012.reasontype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.50012.reasontype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.50012.reasontype.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.50012.reasontype.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.50012.reasontype.5</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="60001" desc="remitflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.60001.remitflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.60001.remitflag.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="60002" desc="busuncollectflag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.60002.busuncollectflag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.60002.busuncollectflag.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="60003" desc="is_remit">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.60003.is_remit.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.60003.is_remit.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="60004" desc="is_has_leavenum">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.60004.is_has_leavenum.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.60004.is_has_leavenum.1</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="60005" desc="process_type">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.60005.process_type.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.60005.process_type.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.60005.process_type.2</value-description>
+		</item>
+	</dictionary-item>
+	
+	<dictionary-item id="60006" desc="invalidremit_flag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.60006.invalidremit_flag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.60006.invalidremit_flag.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="70006" desc="usestate">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.70006.usestate.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.70006.usestate.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="70007" desc="allotmoneyFlag">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.70007.allotmoneyFlag.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.70007.allotmoneyFlag.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="70008" desc="allotType">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.70008.allotType.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.70008.allotType.2</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80001" desc="idType">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.80001.idType.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80001.idType.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.80001.idType.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.80001.idType.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.80001.idType.4</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80002" desc="motoCardState">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.80002.motoCardState.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80002.motoCardState.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="70009" desc="helloworld">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.70009.helloworld.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.70009.helloworld.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80003" desc="voicetype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80003.voicetype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.80003.voicetype.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.80003.voicetype.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.80003.voicetype.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.80003.voicetype.5</value-description>
+		</item>
+		<item>
+			<value>6</value>
+			<value-description>dictionary.80003.voicetype.6</value-description>
+		</item>
+		<item>
+			<value>7</value>
+			<value-description>dictionary.80003.voicetype.7</value-description>
+		</item>
+		<item>
+			<value>8</value>
+			<value-description>dictionary.80003.voicetype.8</value-description>
+		</item>
+		<item>
+			<value>9</value>
+			<value-description>dictionary.80003.voicetype.9</value-description>
+		</item>
+		<item>
+			<value>10</value>
+			<value-description>dictionary.80003.voicetype.10</value-description>
+		</item>
+		<item>
+			<value>11</value>
+			<value-description>dictionary.80003.voicetype.11</value-description>
+		</item>
+		<item>
+			<value>12</value>
+			<value-description>dictionary.80003.voicetype.12</value-description>
+		</item>
+		<item>
+			<value>13</value>
+			<value-description>dictionary.80003.voicetype.13</value-description>
+		</item>
+		<item>
+			<value>14</value>
+			<value-description>dictionary.80003.voicetype.14</value-description>
+		</item>
+		<item>
+			<value>15</value>
+			<value-description>dictionary.80003.voicetype.15</value-description>
+		</item>
+		<item>
+			<value>16</value>
+			<value-description>dictionary.80003.voicetype.16</value-description>
+		</item>
+		<item>
+			<value>17</value>
+			<value-description>dictionary.80003.voicetype.17</value-description>
+		</item>
+		<item>
+			<value>18</value>
+			<value-description>dictionary.80003.voicetype.18</value-description>
+		</item>
+		<item>
+			<value>19</value>
+			<value-description>dictionary.80003.voicetype.19</value-description>
+		</item>
+		<item>
+			<value>20</value>
+			<value-description>dictionary.80003.voicetype.20</value-description>
+		</item>
+		<item>
+			<value>21</value>
+			<value-description>dictionary.80003.voicetype.21</value-description>
+		</item>
+		<item>
+			<value>22</value>
+			<value-description>dictionary.80003.voicetype.22</value-description>
+		</item>
+		<item>
+			<value>23</value>
+			<value-description>dictionary.80003.voicetype.23</value-description>
+		</item>
+		<item>
+			<value>24</value>
+			<value-description>dictionary.80003.voicetype.24</value-description>
+		</item>
+		<item>
+			<value>25</value>
+			<value-description>dictionary.80003.voicetype.25</value-description>
+		</item>
+		<item>
+			<value>26</value>
+			<value-description>dictionary.80003.voicetype.26</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80004" desc="transfer_flag1">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.80004.transfer_flag1.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80004.transfer_flag1.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.80004.transfer_flag1.2</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80005" desc="transfer_flag2">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.80005.transfer_flag2.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80005.transfer_flag2.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80006" desc="proptwo">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80006.proptwo.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.80006.proptwo.2</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80007" desc="proptwounchage">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80007.proptwounchage.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.80007.proptwounchage.2</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80008" desc="activatestatue">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.80008.activatestatue.0</value-description>
+		</item>
+		<item>
+			<value>9</value>
+			<value-description>dictionary.80008.activatestatue.9</value-description>
+		</item>
+		<item>
+			<value>13</value>
+			<value-description>dictionary.80008.activatestatue.13</value-description>
+		</item>
+		<item>
+			<value>17</value>
+			<value-description>dictionary.80008.activatestatue.17</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80009" desc="useflag">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80009.useflag.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.80009.useflag.2</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80010" desc="ordertype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80010.ordertype.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.80010.ordertype.2</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80011" desc="orderstate">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.80011.orderstate.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80011.orderstate.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.80011.orderstate.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.80011.orderstate.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.80011.orderstate.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.80011.orderstate.5</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80012" desc="errorcode">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.80012.errorcode.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80012.errorcode.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.80012.errorcode.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.80012.errorcode.3</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80013" desc="batchstate">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.80013.batchstate.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80013.batchstate.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.80013.batchstate.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.80013.batchstate.3</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80014" desc="amtAll">
+		<item>
+			<value>50</value>
+			<value-description>dictionary.80014.amtAll.50</value-description>
+		</item>
+		<item>
+			<value>100</value>
+			<value-description>dictionary.80014.amtAll.100</value-description>
+		</item>
+		<item>
+			<value>500</value>
+			<value-description>dictionary.80014.amtAll.500</value-description>
+		</item>
+		<item>
+			<value>1000</value>
+			<value-description>dictionary.80014.amtAll.1000</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80015" desc="guaguacardtype">
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80015.guaguacardtype.1</value-description>
+		</item>
+		<item>
+			<value>0</value>
+			<value-description>dictionary.80015.guaguacardtype.0</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80016" desc="storestate">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.80016.storestate.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80016.storestate.1</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80017" desc="activestate">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.80017.activestate.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80017.activestate.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.80017.activestate.2</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80018" desc="txnstatus">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.80018.txnstatus.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80018.txnstatus.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.80018.txnstatus.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.80018.txnstatus.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.80018.txnstatus.4</value-description>
+		</item>
+	</dictionary-item>
+	<dictionary-item id="80019" desc="reason">
+		<item>
+			<value>0</value>
+			<value-description>dictionary.80019.reason.0</value-description>
+		</item>
+		<item>
+			<value>1</value>
+			<value-description>dictionary.80019.reason.1</value-description>
+		</item>
+		<item>
+			<value>2</value>
+			<value-description>dictionary.80019.reason.2</value-description>
+		</item>
+		<item>
+			<value>3</value>
+			<value-description>dictionary.80019.reason.3</value-description>
+		</item>
+		<item>
+			<value>4</value>
+			<value-description>dictionary.80019.reason.4</value-description>
+		</item>
+		<item>
+			<value>5</value>
+			<value-description>dictionary.80019.reason.5</value-description>
+		</item>
+		<item>
+			<value>6</value>
+			<value-description>dictionary.80019.reason.6</value-description>
+		</item>
+	</dictionary-item>
+</system-dictionary-config>

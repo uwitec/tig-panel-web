@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ReportRpColumn">
+
+	<typeAlias alias="ReportRpColumn" type="com.huateng.htreport.domain.ReportRpColumn"/>
+	
+    <resultMap id="reportRpColumnModel" class="ReportRpColumn">
+    	<result property="recordNo"        column="record_no"    /> 
+    	<result property="reportId"        column="report_id"    /> 
+    	<result property="columnName"        column="column_name"    /> 
+    	<result property="align"        column="align"    /> 
+    	<result property="fontColor"        column="font_color"    /> 
+    	<result property="bgColor"        column="bg_color"    /> 
+    	<result property="mergedFontColor"        column="merged_font_color"    /> 
+    	<result property="mergedBgColor"        column="merged_bg_color"    /> 
+    	<result property="merged"        column="merged"    /> 
+    	<result property="rollupType"        column="rollup_type"    /> 
+    	<result property="priority"        column="priority"    /> 
+    	<result property="isLastRowShow"        column="is_last_row_show"    /> 
+	</resultMap>
+	
+
+    <select id="findById" resultMap="reportRpColumnModel" parameterClass="string"  resultSetType="SCROLL_INSENSITIVE" >
+       	   select *  from t_report_rp_column where record_no = #value#
+    </select>
+    
+    
+    <select id="findByCondition" resultMap="reportRpColumnModel" parameterClass="java.util.Map"  resultSetType="SCROLL_INSENSITIVE" >
+        select *  from t_report_rp_column  where 1=1
+        <isNotEmpty prepend="and" property="reportId">
+			report_id=#reportId#
+		</isNotEmpty>
+		order by priority asc
+    </select>
+    
+    <select id="findPagingByCondition" resultMap="reportRpColumnModel" parameterClass="java.util.Map" resultSetType="SCROLL_INSENSITIVE">
+		select * from (select a.*,rownum rn from (select * from t_report_rp_column   where 1=1
+		<isNotEmpty prepend="and" property="reportId">
+			report_id=#reportId#
+		</isNotEmpty>
+		<isNotEmpty property="orderBy">order by  $orderBy$</isNotEmpty>  
+		<![CDATA[	
+			) a where rownum<= #endIndex#) b where b.rn >= #startIndex#
+		]]>
+
+	</select>
+    
+    <select id="findPagingCountByCondition"  resultClass="int" parameterClass="java.util.Map" resultSetType="SCROLL_INSENSITIVE">
+		select count(*)  from t_report_rp_column    where 1=1
+		<isNotEmpty prepend="and" property="reportId">
+			report_id=#reportId#
+		</isNotEmpty>
+	</select>
+
+    <insert id="insert" parameterClass="ReportRpColumn"  >
+        insert into t_report_rp_column(record_no,report_id,column_name,align,font_color,bg_color,merged,rollup_type,priority,merged_font_color,merged_bg_color,is_last_row_show) 
+        	values 
+        (#recordNo#,#reportId#,#columnName#,#align#,#fontColor#,#bgColor#,#merged#,#rollupType#,#priority#,#mergedFontColor#,#mergedBgColor#,#isLastRowShow#)
+    </insert>
+
+    
+    <update id="update" parameterClass="ReportRpColumn"   >
+        update t_report_rp_column set
+				column_name = #columnName#
+        		,align = #align#
+        		,font_color = #fontColor#
+        		,bg_color = #bgColor#
+        		,merged_font_color = #mergedFontColor#
+        		,merged_bg_color = #mergedBgColor#
+        		,merged = #merged#
+        		,rollup_type = #rollupType#
+        		,priority = #priority#
+        		,is_last_row_show=#isLastRowShow#
+        where record_no = #recordNo#
+    </update> 
+    
+    <delete id="deleteByReportId" parameterClass="string" >
+        delete from t_report_rp_column where report_id = #value#
+    </delete>
+    
+    <delete id="deleteByObjId" parameterClass="string" >
+        delete from t_report_rp_column where record_no = #value#
+    </delete>
+
+
+
+</sqlMap>

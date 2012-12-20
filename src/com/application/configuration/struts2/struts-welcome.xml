@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="welcome" extends="BasePackage">
+		<action name="welcome" class="com.web.action.welcome.WelcomeAction">
+			<interceptor-ref name="SystemConsoleInterceptorStack"></interceptor-ref>
+			<result name="success">/webpages/welcome/welcome.jsp</result>
+		</action>
+		
+		<!-- spring managed -->
+		<action name="logon_*" class="LogonActionBean" method="{1}">
+			<interceptor-ref name="SystemConsoleInterceptorStack"></interceptor-ref>
+			<result name="success">/webpages/welcome/mainframe.jsp</result>
+		</action>
+	</package>
+</struts>

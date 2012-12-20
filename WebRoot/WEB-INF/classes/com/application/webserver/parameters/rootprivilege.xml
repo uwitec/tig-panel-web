@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root-privilege-config PUBLIC "-//HUATENG//DTD Root Privilege DTD//EN" "http://www.huateng.com/Guatemala/rootprivilege.dtd" >
+<root-privilege-config>
+	<privilege name="getSystemDictionaryItem" logging="false">/BasePackage/common_getSystemDictionaryItem</privilege>
+	<privilege name="getUnitTreeList1" logging="false">/BasePackage/common_getUnitTreeList1</privilege>
+	<privilege name="getUnitListAtLevel1" logging="false">/BasePackage/common_getUnitListAtLevel1</privilege>
+	<privilege name="queryUnitInfo" logging="false">/BasePackage/privilegequery_queryUnitInfo</privilege>
+	<privilege name="queryUnitInfo1" logging="false">/BasePackage/privilegequery_queryUnitInfo1</privilege>
+	<privilege name="queryMessageNode" logging="false">/BasePackage/privilegequery_queryMessageNode</privilege>
+	<privilege name="getBranchListPage" logging="false">/BasePackage/common_getBranchListPage</privilege>
+
+	<privilege name="a" logging="false">/welcome/welcome</privilege>
+	<privilege name="logon" logging="true">/welcome/logon_logon</privilege>
+	<privilege name="checkout" logging="true">/welcome/logon_checkout</privilege>
+	<privilege name="a" logging="false">/welcome/logon_redirect</privilege>
+
+	<privilege name="a" logging="false">/admin/systemrole_getSystemRoleModule</privilege>
+	<privilege name="a" logging="false">/admin/systemuser_getSystemUserRoles</privilege>
+	<privilege name="a" logging="false">/admin/systemrole_queryrole</privilege>
+	<privilege name="a" logging="false">/admin/systemrole_addrole</privilege>
+	<privilege name="a" logging="false">/admin/systemrole_editrole</privilege>
+	<privilege name="a" logging="false">/admin/systemrole_deleterole</privilege>
+	<privilege name="a" logging="false">/admin/systemuser_adduse</privilege>
+	<privilege name="a" logging="false">/admin/systemuser_edituser</privilege>
+	<privilege name="a" logging="false">/admin/systemuser_assignUserRole</privilege>
+	<privilege name="a" logging="false">/admin/systemuser_deleteuser</privilege>
+	<privilege name="a" logging="false">/admin/systemuser_getSystemUserRoles</privilege>
+	<privilege name="a" logging="false">/admin/systemuser_queryuser</privilege>
+	
+	<privilege name="a" logging="false">/report/reportresult_queryResult</privilege>
+	<privilege name="a" logging="false">/report/reportresult_exportXlsResult</privilege>
+	
+	<!-- 批量添加时用到 -->	
+<!-- 	<privilege name="a" logging="false">/cchs/baseinfo/systempara/cnrqstservicetb_query3</privilege>
+	<privilege name="a" logging="false">/cchs/baseinfo/systempara/cnrqstservicetb_query2</privilege>
+	<privilege name="a" logging="false">/cchs/baseinfo/transpara/tpfhunitdelaytb_query2</privilege>
+	<privilege name="a" logging="false">/cchs/baseinfo/transpara/tpfhamtlimittb_query2</privilege> -->
+	
+	<!-- 数据字典翻译 -->
+	<!-- <privilege name="a" logging="false">/BasePackage/privilegequery_queryBihyinfotb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryBiunitinfotb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryBinetinfotb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryBinetinfotb2type</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryBisaminfotb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryCnrqstservicetb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryTpparamtb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_querybicardkindtb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_querycnerrcodetb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryArrayinfotbpemaptb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryCntxntypemaptb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryInnercnerrcodetb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryOutercnerrcodetb</privilege>
+	
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryMngUserName</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryStfinfotb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryBranchinfotb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryCollectinfotb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryPosinfotb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryTerminfotb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryArrayinfotb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryLineinfotb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryBusinfotb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryParamantinfotb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_querycardtypeandmediatype</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_selectCrdtypeName</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_querySetCnrqstservicetb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_querySetCntxntypemaptb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_querypkgtypeName</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryCrdtypemapNameEdit</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryPosid</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryCarddpt</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryT_report_rp_baseName</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryPosid1</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryticketcardtypecardtype</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryCnsysparamtb</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryDriverName</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryRecntstfName</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryCntstfName</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryTicketNo</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryticketcardtypecardtype_foredit</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryAreainfotb</privilege>
+	
+	qinliang 11.04.04
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryBiunitinfotbbyunitid</privilege>
+	
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryticketcardtypecardtype_foredit1</privilege>
+	
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryLineinfotb1</privilege>
+	<privilege name="a" logging="false">/BasePackage/privilegequery_queryTicketNo1</privilege> -->
+
+</root-privilege-config>

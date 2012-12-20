@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="ModuleActionBean" class="com.web.action.administration.SystemModuleAction">
+		<property name="administrationService">
+			<ref bean="AdministrationService"/>
+		</property>
+	</bean>
+	
+	<bean id="RoleActionBean" class="com.web.action.administration.SystemRoleAction">
+		<property name="administrationService">
+			<ref bean="AdministrationService"/>
+		</property>
+		<property name="pageQueryService">
+			<ref bean="PageQueryService"/>
+		</property>
+	</bean>
+	
+	<bean id="UserActionBean" class="com.web.action.administration.SystemUserAction">
+		<property name="administrationService">
+			<ref bean="AdministrationService"/>
+		</property>
+		<property name="pageQueryService">
+			<ref bean="PageQueryService"/>
+		</property>
+	</bean>
+	
+	<bean id="UnitActionBean" class="com.web.action.administration.SystemUnitAction">
+		<property name="administrationService">
+			<ref bean="AdministrationService"/>
+		</property>
+		<property name="pageQueryService">
+			<ref bean="PageQueryService"/>
+		</property>
+	</bean>
+	
+	<bean id="LogActionBean" class="com.web.action.administration.SystemLogAction">
+		<property name="pageQueryService">
+			<ref bean="PageQueryService"/>
+		</property>
+	</bean>
+	
+	
+	<bean id="PrivilegeQueryActionBean" class="com.web.action.base.PrivilegeQueryAction">
+		<property name="pageQueryService">
+			<ref bean="PageQueryService"/>
+		</property>
+	</bean>
+	
+	<bean id="OperatorinfoActionBean" class="com.web.action.administration.OperatorinfoAction" scope="prototype">
+       <property name="administrationService">
+       <ref bean="AdministrationService" /> 
+     </property>
+    </bean>
+	
+</beans>

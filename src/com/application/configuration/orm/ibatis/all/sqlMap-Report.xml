@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+     PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+     "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Report">
+	<!-- 单位消费统计报表 -->
+	<select id="getUnitFhReport" 
+		parameterClass="com.web.form.report.Batfhunitaccdaytb" 
+		resultClass="com.web.form.report.Batfhunitaccdaytb">
+		SELECT 
+        u.NODENAME as pacunitname,
+        t.*
+        FROM BATFHACCDAYTB t   
+        INNER JOIN MNGNODEINFOTB u on t.PACUNITID=u.NODEID
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="pacunitid">
+				t.PACUNITID IN (SELECT u.NODEID FROM MNGNODEINFOTB u START WITH u.NODEID = #pacunitid# CONNECT BY u.PARENTNODEID = PRIOR u.NODEID)
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="pacsetdate_start">
+				t.pacsetdate >= #pacsetdate_start#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="pacsetdate_end">
+				#pacsetdate_end# >= t.pacsetdate
+			</isNotEmpty>
+		</dynamic>
+	</select>
+</sqlMap>

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="t_report_rp_base" >
+  <resultMap id="ibatorgenerated_BaseResultMap" class="com.web.form.report.reportconfig.t_report_rp_base" >
+    <result column="REPORT_ID" property="report_id" jdbcType="DECIMAL" />
+    <result column="REPORT_NAME" property="reportName" jdbcType="VARCHAR" />
+    <result column="NEED_FORMAT" property="needFormat" jdbcType="CHAR" />
+    <result column="NEED_HEADER" property="needHeader" jdbcType="CHAR" />
+    <result column="HEADER" property="header" jdbcType="VARCHAR" />
+    <result column="HAS_SEQ" property="hasSeq" jdbcType="CHAR" />
+    <result column="SQL" property="sql" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="CHAR" />
+    <result column="IS_EXTEND" property="isExtend" jdbcType="CHAR" />
+    <result column="EXTEND_CLASS" property="extendClass" jdbcType="VARCHAR" />
+    <result column="CREATE_UID" property="createUid" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+    <result column="LAST_MODIFY_UID" property="lastModifyUid" jdbcType="VARCHAR" />
+    <result column="LAST_MODIFY_TIME" property="lastModifyTime" jdbcType="VARCHAR" />
+    <result column="NOTES" property="notes" jdbcType="VARCHAR" />
+    
+    
+    <result column="QUERY_DOMAIN_COUNT" property="queryDomainCount" jdbcType="DECIMAL" />
+    <result column="SHORT_ENG" property="shortEng" jdbcType="VARCHAR" />
+    <result column="NEED_BATCH_NO" property="needBatchNo" jdbcType="CHAR" />
+    <result column="CREATE_TIMETRANS" property="createtimetrans" jdbcType="VARCHAR" />
+    <result column="LAST_MODIFY_TIMETRANS" property="lastmodifytimetrans" jdbcType="VARCHAR" />
+    <result column="NEED_BATCH_NODESC" property="need_batch_nodesc" jdbcType="VARCHAR" />
+    <result column="NEED_FORMATDESC" property="need_formatdesc" jdbcType="VARCHAR" />
+    <result column="NEED_HEADERDESC" property="need_headerdesc" jdbcType="VARCHAR" />
+    <result column="HAS_SEQDESC" property="has_seqdesc" jdbcType="VARCHAR" />
+    <result column="IS_EXTENDDESC" property="is_extenddesc" jdbcType="VARCHAR" />
+    <result column="STATUSDESC" property="statusdesc" jdbcType="VARCHAR" />
+    <result column="LASTMODIFYUIDDESC" property="lastModifyUiddesc" jdbcType="VARCHAR" />
+    <result column="CREATEUIDDESC" property="createUiddesc" jdbcType="VARCHAR" />
+  </resultMap>
+
+
+  
+  <select id="select" resultMap="ibatorgenerated_BaseResultMap" parameterClass="com.web.form.report.reportconfig.t_report_rp_base" >
+	<![CDATA[
+		SELECT tt.*,
+			      q.DICTVALUEDESC AS NEED_BATCH_NODESC,
+			      w.DICTVALUEDESC AS NEED_FORMATDESC,
+			      c.DICTVALUEDESC AS NEED_HEADERDESC,
+			      d.DICTVALUEDESC AS HAS_SEQDESC,
+			      e.DICTVALUEDESC AS IS_EXTENDDESC,
+			      f.DICTVALUEDESC AS STATUSDESC,
+			      g.USERNAME AS LASTMODIFYUIDDESC,
+			      h.USERNAME AS CREATEUIDDESC
+		FROM (
+			]]>
+	<![CDATA[
+		SELECT * FROM (SELECT a.*,ROWNUM AS rn FROM (
+	]]>
+	<![CDATA[
+    select REPORT_ID, REPORT_NAME, NEED_FORMAT, NEED_HEADER, HEADER, HAS_SEQ, SQL, STATUS,
+      IS_EXTEND, EXTEND_CLASS, CREATE_UID, CREATE_TIME, LAST_MODIFY_UID, LAST_MODIFY_TIME, NOTES,
+       QUERY_DOMAIN_COUNT, SHORT_ENG, NEED_BATCH_NO,
+      CREATE_TIME AS CREATE_TIMETRANS,
+      LAST_MODIFY_TIME AS LAST_MODIFY_TIMETRANS
+    from T_REPORT_RP_BASE t
+      
+    ]]>
+    <dynamic prepend="where">
+		<isNotEmpty prepend="and" property="report_id">
+			REPORT_ID = #report_id:DECIMAL#
+		</isNotEmpty>
+	</dynamic>	   
+	<![CDATA[
+		) a WHERE ROWNUM <= #rowEnd#) b WHERE b.rn >= #rowStart#
+	]]>
+	<![CDATA[
+		) tt
+		left join DICTINFOTB q on (tt.NEED_BATCH_NO = q.DICTVALUE AND q.DICTTYPE = '40005' AND q.LOCALE = 'zh_CN')
+      left join DICTINFOTB w on (tt.NEED_FORMAT = w.DICTVALUE AND w.DICTTYPE = '40005' AND w.LOCALE = 'zh_CN')
+      left join DICTINFOTB c on (tt.NEED_HEADER = c.DICTVALUE AND c.DICTTYPE = '40005' AND c.LOCALE = 'zh_CN')
+      left join DICTINFOTB d on (tt.HAS_SEQ = d.DICTVALUE AND d.DICTTYPE = '40005' AND d.LOCALE = 'zh_CN')
+      left join DICTINFOTB e on (tt.IS_EXTEND = e.DICTVALUE AND e.DICTTYPE = '40005' AND e.LOCALE = 'zh_CN')
+      left join DICTINFOTB f on (tt.STATUS = f.DICTVALUE AND f.DICTTYPE = '40004' AND f.LOCALE = 'zh_CN')
+      left join mnguserinfotb g on (tt.LAST_MODIFY_UID = g.USERID)
+      left join mnguserinfotb h on (tt.CREATE_UID = h.USERID)
+      order by REPORT_ID
+	]]>
+  </select>
+  
+  <delete id="delete" parameterClass="com.web.form.report.reportconfig.t_report_rp_base" >
+    delete from T_REPORT_RP_BASE
+    where REPORT_ID = #report_id:DECIMAL#
+  </delete>
+
+
+  <insert id="insert" parameterClass="com.web.form.report.reportconfig.t_report_rp_base" >
+    insert into T_REPORT_RP_BASE
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="report_id" >
+        REPORT_ID
+      </isNotNull>
+      <isNotNull prepend="," property="reportName" >
+        REPORT_NAME
+      </isNotNull>
+      <isNotNull prepend="," property="needFormat" >
+        NEED_FORMAT
+      </isNotNull>
+      <isNotNull prepend="," property="needHeader" >
+        NEED_HEADER
+      </isNotNull>
+      <isNotNull prepend="," property="header" >
+        HEADER
+      </isNotNull>
+      <isNotNull prepend="," property="hasSeq" >
+        HAS_SEQ
+      </isNotNull>
+      <isNotNull prepend="," property="sql" >
+        SQL
+      </isNotNull>
+      <isNotNull prepend="," property="status" >
+        STATUS
+      </isNotNull>
+      <isNotNull prepend="," property="isExtend" >
+        IS_EXTEND
+      </isNotNull>
+      <isNotNull prepend="," property="extendClass" >
+        EXTEND_CLASS
+      </isNotNull>
+      <isNotNull prepend="," property="createUid" >
+        CREATE_UID
+      </isNotNull>
+      <isNotNull prepend="," property="createTime" >
+        CREATE_TIME
+      </isNotNull>
+      <isNotNull prepend="," property="lastModifyUid" >
+        LAST_MODIFY_UID
+      </isNotNull>
+      <isNotNull prepend="," property="lastModifyTime" >
+        LAST_MODIFY_TIME
+      </isNotNull>
+      <isNotNull prepend="," property="notes" >
+        NOTES
+      </isNotNull>
+      
+      <isNotNull prepend="," property="queryDomainCount" >
+        QUERY_DOMAIN_COUNT
+      </isNotNull>
+      <isNotNull prepend="," property="shortEng" >
+        SHORT_ENG
+      </isNotNull>
+      <isNotNull prepend="," property="needBatchNo" >
+        NEED_BATCH_NO
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(" >
+      <isNotNull prepend="," property="report_id" >
+        #report_id:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="reportName" >
+        #reportName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="needFormat" >
+        #needFormat:CHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="needHeader" >
+        #needHeader:CHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="header" >
+        #header:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="hasSeq" >
+        #hasSeq:CHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="sql" >
+        #sql:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="status" >
+        #status:CHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="isExtend" >
+        #isExtend:CHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="extendClass" >
+        #extendClass:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="createUid" >
+        #createUid:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="createTime" >
+        #createTime:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="lastModifyUid" >
+        #lastModifyUid:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="lastModifyTime" >
+        #lastModifyTime:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="notes" >
+        #notes:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="queryDomainCount" >
+        #queryDomainCount:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="shortEng" >
+        #shortEng:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="needBatchNo" >
+        #needBatchNo:CHAR#
+      </isNotNull>
+      )
+    </dynamic>
+  </insert>
+  
+  <select id="selectCount" parameterClass="com.web.form.report.reportconfig.t_report_rp_base" resultClass="java.lang.Integer" >
+	<![CDATA[ 
+    select count(*) from T_REPORT_RP_BASE
+    ]]>
+    <dynamic prepend="where">
+		<isNotEmpty prepend="and" property="report_id">
+			REPORT_ID = #report_id:DECIMAL#
+		</isNotEmpty>
+	</dynamic>	
+	<isNotEmpty prepend="order by" property="sortString">
+		$sortString$
+	</isNotEmpty> 
+  </select>
+
+  <update id="update" parameterClass="com.web.form.report.reportconfig.t_report_rp_base" >
+    update T_REPORT_RP_BASE
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="reportName" >
+        REPORT_NAME = #reportName:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="needFormat" >
+        NEED_FORMAT = #needFormat:CHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="needHeader" >
+        NEED_HEADER = #needHeader:CHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="header" >
+        HEADER = #header:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="hasSeq" >
+        HAS_SEQ = #hasSeq:CHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="sql" >
+        SQL = #sql:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="status" >
+        STATUS = #status:CHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="isExtend" >
+        IS_EXTEND = #isExtend:CHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="extendClass" >
+        EXTEND_CLASS = #extendClass:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="createUid" >
+        CREATE_UID = #createUid:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="createTime" >
+        CREATE_TIME = #createTime:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="lastModifyUid" >
+        LAST_MODIFY_UID = #lastModifyUid:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="lastModifyTime" >
+        LAST_MODIFY_TIME = #lastModifyTime:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="notes" >
+        NOTES = #notes:VARCHAR#
+      </isNotNull>
+      
+      <isNotNull prepend="," property="queryDomainCount" >
+        QUERY_DOMAIN_COUNT = #queryDomainCount:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="shortEng" >
+        SHORT_ENG = #shortEng:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="needBatchNo" >
+        NEED_BATCH_NO = #needBatchNo:CHAR#
+      </isNotNull>
+    </dynamic>
+    where REPORT_ID = #report_id:DECIMAL#
+  </update>
+</sqlMap>

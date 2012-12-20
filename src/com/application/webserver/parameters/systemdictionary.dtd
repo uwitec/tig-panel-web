@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT system-dictionary-config (dictionary-item+)>
+
+<!ELEMENT dictionary-item (item+)>
+<!ATTLIST dictionary-item id        CDATA   #REQUIRED>
+<!ATTLIST dictionary-item desc      CDATA   #REQUIRED>
+
+<!ELEMENT item (value, value-description)>
+<!ELEMENT value (#PCDATA)>
+<!ELEMENT value-description (#PCDATA)>

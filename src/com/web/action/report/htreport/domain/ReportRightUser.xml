@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ReportRightUser">
+
+	<typeAlias alias="ReportRightUser" type="com.web.action.report.htreport.domain.ReportRightUser"/>
+	
+    <resultMap id="reportRightUserModel" class="ReportRightUser">
+    	<result property="userId"        column="user_id"    /> 
+    	<result property="userName"        column="user_name"    /> 
+    	<result property="pinkey"        column="pinkey"    /> 
+    	<result property="name"        column="name"    /> 
+    	<result property="gender"        column="gender"    /> 
+    	<result property="status"        column="status"    /> 
+    	<result property="userGrade"        column="user_grade"    /> 
+    	<result property="userType"        column="user_type"    /> 
+    	<result property="address"        column="address"    /> 
+    	<result property="zipCode"        column="zip_code"    /> 
+    	<result property="phone"        column="phone"    /> 
+    	<result property="fax"        column="fax"    /> 
+    	<result property="email"        column="email"    /> 
+    	<result property="isMacLimited"        column="is_mac_limited"    /> 
+    	<result property="limitedMac"        column="limited_mac"    /> 
+    	<result property="isIpLimited"        column="is_ip_limited"    /> 
+    	<result property="limitedIp"        column="limited_ip"    /> 
+    	<result property="lastSuccessLoginTime"        column="last_success_login_time"    jdbcType="Timestamp" javaType="java.sql.Timestamp"  /> 
+    	<result property="lastSuccessLoginIp"        column="last_success_login_ip"    /> 
+    	<result property="lastFailLoginTime"        column="last_fail_login_time"    jdbcType="Timestamp" javaType="java.sql.Timestamp"  /> 
+    	<result property="lastFailLoginIp"        column="last_fail_login_ip"    /> 
+    	<result property="createUid"        column="create_uid"    /> 
+    	<result property="createTime"        column="create_time"    jdbcType="Timestamp" javaType="java.sql.Timestamp"  /> 
+    	<result property="lastModifyUid"        column="last_modify_uid"    /> 
+    	<result property="lastModifyTime"        column="last_modify_time"    jdbcType="Timestamp" javaType="java.sql.Timestamp"  /> 
+    	<result property="remark"        column="remark"    /> 
+    	<result property="resvFld1"        column="resv_fld1"    /> 
+    	<result property="resvFld2"        column="resv_fld2"    /> 
+	</resultMap>
+	
+
+    <select id="findById" resultMap="reportRightUserModel" parameterClass="string"  resultSetType="SCROLL_INSENSITIVE" >
+       	   select *  from t_report_right_user where user_id = #value#
+    </select>
+    
+    <select id="findByUserName" resultMap="reportRightUserModel" parameterClass="string"  resultSetType="SCROLL_INSENSITIVE" >
+       	   select *  from t_report_right_user where user_name = #value#
+    </select>
+    
+    <select id="findByCondition" resultMap="reportRightUserModel" parameterClass="java.util.Map"  resultSetType="SCROLL_INSENSITIVE" >
+        select *  from t_report_right_user  
+        <dynamic prepend="where">
+       		<isNotEmpty prepend="and" property="userGrade">
+				user_grade=#userGrade#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="status">
+				status=#status#
+			</isNotEmpty>
+		</dynamic>	
+    </select>
+    
+    <select id="findPagingByCondition" resultMap="reportRightUserModel" parameterClass="java.util.Map" resultSetType="SCROLL_INSENSITIVE">
+		select * from (select a.*,rownum rn from (select * from t_report_right_user
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="query">
+			(	
+	        	upper(remark) like upper('%$query$%')  
+	        	or upper(user_name) like upper('%$query$%')
+	        	or upper(name)   like upper('%$query$%')  
+	        	or upper(address)   like upper('%$query$%') 
+	        	or upper(remark)   like upper('%$query$%') 
+			)
+			</isNotEmpty>
+       		<isNotEmpty prepend="and" property="userGrade">
+				user_grade=#userGrade#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="status">
+				status=#status#
+			</isNotEmpty>
+		</dynamic>	
+		<isNotEmpty property="orderBy">order by  $orderBy$</isNotEmpty>  
+		<![CDATA[	
+			) a where rownum<= #endIndex#) b where b.rn >= #startIndex#
+		]]>
+
+	</select>
+    
+    <select id="findPagingCountByCondition"  resultClass="int" parameterClass="java.util.Map" resultSetType="SCROLL_INSENSITIVE">
+		select count(*)  from t_report_right_user
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="query">
+			(	
+				upper(remark) like upper('%$query$%')  
+	        	or upper(user_name) like upper('%$query$%')
+	        	or upper(name)   like upper('%$query$%')  
+	        	or upper(address)   like upper('%$query$%') 
+	        	or upper(remark)   like upper('%$query$%') 
+			)
+			</isNotEmpty>
+       		<isNotEmpty prepend="and" property="userGrade">
+				user_grade=#userGrade#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="status">
+				status=#status#
+			</isNotEmpty>
+		</dynamic>		
+	</select>
+    
+    <insert id="insert" parameterClass="ReportRightUser"  >
+        insert into t_report_right_user(user_id,user_name,pinkey,name,gender,status,user_grade,user_type,address,zip_code,phone,fax,email,is_mac_limited,limited_mac,is_ip_limited,limited_ip,last_success_login_time,last_success_login_ip,last_fail_login_time,last_fail_login_ip,create_uid,create_time,last_modify_uid,last_modify_time,remark,resv_fld1,resv_fld2) 
+        	values 
+        (#userId#,#userName#,#pinkey#,#name#,#gender#,#status#,#userGrade#,#userType#,#address#,#zipCode#,#phone#,#fax#,#email#,#isMacLimited#,#limitedMac#,#isIpLimited#,#limitedIp#,#lastSuccessLoginTime#,#lastSuccessLoginIp#,#lastFailLoginTime#,#lastFailLoginIp#,#createUid#,#createTime#,#lastModifyUid#,#lastModifyTime#,#remark#,#resvFld1#,#resvFld2#)
+    </insert>
+    
+
+    
+    
+    <insert id="insertReportRightUserRole" parameterClass="java.util.Map"  >
+        insert into t_report_right_user_role(user_id,role_id) 
+        	values 
+        (#userId#,#roleId#)
+    </insert>
+    
+    
+    <update id="update" parameterClass="ReportRightUser"   >
+        update t_report_right_user set
+        		user_name = #userName#
+        		,pinkey = #pinkey#
+        		,name = #name#
+        		,gender = #gender#
+        		,status = #status#
+        		,user_grade = #userGrade#
+        		,user_type = #userType#
+        		,address = #address#
+        		,zip_code = #zipCode#
+        		,phone = #phone#
+        		,fax = #fax#
+        		,email = #email#
+        		,is_mac_limited = #isMacLimited#
+        		,limited_mac = #limitedMac#
+        		,is_ip_limited = #isIpLimited#
+        		,limited_ip = #limitedIp#
+        		,last_success_login_time = #lastSuccessLoginTime#
+        		,last_modify_uid = #lastModifyUid#
+        		,last_modify_time = #lastModifyTime#
+        		,remark = #remark#
+        where user_id = #userId#
+    </update>
+    
+
+    
+    <update id="updatePinkey" parameterClass="ReportRightUser"   >
+        update t_report_right_user set
+        		 pinkey=#pinkey#
+        		,last_modify_uid = #lastModifyUid#
+        		,last_modify_time = #lastModifyTime#
+        where user_id = #userId#
+    </update>
+    
+    <delete id="deleteByObjId" parameterClass="string" >
+        delete from t_report_right_user where user_id = #value#
+    </delete>
+	
+	<delete id="deleteUserRoleById" parameterClass="string" >
+        delete from t_report_right_user_role where user_id = #value#
+    </delete>	
+
+
+</sqlMap>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<settings cacheModelsEnabled="true" enhancementEnabled="true"
+		lazyLoadingEnabled="true" maxRequests="512" maxSessions="256"
+		maxTransactions="50" useStatementNamespaces="true" />
+	
+	<!-- report                        报表系统 -->
+	<sqlMap resource="com/application/configuration/orm/ibatis/report/ReportRightFunction.xml"/>
+	<sqlMap resource="com/application/configuration/orm/ibatis/report/ReportRightRole.xml"/>
+	<sqlMap resource="com/application/configuration/orm/ibatis/report/ReportRightUser.xml"/>
+	<sqlMap resource="com/application/configuration/orm/ibatis/report/ReportDictInfo.xml"/>
+	
+	<sqlMap resource="com/application/configuration/orm/ibatis/report/ReportRpBase.xml"/>
+	<sqlMap resource="com/application/configuration/orm/ibatis/report/ReportRpQuery.xml"/>
+	<sqlMap resource="com/application/configuration/orm/ibatis/report/ReportRpColumn.xml"/>
+	
+	
+</sqlMapConfig>

@@ -1,0 +1,28 @@
+.SuggestFramework_List
+{
+	border: 1px solid #CCCCCC;
+	border-top: 0px;
+}
+
+.SuggestFramework_Heading
+{
+	padding: 0px 1px 0px 1px;
+	background-color: #CCCCCC;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.SuggestFramework_Highlighted
+{
+	padding: 0px 1px 0px 1px;
+	background-color: #93B3CA;
+	color: HighlightText;
+}
+
+.SuggestFramework_Normal
+{
+	padding: 0px 1px 0px 1px;
+	background-color: #FFFFFF;
+	color: #000000;
+	overflow :hidden;
+}

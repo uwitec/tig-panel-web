@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="SystemModule">
+  <resultMap class="com.web.form.administration.Module" id="ibatorgenerated_BaseResultMap">
+    <result column="MODULEID" jdbcType="VARCHAR" property="moduleid" />
+    <result column="MODULENAME" jdbcType="VARCHAR" property="modulename" />
+    <result column="PARENTMODULEID" jdbcType="VARCHAR" property="parentmoduleid" />
+    <result column="MODULETYPE" jdbcType="DECIMAL" property="moduletype" />
+    <result column="MODULEACTION" jdbcType="VARCHAR" property="moduleaction" />
+    <result column="MODULEORDER" jdbcType="DECIMAL" property="moduleorder" />
+    <result column="MODULELEVEL" jdbcType="DECIMAL" property="modulelevel" />
+    <result column="LOGFLAG" jdbcType="DECIMAL" property="logflag" />
+  </resultMap>
+  
+  <select id="selectAllModules"
+		parameterClass="java.lang.String"
+		resultMap="ibatorgenerated_BaseResultMap">
+		<!-- SELECT m.* FROM MNGMODULEINFOTB m
+		START WITH m.MODULEID = #value# 
+		CONNECT BY m.PARENTMODULEID = PRIOR m.MODULEID 
+		ORDER SIBLINGS BY m.MODULETYPE,m.MODULEORDER -->
+		select m.* FROM MNGMODULEINFOTB m    
+		where FIND_IN_SET(m.MODULEID, getModuleChildLst(0))   
+		ORDER BY m.MODULETYPE,m.MODULEORDER 
+	</select>
+	
+	<select id="selectModulesByRoleId"
+		parameterClass="com.web.form.administration.Role"
+		resultMap="ibatorgenerated_BaseResultMap">
+		<!-- SELECT m.* FROM MNGMODULEINFOTB m INNER JOIN MNGROLEMODULETB rm
+		ON m.MODULEID = rm.MODULE_ID and rm.ROLE_ID = #roleid#
+		START WITH m.MODULEID = '0' 
+		CONNECT BY m.PARENTMODULEID = PRIOR m.MODULEID 
+		ORDER SIBLINGS BY m.MODULETYPE,m.MODULEORDER -->
+		select m.* FROM MNGMODULEINFOTB m    
+		INNER JOIN MNGROLEMODULETB rm ON m.MODULEID = rm.MODULE_ID and rm.ROLE_ID = #roleid# 
+		where FIND_IN_SET(m.MODULEID, getModuleChildLst(0))   
+		ORDER BY m.MODULETYPE,m.MODULEORDER  
+	</select>
+  
+  
+  <select id="ibatorgenerated_selectByPrimaryKey" parameterClass="com.web.form.administration.Module" resultMap="ibatorgenerated_BaseResultMap">
+    select MODULEID, MODULENAME, PARENTMODULEID, MODULETYPE, MODULEACTION, MODULEORDER, MODULELEVEL, LOGFLAG
+    from MNGMODULEINFOTB
+    where MODULEID = #moduleid:VARCHAR#
+  </select>
+  <delete id="systemmodule_delete" parameterClass="com.web.form.administration.Module">
+    delete from MNGMODULEINFOTB
+    where MODULEID = #moduleid:VARCHAR#
+  </delete>
+  <delete id="systemrolemodule_deletebymodule" parameterClass="com.web.form.administration.Module">
+    delete from MNGROLEMODULETB
+    where MODULE_ID = #moduleid:VARCHAR#
+  </delete>
+
+  <insert id="systemmodule_insert" parameterClass="com.web.form.administration.Module">
+    insert into MNGMODULEINFOTB (MODULEID, MODULENAME, PARENTMODULEID, MODULETYPE, MODULEACTION,
+      MODULEORDER, MODULELEVEL, LOGFLAG)
+    values ((select round(round(rand(),9)*1000000000)), #modulename:VARCHAR#, #parentmoduleid:VARCHAR#,
+      #moduletype:DECIMAL#, #moduleaction:VARCHAR#, #moduleorder:DECIMAL#, #modulelevel:DECIMAL#, #logflag:DECIMAL#)
+  </insert>
+  <insert id="ibatorgenerated_insertSelective" parameterClass="com.web.form.administration.Module">
+    insert into MNGMODULEINFOTB
+    <dynamic prepend="(">
+      <isNotNull prepend="," property="moduleid">
+        MODULEID
+      </isNotNull>
+      <isNotNull prepend="," property="modulename">
+        MODULENAME
+      </isNotNull>
+      <isNotNull prepend="," property="parentmoduleid">
+        PARENTMODULEID
+      </isNotNull>
+      <isNotNull prepend="," property="moduletype">
+        MODULETYPE
+      </isNotNull>
+      <isNotNull prepend="," property="moduleaction">
+        MODULEACTION
+      </isNotNull>
+      <isNotNull prepend="," property="moduleorder">
+        MODULEORDER
+      </isNotNull>
+      <isNotNull prepend="," property="modulelevel">
+        MODULELEVEL
+      </isNotNull>
+      <isNotNull prepend="," property="logflag">
+        LOGFLAG
+      </isNotNull>
+      )
+    </dynamic>
+    values
+    <dynamic prepend="(">
+      <isNotNull prepend="," property="moduleid">
+        #moduleid:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="modulename">
+        #modulename:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="parentmoduleid">
+        #parentmoduleid:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="moduletype">
+        #moduletype:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="moduleaction">
+        #moduleaction:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="moduleorder">
+        #moduleorder:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="modulelevel">
+        #modulelevel:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="logflag">
+        #logflag:DECIMAL#
+      </isNotNull>
+      )
+    </dynamic>
+  </insert>
+
+  <update id="systemmodule_update" parameterClass="com.web.form.administration.Module">
+    update MNGMODULEINFOTB
+    <dynamic prepend="set">
+      <isNotNull prepend="," property="modulename">
+        MODULENAME = #modulename:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="parentmoduleid">
+        PARENTMODULEID = #parentmoduleid:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="moduletype">
+        MODULETYPE = #moduletype:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="moduleaction">
+        MODULEACTION = #moduleaction:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="moduleorder">
+        MODULEORDER = #moduleorder:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="modulelevel">
+        MODULELEVEL = #modulelevel:DECIMAL#
+      </isNotNull>
+      <isNotNull prepend="," property="logflag">
+        LOGFLAG = #logflag:DECIMAL#
+      </isNotNull>
+    </dynamic>
+    where MODULEID = #moduleid:VARCHAR#
+  </update>
+  
+  <update id="ibatorgenerated_updateByPrimaryKey" parameterClass="com.web.form.administration.Module">
+    update MNGMODULEINFOTB
+    set MODULENAME = #modulename:VARCHAR#,
+      PARENTMODULEID = #parentmoduleid:VARCHAR#,
+      MODULETYPE = #moduletype:DECIMAL#,
+      MODULEACTION = #moduleaction:VARCHAR#,
+      MODULEORDER = #moduleorder:DECIMAL#,
+      MODULELEVEL = #modulelevel:DECIMAL#,
+      LOGFLAG = #logflag:DECIMAL#
+    where MODULEID = #moduleid:VARCHAR#
+  </update>
+</sqlMap>

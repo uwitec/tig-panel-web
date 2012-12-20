@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE datagram-config PUBLIC "-//HUATENG//DTD Datagram DTD//EN" "http://www.huateng.com/Guatemala/datagram.dtd">
+<datagram-config name="7055" classname="com.web.service.communication.Datagram8583">
+	<field property="tpdu" type="N" length="10" format="BCD" pendingdir="TRAILING" pendingchar="SPACE">
+		<default-value>6000000000</default-value>
+	</field>
+	<field property="header" type="N" length="12" format="BCD" pendingdir="TRAILING" pendingchar="SPACE">
+		<default-value>612200000000</default-value>
+	</field>
+	<field property="txntype" type="N" length="4" format="BCD" pendingdir="TRAILING" pendingchar="SPACE">
+		<default-value>7055</default-value>
+	</field>
+	<field property="bitmap" type="B" length="64" format="BINARY" pendingdir="TRAILING" pendingchar="SPACE">
+		<default-value>0111000000100000000000001000000000000000110000000000000000000111</default-value>
+	</field>
+	<field property="field2" type="NLLVAR" length="19" format="BCD" pendingdir="LEADING" pendingchar="ZERO"></field>
+	<field property="field3" type="N" length="6" format="BCD" pendingdir="TRAILING" pendingchar="SPACE"></field>
+	<field property="field4" type="N" length="12" format="BCD" pendingdir="LEADING" pendingchar="ZERO"></field>
+	<field property="field11" type="N" length="6" format="BCD" pendingdir="LEADING" pendingchar="ZERO"></field>
+	<field property="field25" type="N" length="2" format="BCD" pendingdir="TRAILING" pendingchar="ZERO"></field>
+	<field property="field41" type="ANS" length="12" format="ASCII" pendingdir="TRAILING" pendingchar="SPACE"></field>
+	<field property="field42" type="ANS" length="12" format="ASCII" pendingdir="TRAILING" pendingchar="SPACE"></field>
+	<field property="field62" type="CHINESELLLVAR" length="100" format="ASCII" pendingdir="TRAILING" pendingchar="SPACE"></field>
+	<field property="field63" type="ANSLLLVAR" length="100" format="ASCII" pendingdir="TRAILING" pendingchar="ZERO"></field>
+	<field property="field64" type="B" length="64" format="BINARY" pendingdir="TRAILING" pendingchar="ZERO"></field>
+</datagram-config>

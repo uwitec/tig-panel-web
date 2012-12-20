@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="mngsys"
+  id="myeclipse.1262061633812"
+  context-root="/console"
+  j2ee-spec="5.0"
+  archive="mngsys.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+
